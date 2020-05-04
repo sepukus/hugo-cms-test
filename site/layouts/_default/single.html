@@ -1,6 +1,13 @@
 {{ define "main" }}
 
 {{ partial "jumbotron" (dict "imageUrl" "/img/7.jpg" "title" "This is where the heading goes" "subtitle" "This is where the subtitle goes") }}
-{{ .Content }}
+
+{{ range .Params.Modules }}
+{{ $path := printf "%s%s%s" "modules/" .type ".html" }}
+{{ $fullpath := printf "%s%s" "layouts/partials/" $path }}
+{{ if (fileExists $fullpath) -}}
+{{ partial $path .}}
+{{- end }}
+{{ end }}
 
 {{ end }}
