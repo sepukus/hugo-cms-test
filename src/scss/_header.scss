@@ -47,14 +47,20 @@
   }
 
   .main-nav-toggle {
-    $height: 20px;
+    $inner-height: 4px;
+    $inner-spacing: 4px;
 
     display: none;
     position: relative;
     background: transparent;
     border: none;
     width: 30px;
-    height: $height;
+    height: ($inner-height * 3 + $inner-spacing * 2);
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
 
     &:hover {
       span {
@@ -62,29 +68,64 @@
       }
     }
 
-    span {
-      width: 100%;
-      height: floor($height/5);
-      background: white;
-      position: absolute;
-      left: 0;
-      transition: $transition-fast;
+    .hamburger-inner {
+      bottom: 0;
 
-      .nav-active & {
-        background: $brand-secondary;
+      &:before,
+      &:after {
+        content: '';
+        display: block;
       }
 
-      &:first-child {
-        top: 0;
+      &,
+      &:before,
+      &:after {
+        width: 100%;
+        height: $inner-height;
+        background: white;
+        position: absolute;
+        left: 0;
+        transition: $transition-fast;
       }
 
-      &:nth-child(2) {
-        top: 50%;
-        margin-top: -(floor($height/5/2));
+      &:before {
+        top: -(floor($inner-height + $inner-spacing));
+        transition: top 0.12s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1),
+                    transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
       }
 
-      &:last-child {
-        bottom: 0;
+      &:after {
+        top: ($inner-spacing * 2 + $inner-height * 2) * -1;
+        transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1),
+                    opacity 0.1s linear;
+      }
+    }
+
+    .nav-active & {
+      .hamburger-inner {
+        transform: translate3d(0, ($inner-spacing + $inner-height) * -1, 0) rotate(-45deg);
+        transition-delay: 0.22s;
+        transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+        &,
+        &:before,
+        &:after {
+          background-color: $brand-secondary;
+        }
+
+        &::after {
+          top: 0;
+          opacity: 0;
+          transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
+                      opacity 0.1s 0.22s linear;
+        }
+
+        &::before {
+          top: 0;
+          transform: rotate(-90deg);
+          transition: top 0.1s 0.16s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
+                      transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
       }
     }
   }
@@ -101,6 +142,15 @@
 
     .uk-navbar-container {
       height: $header-height;
+    }
+
+    a,
+    .uk-navbar-nav > li > a {
+      color: $brand-secondary;
+    }
+
+    .uk-navbar-nav > li > a {
+      min-height:  40px;
     }
 
     .nav-active & {
@@ -125,6 +175,10 @@
       opacity: 0;
       background: white;
       pointer-events: none;
+      padding: 0 20px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
 
       .nav-active & {
         opacity: 1;
