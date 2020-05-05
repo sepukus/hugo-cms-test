@@ -1,20 +1,24 @@
 <!doctype html>
 <html lang="{{ $.Site.Language.Lang }}">
-  {{ partial "header" . }}
-  <body class="sans-serif">
+{{ partial "header" . }}
 
-
-    <div class="uk-container">
-      {{ block "head" . }}{{ partial "nav" . }}{{end}}
-
-      {{ block "main" . }}{{ end }}
+<body class="sans-serif">
+  {{ block "head" . }}
+  <header class="header-main">
+    <div class="uk-container uk-flex uk-flex-between">
+      <img src="/img/logo.png" alt="CMHAA Logo" class="logo" />
+      {{ partial "main-nav" . }}
     </div>
+  </header>
+  {{end}}
+  {{ block "main" . }}{{ end }}
 
-    {{ block "footer" . }}{{ partial "footer" . }}{{end}}
+  {{ block "footer" . }}{{ partial "footer" . }}{{end}}
 
-    {{ $script := .Site.Data.webpack.main }}
-    {{ with $script.js }}
-      <script src="{{ relURL . }}"></script>
-    {{ end }}
-  </body>
+  {{ $script := .Site.Data.webpack.main }}
+  {{ with $script.js }}
+  <script src="{{ relURL . }}"></script>
+  {{ end }}
+</body>
+
 </html>

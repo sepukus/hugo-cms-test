@@ -1,0 +1,13 @@
+<nav class="uk-navbar-container" uk-navbar>
+  <div class="uk-navbar-right">
+    <ul class="uk-navbar-nav">
+      {{ range .Site.Menus.main }}
+        <li>
+          <a href="{{ .URL }}" title="{{ .Title }}">
+            {{ .Name }}
+          </a>
+        </li>
+      {{ end }}
+    </ul>  
+  </div>
+</nav>

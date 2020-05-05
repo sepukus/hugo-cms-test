@@ -7,3 +7,19 @@ title = "My new Victor-Hugo site"
 # See configuration options for more details:
 # https://gohugo.io/getting-started/configuration/#toml-configuration
 disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
+
+[menu]
+  [[menu.main]]
+    identifier = "aboutus"
+    name = "About us"
+    url = "#"
+
+  [[menu.main]]
+    identifier = "ourstories"
+    name = "Our Stories"
+    url = "#"
+
+  [[menu.main]]
+    identifier = "contactus"
+    name = "Contact Us"
+    url = "#"
