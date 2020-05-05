@@ -1,0 +1,33 @@
+.jumbotron {
+  .uk-background-cover {
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
+  .uk-background-primary {
+    $border-radius: 60px;
+    $border-radius-small: $border-radius/2;
+
+    position: relative;
+    max-width: 380px;
+    padding: 60px;
+    border-top-left-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      height: 100px;
+      width: 100px;
+      bottom: 0;
+      right: 0;
+      transform: translate(45%, 45%);
+      border: 2px solid white;
+
+      border-top-left-radius: $border-radius-small;
+      border-bottom-left-radius: $border-radius-small;
+      border-bottom-right-radius: $border-radius-small;
+    }
+  }
+}

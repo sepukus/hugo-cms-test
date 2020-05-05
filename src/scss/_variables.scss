@@ -1,0 +1,26 @@
+$brand-primary: #F59C00;
+$brand-secondary: #6A6D71;
+
+$grey-light: #999;
+
+$transition-fast: 200ms ease-out;
+
+
+$global-color:                                   #666 !default;
+$global-emphasis-color:                          #333 !default;
+$global-muted-color:                             #999 !default;
+
+$global-link-color:                              $brand-primary;
+$global-link-hover-color:                        darken($brand-primary, 0.2);
+
+$global-inverse-color:                           #fff !default;
+
+$global-background:                              #fff !default;
+
+$global-muted-background:                        #f8f8f8 !default;
+$global-primary-background:                      $brand-primary;
+$global-secondary-background:                    #222 !default;
+
+$global-success-background:                      #32d296 !default;
+$global-warning-background:                      #faa05a !default;
+$global-danger-background:                       #f0506e !default;

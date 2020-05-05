@@ -1,61 +1,66 @@
 const webpack = require("webpack");
-const path = require('path');
+const path = require("path");
 
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const AssetsPlugin = require("assets-webpack-plugin");
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CleanWebpackPlugin = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  mode: 'development',
+  mode: "development",
 
   entry: {
     cms: path.join(__dirname, "src", "scripts", "cms.js"),
-    main: path.join(__dirname, "src", "index.js")
+    main: path.join(__dirname, "src", "index.js"),
   },
 
   output: {
-    filename: '[name].js',
-    path: path.join(__dirname, "dist")
+    filename: "[name].js",
+    path: path.join(__dirname, "dist"),
   },
 
   resolve: {
     alias: {
-      'uikit-util': path.join(__dirname, "src", "scripts", "util")
-    }
-},
+      "uikit-util": path.join(__dirname, "src", "scripts", "util"),
+    },
+  },
 
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.txt$/,
-        use: 'raw-loader'
+        use: "raw-loader",
       },
 
       {
         test: /\.(jpe?g|png|gif|svg)$/,
-        use: [{
-          loader: 'file-loader',
-          options: {
-            name: '[name].[ext]',
-            outputPath: 'images/',
-            publicPath: 'images/'
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
+              outputPath: "images/",
+              publicPath: "images/",
+            },
           },
-        }]
+        ],
       },
 
-      {test: /\.json$/, loader: "json-loader"},
+      { test: /\.json$/, loader: "json-loader" },
 
       {
         test: /\.(woff|woff2|ttf|otf)$/,
-        use: [{
-          loader: 'file-loader',
-          options: {
-            name: '[name].[ext]',
-            outputPath: 'fonts/',
-            publicPath: 'fonts/'
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
+              outputPath: "fonts/",
+              publicPath: "fonts/",
+            },
           },
-        }]
+        ],
       },
 
       {
@@ -63,27 +68,33 @@ module.exports = {
         use: [
           MiniCssExtractPlugin.loader,
           {
-            loader: 'css-loader',
+            loader: "css-loader",
             options: {
-              sourceMap: true
-            }
+              sourceMap: true,
+            },
           },
           {
-            loader: 'postcss-loader',
+            loader: "postcss-loader",
             options: {
-              sourceMap: true
-            }
-          }
-        ]
+              sourceMap: true,
+            },
+          },
+          {
+            loader: "sass-loader",
+            options: {
+              sourceMap: true,
+            },
+          },
+        ],
       },
 
       {
         loader: "babel-loader",
         test: /\.js?$/,
         exclude: /node_modules/,
-        query: {cacheDirectory: true}
+        query: { cacheDirectory: true },
       },
-    ]
+    ],
   },
   plugins: [
     //new CleanWebpackPlugin(['dist']),
@@ -95,19 +106,19 @@ module.exports = {
     new AssetsPlugin({
       filename: "webpack.json",
       path: path.join(process.cwd(), "site/data"),
-      prettyPrint: true
+      prettyPrint: true,
     }),
     new CopyWebpackPlugin([
       {
         from: "./src/fonts/",
         to: "fonts/",
-        flatten: true
-      }
+        flatten: true,
+      },
     ]),
     new HtmlWebpackPlugin({
-      filename: 'admin/index.html',
-      template: 'src/cms.html',
+      filename: "admin/index.html",
+      template: "src/cms.html",
       inject: false,
     }),
-  ]
+  ],
 };

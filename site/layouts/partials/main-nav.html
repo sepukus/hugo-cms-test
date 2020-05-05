@@ -1,6 +1,17 @@
-<nav class="uk-navbar-container" uk-navbar>
+<nav class="uk-navbar-container uk-navbar-transparent uk-flex uk-flex-between" uk-navbar>
+  <div class="uk-navbar-left">
+    <a href="/" class="uk-position-relative logo-link">
+      <img src="/img/logo-white.png" alt="CMHAA Logo" class="logo" />
+      <img src="/img/logo.png" alt="CMHAA Logo" class="logo logo--color" />
+    </a>
+  </div>
   <div class="uk-navbar-right">
-    <ul class="uk-navbar-nav">
+    <button class="main-nav-toggle" uk-toggle="target: body; cls: nav-active">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="uk-navbar-nav" id="main-nav">
       {{ range .Site.Menus.main }}
         <li>
           <a href="{{ .URL }}" title="{{ .Title }}">

@@ -1,13 +1,15 @@
-<div class="uk-child-width-1-2@s uk-light" uk-grid>
-  <div>
-    <div class="uk-background-cover uk-height-medium uk-panel uk-flex uk-flex-center uk-flex-middle"
+<div class="jumbotron uk-child-width-1-2@s uk-light" uk-grid>
+  <div class="uk-background-cover"
       style="background-image: url({{.imageUrl}});">
-      <p class="uk-h4 has-text-white">{{.title}}</p>
-      {{ if .subtitle }}
-      <p class="b f4 di lh-title mb3 white mw6 bg-primary">
-        {{.subtitle}}
-      </p>
-      {{ end }}
+    <div class="uk-container">
+      <div class="uk-background-primary has-text-white">
+        <h1 class="has-text-white uk-margin-remove">{{.title}}</h1>
+        {{ if .subtitle }}
+          <p class="b f4 di lh-title mb3 white mw6 bg-primary">
+            {{.subtitle}}
+          </p>
+        {{ end }}
+      </div>            
     </div>
   </div>
 </div>
