@@ -19,7 +19,12 @@ collections: # A list of collections the CMS should be able to edit
     create: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Content", name: "content", widget: "markdown" }
+      - {
+          label: "Banner Image",
+          name: "banner_image",
+          widget: "image",
+          required: false,
+        }
       - label: "Modules"
         name: "modules"
         widget: "list"
