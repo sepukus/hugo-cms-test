@@ -1,6 +1,7 @@
-// JS Goes here - ES6 supported
+require("offline-plugin/runtime").install();
 
-import "./css/main.css";
+import "./fonts/LibreBaskerville-Regular.ttf";
 
-// Say hello
-console.log("🦊 Hello! Edit me in src/index.js");
+import "./scss/main.scss";
+
+import "./scripts/app.core.js";

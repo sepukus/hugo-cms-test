@@ -6,7 +6,8 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const common = require("./webpack.common");
 
 module.exports = merge(common, {
-  mode: "development",
+  mode: 'development',
+  devtool: 'inline-source-map',
 
   output: {
     filename: "[name].js",
@@ -17,6 +18,7 @@ module.exports = merge(common, {
     port: process.env.PORT || 3000,
     contentBase: path.join(process.cwd(), "./dist"),
     watchContentBase: true,
+    stats: "none",
     quiet: false,
     open: true,
     historyApiFallback: {

@@ -1,18 +1,35 @@
-<div class="pv5 pv6-l ph3 bg-center cover" style="background-image: url('{{.imageUrl}}')">
-  <div class="mw7 center ph3">
-    <div class="db mb3">
-      <div class="mw7 relative bg-fix-primary mb3">
-        <h1 class="f2 f1-l b di lh-title mb3 white mw6 bg-primary">
-          {{.title}}
-        </h1>
-      </div>
-      <div class="mw7 relative bg-fix-primary">
-        {{ if .subtitle }}
-        <p class="b f4 di lh-title mb3 white mw6 bg-primary">
-          {{.subtitle}}
-        </p>
-        {{ end }}
-      </div>
+<div class="uk-child-width-1-2@s uk-light" uk-grid>
+  <div>
+    <div class="uk-background-cover uk-height-medium uk-panel uk-flex uk-flex-center uk-flex-middle" style="background-image: url({{.imageUrl}});">
+      <p class="uk-h4 has-text-white">{{.title}}</p>
+      {{ if .subtitle }}
+      <p class="b f4 di lh-title mb3 white mw6 bg-primary">
+        {{.subtitle}}
+      </p>
+      {{ end }}
     </div>
   </div>
 </div>
+
+<!-- testing connection to accordion javascript -->
+<ul uk-accordion data-id="C01" class="accordion">
+  <li class="uk-open">
+    <a class="uk-accordion-title" href="#">Item 1</a>
+    <div class="uk-accordion-content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+  </li>
+  <li>
+    <a class="uk-accordion-title" href="#">Item 2</a>
+    <div class="uk-accordion-content">
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor reprehenderit.</p>
+    </div>
+  </li>
+  <li>
+    <a class="uk-accordion-title" href="#">Item 3</a>
+    <div class="uk-accordion-content">
+      <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat proident.</p>
+    </div>
+  </li>
+</ul>
+

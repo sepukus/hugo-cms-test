@@ -1,5 +1,8 @@
-node_modules/
-dist/
+/node_modules
+/dist
+/.vscode
+/haters
+.DS_Store
 site/data/webpack.json
-/npm-debug.log
-yarn-error.log
+/archive
+.idea
