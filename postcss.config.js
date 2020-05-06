@@ -1,18 +1,19 @@
-const purgecss = require('@fullhuman/postcss-purgecss');
+const purgecss = require("@fullhuman/postcss-purgecss");
 
 module.exports = {
   plugins: [
-    require('postcss-import')({}),
-    require('postcss-preset-env')({
-      browsers: "last 2 versions"
+    require("postcss-import")({}),
+    require("postcss-preset-env")({
+      browsers: "last 2 versions",
     }),
-    require('autoprefixer')({}),
-    require('cssnano')({
-        preset: 'default',
+    require("autoprefixer")({}),
+    require("cssnano")({
+      preset: "default",
     }),
     purgecss({
-      content: ['./**/*.html'],
-      keyframes: true
-    })
-  ]
-}
+      content: ["./**/*.html"],
+      keyframes: true,
+      whitelist: ["sticky-header"],
+    }),
+  ],
+};

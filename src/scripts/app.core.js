@@ -6,7 +6,7 @@ window.UIkit = UIkit;
  * Import Classes
  */
 // import $ from 'jquery';
-import { Namespace, Browser, Accordions } from "./modules";
+import { Namespace, Browser, Accordions, StickyHeader } from "./modules";
 
 // loads the Icon plugin
 UIkit.use(Icons);
@@ -15,19 +15,20 @@ UIkit.use(Icons);
 UIkit.notification("Hello world.");
 
 document.addEventListener("DOMContentLoaded", function () {
-    /**
-     * Classes
-     */
-    new Browser();
-    new Namespace();
+  /**
+   * Classes
+   */
+  new Browser();
+  new Namespace();
 
-    /**
-     * Components
-     */
-    new Accordions();
+  /**
+   * Components
+   */
+  new Accordions();
+  new StickyHeader();
 });
 
 // HMR (Hot Module Replacement)
 if (module.hot) {
-    module.hot.accept();
+  module.hot.accept();
 }
