@@ -1,0 +1,29 @@
+{{ define "main" }}
+
+{{ partial "jumbotron" (dict "imageUrl" "/img/blog-index.jpg" "title" "Latest stories") }}
+
+<div class="mw7 center">
+  <ul class="flex-ns flex-wrap mhn1-ns pa3">
+    {{ range $name, $taxonomy := .Site.Taxonomies.category }}
+      {{ $name }} {{ $taxonomy.Count }}<br>
+    {{ end }}<br>
+    {{ range $name, $taxonomy := .Site.Taxonomies.focus }}
+      {{ $name }} {{ $taxonomy.Count }}<br>
+    {{ end }}<br>
+    {{ range $name, $taxonomy := .Site.Taxonomies.role }}
+      {{ $name }} {{ $taxonomy.Count }}<br>
+    {{ end }}<br>
+    {{ range $name, $taxonomy := .Site.Taxonomies.organisation_size }}
+      {{ $name }} {{ $taxonomy.Count }}<br>
+    {{ end }}<br>
+
+    {{ range (.Paginator 4).Pages.ByPublishDate.Reverse }}
+      <div class="w-50-ns ph1-ns flex">
+        {{ .Render "li"}}
+      </div>
+    {{ end }}
+  </ul>
+  {{ partial "pagination" . }}
+</div>
+
+{{end}}

@@ -6,7 +6,15 @@ title = "CMHAA"
 # RSS, categories and tags disabled for an easy start
 # See configuration options for more details:
 # https://gohugo.io/getting-started/configuration/#toml-configuration
-disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
+#disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
+disableKinds = ["RSS"]
+
+[taxonomies]
+  category = "category"
+  focus = "focus"
+  role = "role"
+  organisation_size = "organisation_size"
+  industry = "industry"
 
 [outputs]
 home = ["HTML", "Algolia"]

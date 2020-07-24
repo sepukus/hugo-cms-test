@@ -6,3 +6,4 @@
 site/data/webpack.json
 /archive
 .idea
+.env

@@ -31,65 +31,70 @@ collections: # A list of collections the CMS should be able to edit
       - label: "Category"
         name: "category"
         widget: "select"
-        options: 
-          - { label: "Personal stories", value: 'personal-stories' }
-          - { label: "Case studies", value: 'case-study' }
-          - { label: "Fact sheets", value: 'fact-sheets' }
-          - { label: "Guides & Toolkits", value: 'guides' }
-          - { label: "Support services", value: 'support' }
-          - { label: "Research", value: 'research' }
+        options: [
+          "Personal stories", 
+          "Case studies", 
+          "Fact sheets", 
+          "Guides & Toolkits", 
+          "Support services", 
+          "Research"
+        ]
       - label: "Focus"
         name: "focus"
         widget: "select"
-        options: 
-          - { label: "Support for leaders, colleagues and staff", value: 'support' }
-          - { label: "Assessment of organisational approach", value: 'assessment' }
-          - { label: "Improving workplace culture", value: 'workplace-culture' }
-          - { label: "Developing policy and practice", value: 'policy' }
+        options: [
+          "Support for leaders, colleagues and staff", 
+          "Assessment of organisational approach", 
+          "Improving workplace culture", 
+          "Developing policy and practice"
+        ]
       - label: "Role"
         name: "role"
         widget: "select"
-        options: 
-          - { label: "CEO or leadership", value: 'leadership' }
-          - { label: "Senior manager", value: 'senior-manager' }
-          - { label: "HR professional", value: 'hr-professional' }
-          - { label: "Line manager/supervisor", value: 'line-manager' }
-          - { label: "Sole trader", value: 'sole-trader' }
-          - { label: "Employee", value: 'employee' }
-          - { label: "Health or wellbeing lead", value: 'wellbeing-lead' }
-          - { label: "Champion or advocate", value: 'champion' }
+        options: [
+          "CEO or leadership", 
+          "Senior manager", 
+          "HR professional", 
+          "Line manager/supervisor", 
+          "Sole trader", 
+          "Employee", 
+          "Health or wellbeing lead", 
+          "Champion or advocate"
+        ]
       - label: "Organisation size"
         name: "organisation_size"
         widget: "select"
-        options: 
-          - { label: "Micro (<10 employees)", value: "micro" }
-          - { label: "Small (10-49 employees)", value: "small" }
-          - { label: "Medium (50-249 employees)", value: "medium" }
-          - { label: "Large (250+ employees)", value: "large" }
+        options: [
+          "Micro (<10 employees)", 
+          "Small (10-49 employees)", 
+          "Medium (50-249 employees)", 
+          "Large (250+ employees)"
+        ]
       - label: "Industry"
         name: "industry"
         widget: "select"
-        options:
-          - { label: "Retail & consumer", value: "retail" }
-          - { label: "Manufacturing", value: "manufactoring" }
-          - { label: "Property & Construction", value: "property" }
-          - { label: "Transport & Logistics", value: "transport" }
-          - { label: "Law & Legal Services", value: "legal" }
-          - { label: "Financial & Insurance Services", value: "financial" }
-          - { label: "Business Consulting & Management", value: "consulting" }
-          - { label: "IT & Telecommunications", value: "it" }
-          - { label: "Healthcare", value: "health" }
-          - { label: "Recruitment & HR", value: "recruitment" }
-          - { label: "Science & Pharmaceuticals", value: "science" }
-          - { label: "Tourism & Hospitality", value: "tourism" }
-          - { label: "Government & Public Agencies", value: "government" }
-          - { label: "Education & Training", value: "education" }
-          - { label: "Media, communications and digital", value: "media" }
-          - { label: "Occupational health & rehabilitation", value: "occupational-health" }
-          - { label: "Energy & Utilities", value: "energy" }
-          - { label: "Charity, not-for-profit", value: "charity" }
-          - { label: "Environment & agriculture", value: "environment" }
-          - { label: "Emergency services & security", value: "emergency-services" }
+        options: [
+          "Retail & consumer", 
+          "Manufacturing", 
+          "Property & Construction", 
+          "Transport & Logistics", 
+          "Law & Legal Services", 
+          "Financial & Insurance Services", 
+          "Business Consulting & Management", 
+          "IT & Telecommunications", 
+          "Healthcare", 
+          "Recruitment & HR", 
+          "Science & Pharmaceuticals", 
+          "Tourism & Hospitality", 
+          "Government & Public Agencies", 
+          "Education & Training", 
+          "Media, communications and digital", 
+          "Occupational health & rehabilitation", 
+          "Energy & Utilities", 
+          "Charity, not-for-profit", 
+          "Environment & agriculture", 
+          "Emergency services & security"
+        ]
       - { label: Content, name: content, widget: markdown, required: false }
 
   - name: "pages"
