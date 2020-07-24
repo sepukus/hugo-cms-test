@@ -13,6 +13,30 @@ collections: # A list of collections the CMS should be able to edit
       - { label: "Intro Blurb", name: "description", widget: "text" }
       - { label: "Image", name: "image", widget: "image", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
+  - name: "resources"
+    label: "Resources"
+    folder: "site/content/resources"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - {
+          label: "Banner Image",
+          name: "banner_image",
+          widget: "image",
+          required: false,
+        }
+      - { label: "Banner Subcontent", name: "banner_subcontent", widget: markdown }
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options: [
+          "Personal stories",
+          "Case study",
+          "Fact sheets",
+          "Guides & Toolkits",
+          "Support services",
+          "Research"
+        ]
   - name: "pages"
     label: "Pages"
     folder: "site/content"
