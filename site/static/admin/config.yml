@@ -25,12 +25,6 @@ collections: # A list of collections the CMS should be able to edit
           widget: "image",
           required: false,
         }
-      - {
-        label: 'Tags', 
-        name: 'tags',
-        widget: 'list', 
-        default: ['news']
-      }
       - label: "Modules"
         name: "modules"
         widget: "list"

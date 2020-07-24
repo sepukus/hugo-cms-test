@@ -1,14 +1,15 @@
 {{ define "main" }}
     {{ partial "jumbotron" (dict "imageUrl" .Params.banner_image "title" .Title "subtitle" .Params.subtitle) }}
+
     {{ range .Params.Modules }}
         {{ $path := printf "%s%s%s" "modules/" .type ".html" }}
         {{ $fullpath := printf "%s%s" "layouts/partials/" $path }}
         {{ if (fileExists $fullpath) -}}
-        {{ partial $path .}}
+            {{ partial $path .}}
         {{ else }}
-        {{ if ne (getenv "HUGO_ENV") "production" }}
-            <h1>Module does not exist</h1>
-        {{ end }}
+            {{ if ne (getenv "HUGO_ENV") "production" }}
+                <h1>Module does not exist</h1>
+            {{ end }}
         {{- end }}
     {{ end }}
 {{ end }}
