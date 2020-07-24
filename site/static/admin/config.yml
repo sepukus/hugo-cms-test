@@ -36,7 +36,6 @@ collections: # A list of collections the CMS should be able to edit
           - { label: "Guides & Toolkits", value: 'guides' }
           - { label: "Support services", value: 'support' }
           - { label: "Research", value: 'research' }
-        ]
       - label: "Focus"
         name: "focus"
         widget: "select"
@@ -45,7 +44,6 @@ collections: # A list of collections the CMS should be able to edit
           - { label: "Assessment of organisational approach", value: 'assessment' }
           - { label: "Improving workplace culture", value: 'workplace-culture' }
           - { label: "Developing policy and practice", value: 'policy' }
-        ]
       - label: "Role"
         name: "role"
         widget: "select"
@@ -58,7 +56,6 @@ collections: # A list of collections the CMS should be able to edit
           - { label: "Employee", value: 'employee' }
           - { label: "Health or wellbeing lead", value: 'wellbeing-lead' }
           - { label: "Champion or advocate", value: 'champion' }
-        ]
       - label: "Organisation size"
         name: "organisation_size"
         widget: "select"
@@ -67,7 +64,6 @@ collections: # A list of collections the CMS should be able to edit
           - { label: "Small (10-49 employees)", value: "small" }
           - { label: "Medium (50-249 employees)", value: "medium" }
           - { label: "Large (250+ employees)", value: "large" }
-        ]
       - label: "Industry"
         name: "industry"
         widget: "select"
@@ -92,8 +88,8 @@ collections: # A list of collections the CMS should be able to edit
           - { label: "Charity, not-for-profit", value: "charity" }
           - { label: "Environment & agriculture", value: "environment" }
           - { label: "Emergency services & security", value: "emergency-services" }
-        - { label: Content, name: content, widget: markdown }
-        
+      - { label: Content, name: content, widget: markdown }
+
   - name: "pages"
     label: "Pages"
     folder: "site/content"
