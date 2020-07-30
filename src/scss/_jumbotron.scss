@@ -3,7 +3,7 @@
     padding-top: 150px;
     padding-bottom: 150px;
   }
-  .uk-background-primary {
+  .uk-background-transparent {
     $border-radius: 60px;
     $border-radius-small: $border-radius/2;
 
@@ -14,20 +14,20 @@
     border-bottom-left-radius: $border-radius;
     border-bottom-right-radius: $border-radius;
 
-    &:after {
-      content: '';
-      display: block;
-      position: absolute;
-      height: 100px;
-      width: 100px;
-      bottom: 0;
-      right: 0;
-      transform: translate(45%, 45%);
-      border: 2px solid white;
-
-      border-top-left-radius: $border-radius-small;
-      border-bottom-left-radius: $border-radius-small;
-      border-bottom-right-radius: $border-radius-small;
-    }
+    //&:after {
+    //  content: '';
+    //  display: block;
+    //  position: absolute;
+    //  height: 100px;
+    //  width: 100px;
+    //  bottom: 0;
+    //  right: 0;
+    //  transform: translate(45%, 45%);
+    //  border: 2px solid white;
+    //
+    //  border-top-left-radius: $border-radius-small;
+    //  border-bottom-left-radius: $border-radius-small;
+    //  border-bottom-right-radius: $border-radius-small;
+    //}
   }
 }
