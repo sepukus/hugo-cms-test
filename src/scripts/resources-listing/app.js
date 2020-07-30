@@ -6,12 +6,10 @@ import FilterBar from "./Layout/FilterBar";
 import Listing from "./Layout/Listing";
 
 const App = (props) => {
-  console.log(props);
-
   return (
     <div>
       <Header />
-      <FilterBar />
+      <FilterBar filters={props.filters} />
       <Listing />
     </div>
   );
