@@ -90,7 +90,7 @@ module.exports = {
 
       {
         loader: "babel-loader",
-        test: /\.js?$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         query: { cacheDirectory: true },
       },

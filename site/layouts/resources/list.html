@@ -4,18 +4,24 @@
 
 <div class="mw7 center">
   <ul class="flex-ns flex-wrap mhn1-ns pa3">
-    {{ range $name, $taxonomy := .Site.Taxonomies.category }}
-      {{ $name }} {{ $taxonomy.Count }}<br>
-    {{ end }}<br>
-    {{ range $name, $taxonomy := .Site.Taxonomies.focus }}
-      {{ $name }} {{ $taxonomy.Count }}<br>
-    {{ end }}<br>
-    {{ range $name, $taxonomy := .Site.Taxonomies.role }}
-      {{ $name }} {{ $taxonomy.Count }}<br>
-    {{ end }}<br>
-    {{ range $name, $taxonomy := .Site.Taxonomies.organisation_size }}
-      {{ $name }} {{ $taxonomy.Count }}<br>
-    {{ end }}<br>
+    {{/* 
+          Loop over our filter taxonomies, add the name and amount of articles
+          within those taxonomies to a dictionary then parse that as json to
+          the resource listing app for initial population
+    */}}
+    {{ $filters := slice "category" "focus" "role" "organisation_size" "industry" }}
+    {{- $.Scratch.Add "index" dict -}}
+    {{ range $filter := $filters }}
+      {{ $tax := index $.Site.Taxonomies $filter}}
+      {{ $.Scratch.Add "filterData" slice }}
+      {{ range $name, $taxonomy := $tax }}
+        {{- $.Scratch.Add "filterData" (dict "name" $name "count" $taxonomy.Count ) -}}
+      {{ end }}
+      {{ $filterData := $.Scratch.Get "filterData" }}
+      {{- $.Scratch.SetInMap "index" $filter $filterData -}}
+      {{- $.Scratch.Delete "filterData" -}}
+    {{ end }}
+    <div id='resource-listing' data-filters="{{- $.Scratch.Get "index" | jsonify -}}"></div>   
 
     {{ range (.Paginator 4).Pages.ByPublishDate.Reverse }}
       <div class="w-50-ns ph1-ns flex">
