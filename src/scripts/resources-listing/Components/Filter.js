@@ -5,11 +5,10 @@ const Filter = (props) => {
     props.name.charAt(0).toUpperCase() + props.name.slice(1).replace("_", " ");
 
   const categories = props.categories.map((el) => {
-    console.log(el);
     return (
-      <label>
+      <label key={el.name}>
         <input type="checkbox" />
-        {el.name} {el.count}
+        {el.name} ({el.count})
       </label>
     );
   });

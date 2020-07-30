@@ -5,7 +5,13 @@ const FilterBar = (props) => {
   const filterOrder = ["category", "focus", "role", "organisation_size"];
 
   const filters = filterOrder.map((filterName) => {
-    return <Filter name={filterName} categories={props.filters[filterName]} />;
+    return (
+      <Filter
+        key={filterName}
+        name={filterName}
+        categories={props.filters[filterName]}
+      />
+    );
   });
 
   return (
