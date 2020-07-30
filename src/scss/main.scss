@@ -1,5 +1,4 @@
 // 1. Your custom variables and variable overwrites.
-$global-link-color: #DA7D02;
 @import 'variables';
 
 // 2. Import default variables and available mixins.
@@ -12,7 +11,14 @@ $global-link-color: #DA7D02;
 // 4. Import UIkit.
 @import "~uikit/src/scss/uikit-theme.scss";
 
-/* add in custom below */
-@import 'header';
-@import 'jumbotron';
+/* GLOBAL */
+@import
+  'header',
+  'jumbotron'
+;
+
+/* components */
+@import
+  'components/C03-split-title-content'
+;
 

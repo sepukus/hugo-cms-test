@@ -1,0 +1,9 @@
+.C03-split-title-content {
+  padding-top: $global-padding;
+  padding-bottom: $global-padding;
+  &__svg {
+    @media (max-width: $breakpoint-small) {
+      display: block;
+    }
+  }
+}
