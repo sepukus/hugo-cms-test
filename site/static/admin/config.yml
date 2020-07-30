@@ -113,23 +113,30 @@ collections: # A list of collections the CMS should be able to edit
         name: "modules"
         widget: "list"
         types:
-          - label: "Module 1"
-            name: "module-1"
-            widget: object
-            fields:
+          - label: "Accordion"
+              name: "accordion"
+              widget: object
+              fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Subtitle, name: subtitle, widget: string }
+              - { label: Description, name: description, widget: markdown }
+              - { label: Image, name: image, widget: image }
+          - label: "Our Members"
+              name: "our_members"
+              widget: object
+              fields:
               - { label: Title, name: title, widget: string }
               - { label: Content, name: content, widget: markdown }
-          - label: "Module 2"
-            name: "module-2"
-            widget: object
-            fields:
+          - label: "Our Board"
+              name: "our_board"
+              widget: object
+              fields:
               - { label: Title, name: title, widget: string }
-              - { label: Sub Title, name: subtitle, widget: string }
               - { label: Content, name: content, widget: markdown }
           - label: "Split Title with Content"
               name: "split_title_content"
               widget: object
               fields:
-                - { label: Title, name: title, widget: string }
-                - { label: Lead Text, name: leadtext, widget: string }
-                - { label: Content, name: content, widget: markdown }
+              - { label: Title, name: title, widget: string }
+              - { label: Lead Text, name: leadtext, widget: string }
+              - { label: Content, name: content, widget: markdown }
