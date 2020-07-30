@@ -1,24 +1,17 @@
 ---
 title: Led by business for business to create mentally healthy workplaces
-banner_image: img/banner-image.jpg
+banner_image: img/main-hero.jpg
 modules:
-  - type: ourMembers
-    title: Our Members
-    content:
-        - logo: /img/about-shade-grown.jpg
-        - logo: /img/about-single-origin.jpg
-        - logo: /img/about-sustainable-farming.jpg
-  - type: ourBoard
-    title: Our Board
-    description: "We wish for mental health to be recognised as a boardroom issue and considered essential to maximise business performance, critical to managing business risk and vital to safeguarding organisations’ people responsibilities."
-    content:
-      - image: /img/about-shade-grown.jpg
-        name: "Sam Brunno"
-        title: "Job Title"
-      - image: /img/about-shade-grown.jpg
-        name: "Sam Brunno"
-        title: "Job Title"
-      - image: /img/about-shade-grown.jpg
-        name: "Sam Brunno"
-        title: "Job Title"
+  - type: split_title_content
+    title: Who we are
+    leadtext: "We are a business-led, expert-guided alliance of Australian business
+      leaders who have come together for the first time, united in our focus to
+      facilitate change and embed good mental health practice within workplaces
+      in a sustainable and measurable way. "
+    content: Why? Because we know that we can do better, and that doing better
+      begins with business leaders prioritising mental health in ways that are
+      experienced by all of their employees. We also know that when businesses
+      pool their knowledge and resources and work with each other in a
+      collaborative, non-competitive way, more sustainable outcomes can be
+      achieved for our people, and for the wider community.
 ---
