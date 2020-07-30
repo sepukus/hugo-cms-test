@@ -1,5 +1,5 @@
 ---
-title: Led by business for business to create mentally healthy workplaces
+title: Together in the business of improving workplace mental health
 banner_image: img/main-hero.jpg
 modules:
   - type: split_title_content
