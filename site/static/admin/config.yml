@@ -21,18 +21,7 @@ collections: # A list of collections the CMS should be able to edit
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
-      - {
-          label: "Banner Image",
-          name: "banner_image",
-          widget: "image",
-          required: false,
-        }
-      - {
-        label: "Banner CTA",
-        name: "banner_cta",
-        widget: "string",
-        required: false,
-      }
+      - { label: "Banner Image", name: "banner_image", widget: "image", required: false }
       - { label: "Banner Subcontent", name: "banner_subcontent", widget: markdown, required: false }
       - label: "Category"
         name: "category"
@@ -109,12 +98,8 @@ collections: # A list of collections the CMS should be able to edit
     create: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - {
-          label: "Banner Image",
-          name: "banner_image",
-          widget: "image",
-          required: false,
-        }
+      - { label: "Banner Image", name: "banner_image", widget: "image", required: false }
+      - { label: "Banner CTA", name: "banner_cta", widget: "string", required: false }
       - label: "Modules"
         name: "modules"
         widget: "list"
