@@ -126,3 +126,10 @@ collections: # A list of collections the CMS should be able to edit
               - { label: Title, name: title, widget: string }
               - { label: Sub Title, name: subtitle, widget: string }
               - { label: Content, name: content, widget: markdown }
+          - label: "Split Title with Content"
+              name: "split-title-content"
+              widget: object
+              fields:
+                - { label: Title, name: title, widget: string }
+                - { label: Lead Text, name: leadtext, widget: string }
+                - { label: Content, name: content, widget: markdown }
