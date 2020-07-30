@@ -16,5 +16,5 @@ const App = (props) => {
 };
 
 const element = document.getElementById("resource-listing");
-const appData = JSON.parse(element.getAttribute("data-filters"));
+const appData = JSON.parse(element.innerHTML);
 ReactDOM.render(<App filters={appData} />, element);

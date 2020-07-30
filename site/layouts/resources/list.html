@@ -21,7 +21,7 @@
       {{- $.Scratch.SetInMap "index" $filter $filterData -}}
       {{- $.Scratch.Delete "filterData" -}}
     {{ end }}
-    <div id='resource-listing' data-filters="{{- $.Scratch.Get "index" | jsonify -}}"></div>   
+    <div id='resource-listing'>{{- $.Scratch.Get "index" | jsonify -}}</div>   
 
     {{ range (.Paginator 4).Pages.ByPublishDate.Reverse }}
       <div class="w-50-ns ph1-ns flex">
