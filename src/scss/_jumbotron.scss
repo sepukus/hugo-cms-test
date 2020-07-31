@@ -2,9 +2,14 @@
   .uk-background-cover {
     padding-top: 150px;
     padding-bottom: 150px;
+
+    @media (max-width: $breakpoint-small) {
+      padding-bottom: 0;
+    }
   }
+
   .uk-background-transparent {
-    $border-radius: 60px;
+    $border-radius: 0;
     $border-radius-small: $border-radius/2;
 
     position: relative;
@@ -13,6 +18,11 @@
     border-top-left-radius: $border-radius;
     border-bottom-left-radius: $border-radius;
     border-bottom-right-radius: $border-radius;
+
+    @media (max-width: $breakpoint-small) {
+      max-width: 100%;
+      padding: 60px 5px 30px;
+    }
   }
 
   &__title {
