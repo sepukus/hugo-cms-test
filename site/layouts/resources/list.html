@@ -7,7 +7,6 @@
     {{/* Get number of all categories */}}
     {{ $countAll := 0}}
     {{ range $key, $filter := $.Site.Taxonomies.category }}
-        {{ $filter.Count }}
         {{ $countAll = add $countAll $filter.Count }}
     {{ end }}
     {{/* 
@@ -25,12 +24,22 @@
         {{- $.Scratch.Add "filterData" (dict "name" "all" "count" $countAll "active" true "parent" $filter) -}}
       {{ end }}
       {{ range $name, $taxonomy := $tax }}
-        {{- $.Scratch.Add "filterData" (dict "name" $name "count" $taxonomy.Count "active" false "parent" $filter) -}}
+        {{ with $.Site.GetPage (printf "/%s" $name) }} {{/* doing this we can use .LinkTitle to get taxonomy human friendly name */}}
+          {{- $.Scratch.Add "filterData" (dict "name" .LinkTitle "count" $taxonomy.Count "active" false "parent" $filter) -}}
+        {{ end }}
       {{ end }}
       {{ $filterData := $.Scratch.Get "filterData" }}
       {{- $.Scratch.SetInMap "index" $filter $filterData -}}
       {{- $.Scratch.Delete "filterData" -}}
     {{ end }}
+
+    
+    <!-- {{ range $name, $tax := $.Site.Taxonomies.category }}
+    {{ with $.Site.GetPage (printf "/%s" $name) }}
+        {{ .LinkTitle }}
+        {{ printf "%#v" $name | humanize }} {{ printf "%#v" $tax }}<br>
+      {{ end }}
+    {{ end }} -->
     
     <div id='resource-listing'>{{- $.Scratch.Get "index" | jsonify -}}</div>   
 

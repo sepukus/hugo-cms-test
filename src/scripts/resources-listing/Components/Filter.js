@@ -1,11 +1,6 @@
 import React from "react";
 
-const prettifyName = (name) => {
-  return (
-    name.charAt(0).toUpperCase() +
-    name.slice(1).replace("_", " ").replace("-", " ")
-  );
-};
+import prettifyName from "../utils/prettyName";
 
 const Filter = (props) => {
   const title = prettifyName(props.name);
