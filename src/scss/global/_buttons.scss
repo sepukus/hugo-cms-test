@@ -1,17 +1,48 @@
 .uk-button {
   border-radius: 50px;
+  padding: 13px 32px;
+  font-family: Futura;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 140%;
+  text-align: center;
+  text-transform: uppercase;
+
+  @media (max-width: $breakpoint-medium) {
+    font-size: 16px;
+  }
+
+  @media (max-width: $breakpoint-small) {
+    font-size: 15px;
+  }
 
   &-primary {
     background-color: $brand-primary;
     color: $global-black;
-    border-radius: 50px;
-    padding: 13px 32px;
-    font-family: Futura;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 25px;
-    text-align: center;
-    text-transform: uppercase;
+
+    &:hover {
+      background-color: $brand-primary-darker;
+      color: $global-black;
+    }
+    &:focus {
+      background-color: $brand-primary;
+      color: $global-black;
+    }
+  }
+
+  &-secondary {
+    background-color: $brand-secondary;
+    color: $global-white;
+  }
+
+  // disabled state
+  &-default:disabled,
+  &-primary:disabled,
+  &-secondary:disabled,
+  &-danger:disabled {
+    background-color: $grey-lighter;
+    color: $brand-secondary;
+    border-color: $grey-lighter;
   }
 }

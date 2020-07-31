@@ -1,7 +1,10 @@
 $brand-primary: #F59C00;
+$brand-primary-darker: #EF8F00;
 $brand-secondary: #6A6D71;
+$brand-secondary-darker: #6A6D71;
 
 $grey-light: #999;
+$grey-lighter: #D0D0D0;
 
 $transition-fast: 200ms ease-out;
 
@@ -33,6 +36,7 @@ $global-font-size: 20px;
 
 // spacing
 $global-padding: 80px;
+$global-padding-mobile: 40px;
 
 // colours
 $global-black: #000;
