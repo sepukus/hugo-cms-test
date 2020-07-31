@@ -50,6 +50,16 @@
         }
       }
     }
+
+    .main-nav-toggle {
+      .hamburger-inner {
+        &,
+        &:before,
+        &:after {
+          background: $global-black;
+        }
+      }
+    }
   }
 
   .logo {
