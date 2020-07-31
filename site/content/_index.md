@@ -1,7 +1,8 @@
 ---
 title: Together in the business of improving workplace mental health
 banner_image: img/main-hero.jpg
-banner_cta: /about-us
+banner_cta_link: /about-us
+banner_cta_text: FIND OUT HOW
 modules:
   - type: split_title_content
     title: Who we are

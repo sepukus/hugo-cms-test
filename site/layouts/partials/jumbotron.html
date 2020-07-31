@@ -9,6 +9,9 @@
             {{.subtitle}}
           </p>
         {{ end }}
+        {{ if .banner_cta_link }}
+          <a href="{{ banner_cta_link }}"> {{ banner_cta_text }}</a>
+        {{ end }}
       </div>
     </div>
   </div>
