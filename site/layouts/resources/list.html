@@ -4,6 +4,12 @@
 
 <div class="mw7 center">
   <ul class="flex-ns flex-wrap mhn1-ns pa3">
+    {{/* Get number of all categories */}}
+    {{ $countAll := 0}}
+    {{ range $key, $filter := $.Site.Taxonomies.category }}
+        {{ $filter.Count }}
+        {{ $countAll = add $countAll $filter.Count }}
+    {{ end }}
     {{/* 
           Loop over our filter taxonomies, add the name and amount of articles
           within those taxonomies to a dictionary then parse that as json to
@@ -14,13 +20,18 @@
     {{ range $filter := $filters }}
       {{ $tax := index $.Site.Taxonomies $filter}}
       {{ $.Scratch.Add "filterData" slice }}
+      {{/* Add all with all counted resources to category */}}
+      {{ if eq $filter "category" }}
+        {{- $.Scratch.Add "filterData" (dict "name" "all" "count" $countAll "active" true "parent" $filter) -}}
+      {{ end }}
       {{ range $name, $taxonomy := $tax }}
-        {{- $.Scratch.Add "filterData" (dict "name" $name "count" $taxonomy.Count ) -}}
+        {{- $.Scratch.Add "filterData" (dict "name" $name "count" $taxonomy.Count "active" false "parent" $filter) -}}
       {{ end }}
       {{ $filterData := $.Scratch.Get "filterData" }}
       {{- $.Scratch.SetInMap "index" $filter $filterData -}}
       {{- $.Scratch.Delete "filterData" -}}
     {{ end }}
+    
     <div id='resource-listing'>{{- $.Scratch.Get "index" | jsonify -}}</div>   
 
     {{ range (.Paginator 4).Pages.ByPublishDate.Reverse }}
