@@ -11,9 +11,10 @@ module.exports = {
       preset: "default",
     }),
     purgecss({
-      content: ["./**/*.html"],
+      content: ["./**/*.html "],
       keyframes: true,
       whitelist: ["sticky-header"],
-    }),
+      defaultExtractor: content => content.match(/[@A-Za-z0-9_-]+/g) || []
+    })
   ],
 };
