@@ -13,12 +13,13 @@
 
 /* GLOBAL */
 @import
-  'header',
-  'jumbotron'
+  'global/index'
 ;
 
 /* components */
 @import
+  'header',
+  'jumbotron',
   'components/C03-split-title-content'
 ;
 

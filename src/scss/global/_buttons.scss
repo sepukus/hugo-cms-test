@@ -1,0 +1,17 @@
+.uk-button {
+  border-radius: 50px;
+
+  &-primary {
+    background-color: $brand-primary;
+    color: $global-black;
+    border-radius: 50px;
+    padding: 13px 32px;
+    font-family: Futura;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
