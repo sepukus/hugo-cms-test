@@ -13,25 +13,9 @@
     border-top-left-radius: $border-radius;
     border-bottom-left-radius: $border-radius;
     border-bottom-right-radius: $border-radius;
-
-    //&:after {
-    //  content: '';
-    //  display: block;
-    //  position: absolute;
-    //  height: 100px;
-    //  width: 100px;
-    //  bottom: 0;
-    //  right: 0;
-    //  transform: translate(45%, 45%);
-    //  border: 2px solid white;
-    //
-    //  border-top-left-radius: $border-radius-small;
-    //  border-bottom-left-radius: $border-radius-small;
-    //  border-bottom-right-radius: $border-radius-small;
-    //}
   }
 
-  &__heading {
+  &__title {
     color: white;
   }
 }
