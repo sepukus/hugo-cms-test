@@ -5,13 +5,7 @@ import prettifyName from "../utils/prettyName";
 const Filter = (props) => {
   const title = prettifyName(props.name);
 
-  const updateValue = (el) => {
-    props.update(el);
-  };
-
   const categories = props.categories.map((el) => {
-    const name = prettifyName(el.name);
-
     return (
       <label key={el.name}>
         <input
@@ -21,7 +15,7 @@ const Filter = (props) => {
             props.update(el);
           }}
         />
-        {name} ({el.count})
+        {el.name} ({el.count})
       </label>
     );
   });

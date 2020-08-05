@@ -43,13 +43,13 @@
     
     <div id='resource-listing'>{{- $.Scratch.Get "index" | jsonify -}}</div>   
 
-    {{ range (.Paginator 4).Pages.ByPublishDate.Reverse }}
+    {{/* {{ range (.Paginator 4).Pages.ByPublishDate.Reverse }}
       <div class="w-50-ns ph1-ns flex">
         {{ .Render "li"}}
       </div>
-    {{ end }}
+    {{ end }} */}}
   </ul>
-  {{ partial "pagination" . }}
+  {{/*  {{ partial "pagination" . }} */}}
 </div>
 
 {{end}}

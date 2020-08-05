@@ -7,8 +7,6 @@ import Header from "./Layout/Header";
 import FilterBar from "./Layout/FilterBar";
 import Listing from "./Layout/Listing";
 
-import prettifyName from "./utils/prettyName";
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -16,6 +14,7 @@ class App extends React.Component {
     this.state = {
       initialFilters: this._sortInitialFilters(props.filters),
       filters: {},
+      searchResults: [],
     };
 
     this._filterUpdate = this._filterUpdate.bind(this);
@@ -35,32 +34,75 @@ class App extends React.Component {
   }
 
   componentDidUpdate() {
+    console.log("state", this.state);
+  }
+
+  /*
+   * Get query and send to algolia
+   */
+  _querySearch() {
     const query = this._buildQuery();
-    console.log(query);
 
     this.searchindex
       .search("", {
         filters: query,
+        hitsPerPage: 1000,
       })
       .then(({ hits }) => {
-        console.log("hits", hits);
+        this._filterAvailable(hits);
       })
       .catch((err) => {
         console.log("error", err);
       });
   }
 
-  _buildQuery() {
+  _filterAvailable(searchResults) {
+    this.setState((currentState) => {
+      const filterable = ["focus", "role", "organisation_size"];
+
+      // Reset count to 0
+      let filters = currentState.filters;
+      filterable.forEach((filterName) => {
+        filters[filterName].forEach((el) => {
+          el.count = 0;
+        });
+      });
+
+      // Loop over search results and increase count on filters found
+      searchResults.forEach((result) => {
+        filterable.forEach((filterName) => {
+          const resultValue = result[filterName];
+          const filterIndex = filters[filterName].findIndex(
+            (el) => el.name === resultValue
+          );
+          if (filterIndex != -1) {
+            filters[filterName][filterIndex].count++;
+          }
+        });
+      });
+
+      return {
+        filters,
+        searchResults,
+      };
+    });
+  }
+
+  /*
+   * Build query to send to algolia for search results
+   */
+  _buildQuery($categoryOnly = false) {
     const filters = this.state.filters;
     const active = {};
 
-    /*
-     * Get all our active filters to add to query
-     */
     Object.keys(filters).forEach((filter) => {
       const names = [];
 
       filters[filter].forEach((el) => {
+        if ($categoryOnly && filter !== "category") {
+          return;
+        }
+
         // early return if category is all or not active
         if ((filter === "category" && el.name === "all") || el.active != true) {
           return;
@@ -88,6 +130,10 @@ class App extends React.Component {
     return query;
   }
 
+  /*
+   * Handle category changes - select either all or anything selected,
+   * send query to algolia -- anything from there can be reindexed locally
+   */
   _handleCategoryChange(value) {
     let newFilters = this.state.filters;
     const allKey = "all";
@@ -111,11 +157,17 @@ class App extends React.Component {
       ].active;
     }
 
-    this.setState({
-      filters: newFilters,
-    });
+    this.setState(
+      {
+        filters: newFilters,
+      },
+      this._querySearch
+    );
   }
 
+  /*
+   * Updates state when filters changed - function passed to filters component
+   */
   _filterUpdate(value) {
     /* Handle categories differently */
     if (value.parent == "category") {
@@ -133,11 +185,17 @@ class App extends React.Component {
       filterIndex
     ].active;
 
-    this.setState({
-      filters: newFilters,
-    });
+    this.setState(
+      {
+        filters: newFilters,
+      },
+      this._querySearch
+    );
   }
 
+  /*
+   * Sort our data into order it should render
+   */
   _sortInitialFilters(filters) {
     return {
       category: filters.category,
@@ -149,10 +207,10 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="resource-listing">
         <Header />
         <FilterBar filters={this.state.filters} update={this._filterUpdate} />
-        <Listing />
+        <Listing results={this.state.searchResults} />
       </div>
     );
   }
