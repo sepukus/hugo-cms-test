@@ -36,6 +36,13 @@ modules:
     info3: of employees do not seek help, and less than 3% use an Employee
       Assistance Program
     statType3: "%"
+    statInfo1: working Australians either have mental ill-health or are carers of
+      someone with mental ill-health
+    statInfo2: Untreated mental health conditions cost Australian employers
+      approximately $12.8 billion yearly through absenteeism, reduced
+      productivity and compensation claims
+    statInfo3: of employees do not seek help, and less than 3% use an Employee
+      Assistance Program
     statNumber1: 3
     statNumber2: 12.8
     statNumber3: 70
