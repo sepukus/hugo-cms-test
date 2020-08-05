@@ -97,6 +97,7 @@ collections: # A list of collections the CMS should be able to edit
     folder: "site/content"
     create: true
     fields:
+      - { label: "Page Title", name: "page_title", widget: "string" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Banner Image", name: "banner_image", widget: "image", required: false }
       - { label: "Banner CTA Link", name: "banner_cta_link", widget: "string", required: false }
