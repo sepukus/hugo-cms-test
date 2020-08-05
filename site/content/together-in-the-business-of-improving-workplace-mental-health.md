@@ -39,4 +39,24 @@ modules:
     stat_type_2: b
     stat_type_3: "%"
     type: statistics
+  - card_image_3: img/drivelastingchange.png
+    card_description_2: "To openly share our knowledge and resources to educate,
+      equip and support our fellow business leaders to take action on mental
+      health in their own workplaces. "
+    card_description_3: "To advocate for systemic change within our businesses, our
+      supply chains and the community more broadly, and help shape public policy
+      over the long term. "
+    intro_title: Our strategic pillars
+    intro_description: Informed by our collective data, research and experience, and
+      with the guidance of mental health advisors, we work together to provide
+      safe settings, share credible practice, and drive lasting change.
+    type: pillar-content-cards
+    card_title_1: Provide safe settings
+    card_title_2: Equip our leaders
+    card_title_3: Drive lasting change
+    card_image_1: img/safesettings.png
+    card_image_2: img/equipourleaders.png
+    card_description_1: To create an environment where everyone in the workplace
+      feels safe to talk about their mental health, beginning with leaders
+      sharing their own stories.
 ---
