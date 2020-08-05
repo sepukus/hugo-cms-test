@@ -145,12 +145,27 @@ collections: # A list of collections the CMS should be able to edit
             name: "statistics"
             widget: object
             fields:
-              - { label: Statistic Number 1, name: statNumber1, widget: number, valueType: "float" }
-              - { label: Statistic Type 1, name: statType1, widget: string }
-              - { label: Info 1, name: statInfo1, widget: markdown }
-              - { label: Statistic Number 2, name: statNumber2, widget: number, valueType: "float" }
-              - { label: Statistic Type 2, name: statType2, widget: string }
-              - { label: Info 2, name: statInfo2, widget: markdown }
-              - { label: Statistic Number 3, name: statNumber3, widget: number, valueType: "float" }
-              - { label: Statistic Type 3, name: statType3, widget: string }
-              - { label: Info 3, name: statInfo3, widget: markdown }
+              - { label: Statistic Number 1, name: stat_number_1, widget: number, valueType: "float" }
+              - { label: Statistic Type 1, name: stat_type_1, widget: string }
+              - { label: Info 1, name: stat_info_1, widget: markdown }
+              - { label: Statistic Number 2, name: stat_number_2, widget: number, valueType: "float" }
+              - { label: Statistic Type 2, name: stat_type_2, widget: string }
+              - { label: Info 2, name: stat_info_2, widget: markdown }
+              - { label: Statistic Number 3, name: stat_number_3, widget: number, valueType: "float" }
+              - { label: Statistic Type 3, name: stat_type_3, widget: string }
+              - { label: Info 3, name: stat_info_3, widget: markdown }
+          - label: "Pillar Content - Card, Image & Description"
+            name: "pillar-content-cards"
+            widget: object
+            fields:
+              - { label: Intro Title, name: intro_title, widget: string }
+              - { label: Intro Description, name: intro_description, widget: markdown }
+              - { label: Card Image 1, name: card_image_1, widget: image }
+              - { label: Card Title 1, name: card_title_1, widget: string }
+              - { label: Card Description 1, name: card_description_1, widget: string }
+              - { label: Card Image 2, name: card_image_2, widget: image }
+              - { label: Card Title 2, name: card_title_2, widget: string }
+              - { label: Card Description 2, name: card_description_2, widget: string }
+              - { label: Card Image 3, name: card_image_3, widget: image }
+              - { label: Card Title 3, name: card_title_3, widget: string }
+              - { label: Card Description 3, name: card_description_3, widget: string }
