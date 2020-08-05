@@ -5,6 +5,7 @@ $brand-secondary-darker: #6A6D71;
 
 $grey-light: #999;
 $grey-lighter: #D0D0D0;
+$grey-lightest: #F0F0F0;
 
 $transition-fast: 200ms ease-out;
 
@@ -43,3 +44,6 @@ $global-black: #000;
 $global-white: #FFF;
 $global-primary-background: $brand-primary;
 $global-secondary-background: $brand-secondary;
+
+// cards
+$card-default-background: $grey-lightest;
