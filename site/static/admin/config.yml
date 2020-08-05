@@ -163,10 +163,10 @@ collections: # A list of collections the CMS should be able to edit
               - { label: Intro Description, name: intro_description, widget: markdown }
               - { label: Card Image 1, name: card_image_1, widget: image }
               - { label: Card Title 1, name: card_title_1, widget: string }
-              - { label: Card Description 1, name: card_description_1, widget: string }
+              - { label: Card Description 1, name: card_description_1, widget: markdown }
               - { label: Card Image 2, name: card_image_2, widget: image }
               - { label: Card Title 2, name: card_title_2, widget: string }
-              - { label: Card Description 2, name: card_description_2, widget: string }
+              - { label: Card Description 2, name: card_description_2, widget: markdown }
               - { label: Card Image 3, name: card_image_3, widget: image }
               - { label: Card Title 3, name: card_title_3, widget: string }
-              - { label: Card Description 3, name: card_description_3, widget: string }
+              - { label: Card Description 3, name: card_description_3, widget: markdown }
