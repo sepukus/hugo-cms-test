@@ -44,13 +44,23 @@
 }
 
 // global spacing mixing
-@mixin componentSpacingCompile() {
-  padding-top: $global-padding;
-  padding-bottom: $global-padding / 2;
+@mixin componentSpacingCompile($small: false) {
+  @if $small {
+    padding-top: $global-padding-minimal;
+    padding-bottom: $global-padding-minimal / 2;
 
-  @media (max-width: $breakpoint-small) {
-    padding-top: $global-padding-mobile;
-    padding-bottom: $global-padding-mobile / 2;
+    @media (max-width: $breakpoint-small) {
+      padding-top: $global-padding-minimal-mobile;
+      padding-bottom: $global-padding-minimal-mobile / 2;
+    }
+  } @else {
+    padding-top: $global-padding;
+    padding-bottom: $global-padding / 2;
+
+    @media (max-width: $breakpoint-small) {
+      padding-top: $global-padding-mobile;
+      padding-bottom: $global-padding-mobile / 2;
+    }
   }
 }
 
