@@ -1,11 +1,5 @@
 .C03-split-title-content {
-  padding-top: $global-padding;
-  padding-bottom: $global-padding;
-
-  @media (max-width: $breakpoint-small) {
-    padding-top: $global-padding-mobile;
-    padding-bottom: $global-padding-mobile;
-  }
+  @include componentSpacingCompile();
 
   &__svg {
     padding-bottom: 60px;

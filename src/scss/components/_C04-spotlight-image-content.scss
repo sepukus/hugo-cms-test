@@ -1,12 +1,6 @@
 .C04-spotlight-image-content {
-  padding-top: $global-padding;
-  padding-bottom: $global-padding;
+  @include componentSpacingCompile();
 
-  @media (max-width: $breakpoint-small) {
-    padding-top: $global-padding-mobile;
-    padding-bottom: $global-padding-mobile;
-  }
-  
   h1,
   h2,
   h3 {

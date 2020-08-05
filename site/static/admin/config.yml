@@ -141,3 +141,16 @@ collections: # A list of collections the CMS should be able to edit
               - { label: Content 1, name: content1, widget: markdown }
               - { label: Title 2, name: title2, widget: string }
               - { label: Content 2, name: content2, widget: markdown }
+          - label: "Statistics"
+            name: "statistics"
+            widget: object
+            fields:
+              - { label: Statistic Number 1, name: statNumber1, widget: number, valueType: "float" }
+              - { label: Statistic Type 1, name: statType1, widget: string }
+              - { label: Info 1, name: statInfo1, widget: markdown }
+              - { label: Statistic Number 2, name: statNumber2, widget: number, valueType: "float" }
+              - { label: Statistic Type 2, name: statType2, widget: string }
+              - { label: Info 2, name: statInfo2, widget: markdown }
+              - { label: Statistic Number 3, name: statNumber3, widget: number, valueType: "float" }
+              - { label: Statistic Type 3, name: statType3, widget: string }
+              - { label: Info 3, name: statInfo3, widget: markdown }
