@@ -47,6 +47,4 @@ modules:
     statNumber2: 12.8
     statNumber3: 70
     type: statistics
-  - type: tish
-    tishNumber1: 238703
 ---
