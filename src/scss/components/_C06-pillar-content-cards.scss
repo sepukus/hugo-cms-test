@@ -13,4 +13,22 @@
       padding-bottom: 20px;
     }
   }
+
+  .uk-card {
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid $grey-lighter;
+
+    @media (max-width: $breakpoint-small) {
+      padding-bottom: 0;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: $breakpoint-small) {
+      img {
+        width: 100%;
+        padding-bottom: 10px;
+      }
+    }
+  }
 }
