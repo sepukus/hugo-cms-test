@@ -1,5 +1,5 @@
 ---
-page_title: Homepage
+page_title: Home Page
 title: Together in the business of improving workplace mental health
 banner_image: img/main-hero.jpg
 banner_cta_link: /about-us
