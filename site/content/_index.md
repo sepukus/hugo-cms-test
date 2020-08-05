@@ -4,6 +4,16 @@ banner_image: img/main-hero.jpg
 banner_cta_link: /about-us
 banner_cta_text: FIND OUT HOW
 modules:
+  - type: spotlight_image_content
+    image: img/ourvision.jpg
+    title1: Our vision
+    content1: To create a culture of good mental health for workers, where everyone
+      feels safe to talk about their mental health without fear of stigma or
+      discrimination.
+    title2: Our mission
+    content2: Drive improvements in how Australian businesses respond and adapt to
+      this rapidly evolving and growing challenge by providing evidence-based
+      recommendations.
   - type: split_title_content
     title: Who we are
     leadtext: "We are a business-led, expert-guided alliance of Australian business
@@ -16,16 +26,6 @@ modules:
       pool their knowledge and resources and work with each other in a
       collaborative, non-competitive way, more sustainable outcomes can be
       achieved for our people, and for the wider community.
-  - type: spotlight_image_content
-    image: img/ourvision.jpg
-    title1: Our vision
-    content1: To create a culture of good mental health for workers, where everyone
-      feels safe to talk about their mental health without fear of stigma or
-      discrimination.
-    title2: Our mission
-    content2: Drive improvements in how Australian businesses respond and adapt to
-      this rapidly evolving and growing challenge by providing evidence-based
-      recommendations.
   - info1: working Australians either have mental ill-health or are carers of
       someone with mental ill-health
     statType1: m
