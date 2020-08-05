@@ -26,4 +26,18 @@ modules:
     content2: Drive improvements in how Australian businesses respond and adapt to
       this rapidly evolving and growing challenge by providing evidence-based
       recommendations.
+  - info1: working Australians either have mental ill-health or are carers of
+      someone with mental ill-health
+    statType1: m
+    info2: Untreated mental health conditions cost Australian employers
+      approximately $12.8 billion yearly through absenteeism, reduced
+      productivity and compensation claims
+    statType2: b
+    info3: of employees do not seek help, and less than 3% use an Employee
+      Assistance Program
+    statType3: "%"
+    statNumber1: 3
+    statNumber2: 12.8
+    statNumber3: 70
+    type: statistics
 ---
