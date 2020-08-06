@@ -111,4 +111,25 @@ modules:
         our_member_link: https://www.microsoft.com/en-au
       - our_member_image: img/minterellison.jpg
         our_member_link: https://www.minterellison.com/
+  - type: feat_members
+    feat_member_intro: Hear from some of our members and get to know their story.
+    feat_member:
+      - feat_member_image: img/member1.jpg
+        feat_member_description: '"Neque porro quisquam est qui dolorem ipsum quia dolor
+          sit amet, ipsum quia dolor sit amet. Neque porro quisquam est qui
+          dolorem ipsum quia dolor sit amet, ipsum quia dolor sit amet”'
+        feat_member_link: /link
+        feat_member_cta: HEAR HER STORY
+      - feat_member_image: img/member2.jpg
+        feat_member_description: '"Neque porro quisquam est qui dolorem ipsum quia dolor
+          sit amet, ipsum quia dolor sit amet. Neque porro quisquam est qui
+          dolorem ipsum quia dolor sit amet, ipsum quia dolor sit amet”'
+        feat_member_link: /link
+        feat_member_cta: HEAR HIS STORY
+      - feat_member_image: img/member3.jpg
+        feat_member_cta: HEAR HER STORY
+        feat_member_description: '"Neque porro quisquam est qui dolorem ipsum quia dolor
+          sit amet, ipsum quia dolor sit amet. Neque porro quisquam est qui
+          dolorem ipsum quia dolor sit amet, ipsum quia dolor sit amet”'
+        feat_member_link: /link
 ---
