@@ -71,4 +71,13 @@ modules:
       their people through these challenging times..
     callout_cta_link: /about-us
     callout_cta_text: FIND OUT MORE
+  - type: stacked-content-top-image
+    stacked_image: img/ourleadership.jpg
+    stacked_title: Our leadership
+    stacked_description: Our Board is comprised of leaders from within our Founding
+      Member organisations. Their involvement with CMHAA is supported at an
+      operational level through their sponsorship of a Functional Lead
+      representative.
+    stacked_cta_link: /meet-the-board
+    stacked_cta_text: MEET THE BOARD
 ---
