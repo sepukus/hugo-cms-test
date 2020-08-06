@@ -23,6 +23,17 @@
         padding-bottom: 20px;
       }
     }
+  }
 
+  &__button {
+    &-shown,
+    &-hidden {
+      margin: 0 auto;
+      display: block;
+
+      &.hidden {
+        display: none;
+      }
+    }
   }
 }
