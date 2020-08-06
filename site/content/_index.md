@@ -85,7 +85,7 @@ modules:
     our_members_description: Our members see it as their responsibility to protect,
       support and create mentally healthy workplaces for their people.
       Together,  they are leading a movement for positive change across
-      Australia, and the world, as a part of the CMHA Global network.
+      Australia, and the world, as a part of the CMHAGlobal network.
     member:
       - our_member_image: img/allianz.jpg
         our_member_link: https://www.allianz.com.au/
