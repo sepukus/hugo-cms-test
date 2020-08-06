@@ -103,6 +103,12 @@ modules:
         our_member_link: https://www.dlapiper.com/en/australia/
       - our_member_image: img/johnson.png
         our_member_link: https://www.jnj.com.au/
-      - our_member_image: img/isobar.jpg
-        our_member_link: https://www.isobar.com/en-au
+      - our_member_image: img/kingwood.jpg
+        our_member_link: https://www.kwm.com/en/au
+      - our_member_image: img/kpmg.jpg
+        our_member_link: https://home.kpmg/au/en/home.html
+      - our_member_image: img/microsoft.jpg
+        our_member_link: https://www.microsoft.com/en-au
+      - our_member_image: img/minterellison.jpg
+        our_member_link: https://www.minterellison.com/
 ---
