@@ -5,20 +5,6 @@ banner_image: img/main-hero.jpg
 banner_cta_link: /about-us
 banner_cta_text: FIND OUT HOW
 modules:
-  - stat_number_1: 3
-    stat_number_2: 12.8
-    stat_number_3: 70
-    stat_info_1: working Australians either have mental ill-health or are carers of
-      someone with mental ill-health
-    stat_info_2: Untreated mental health conditions cost Australian employers
-      approximately $12.8 billion yearly through absenteeism, reduced
-      productivity and compensation claims
-    stat_info_3: of employees do not seek help, and less than 3% use an Employee
-      Assistance Program
-    stat_type_1: m
-    stat_type_2: b
-    stat_type_3: "%"
-    type: statistics
   - type: spotlight_image_content
     image: img/ourvision.jpg
     title1: Our vision
@@ -61,6 +47,20 @@ modules:
     card_description_1: To create an environment where everyone in the workplace
       feels safe to talk about their mental health, beginning with leaders
       sharing their own stories.
+  - stat_number_1: 3
+    stat_number_2: 12.8
+    stat_number_3: 70
+    stat_info_1: working Australians either have mental ill-health or are carers of
+      someone with mental ill-health
+    stat_info_2: Untreated mental health conditions cost Australian employers
+      approximately $12.8 billion yearly through absenteeism, reduced
+      productivity and compensation claims
+    stat_info_3: of employees do not seek help, and less than 3% use an Employee
+      Assistance Program
+    stat_type_1: m
+    stat_type_2: b
+    stat_type_3: "%"
+    type: statistics
   - type: callout-image-text-cta
     callout_image: img/half.jpg
     callout_title: Resources to support your people through COVID-19
