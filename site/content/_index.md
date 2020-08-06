@@ -132,4 +132,5 @@ modules:
           sit amet, ipsum quia dolor sit amet. Neque porro quisquam est qui
           dolorem ipsum quia dolor sit amet, ipsum quia dolor sit amet”'
         feat_member_link: /link
+    feat_member_read_more: /link-to-more-stories
 ---
