@@ -61,4 +61,14 @@ modules:
     card_description_1: To create an environment where everyone in the workplace
       feels safe to talk about their mental health, beginning with leaders
       sharing their own stories.
+  - type: callout-image-text-cta
+    callout_image: img/half.jpg
+    callout_title: Resources to support your people through COVID-19
+    callout_description: CMHAA’s counterparts in the United Kingdom and Hong Kong
+      have worked with businesses from across their international membership,
+      guided by mental health experts, to develop a range of evidence-informed
+      resources to help workplaces support the mental health and wellbeing of
+      their people through these challenging times..
+    callout_cta_link: /about-us
+    callout_cta_text: FIND OUT MORE
 ---
