@@ -80,4 +80,29 @@ modules:
       representative.
     stacked_cta_link: /meet-the-board
     stacked_cta_text: MEET THE BOARD
+  - type: our_members
+    our_members_title: Our Members
+    our_members_description: Our members see it as their responsibility to protect,
+      support and create mentally healthy workplaces for their people.
+      Together,  they are leading a movement for positive change across
+      Australia, and the world, as a part of the CMHA Global network.
+    member:
+      - our_member_image: img/allianz.jpg
+        our_member_link: https://www.allianz.com.au/
+      - our_member_image: img/bunnings.jpg
+        our_member_link: https://www.bunnings.com.au/
+      - our_member_image: img/clayton.jpg
+        our_member_link: https://www.claytonutz.com/
+      - our_member_image: img/coles.jpg
+        our_member_link: https://www.colesgroup.com.au/home/
+      - our_member_image: img/commbank.jpg
+        our_member_link: https://www.commbank.com.au/
+      - our_member_image: img/deloitte.jpg
+        our_member_link: https://www2.deloitte.com/au/en.html
+      - our_member_image: img/dlapiper.jpg
+        our_member_link: https://www.dlapiper.com/en/australia/
+      - our_member_image: img/johnson.png
+        our_member_link: https://www.jnj.com.au/
+      - our_member_image: img/isobar.jpg
+        our_member_link: https://www.isobar.com/en-au
 ---
