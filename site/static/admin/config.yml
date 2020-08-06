@@ -179,3 +179,12 @@ collections: # A list of collections the CMS should be able to edit
               - { label: Call Out Description, name: callout_description, widget: markdown }
               - { label: Call Out CTA Link, name: callout_cta_link, widget: string }
               - { label: Call Out CTA Text, name: callout_cta_text, widget: string }
+          - label: "Stacked Content with Top Image"
+            name: "stacked-content-top-image"
+            widget: object
+            fields:
+              - { label: Stacked Image, name: stacked_image, widget: image }
+              - { label: Stacked Title, name: stacked_title, widget: string }
+              - { label: Stacked Description, name: stacked_description, widget: markdown }
+              - { label: Stacked CTA Link, name: stacked_cta_link, widget: string }
+              - { label: Stacked CTA Text, name: stacked_cta_text, widget: string }

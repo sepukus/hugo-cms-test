@@ -1,0 +1,16 @@
+/*
+ * UK Card White
+ */
+
+.uk-card-white {
+  background: $global-white;
+  color: $card-primary-color;
+}
+
+.uk-card-primary .uk-card-title {
+  color: $card-primary-title-color;
+}
+
+.uk-card-primary.uk-card-hover:hover {
+  background-color: $card-primary-hover-background;
+}
