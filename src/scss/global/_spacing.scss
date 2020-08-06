@@ -1,0 +1,7 @@
+.global-padding-tb {
+  @include componentSpacingCompile();
+}
+
+.global-padding-tb-small {
+  @include componentSpacingCompile($small:true);
+}

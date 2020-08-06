@@ -63,7 +63,7 @@ modules:
       sharing their own stories.
   - type: callout-image-text-cta
     callout_image: img/half.jpg
-    callout_title: Resources to support your people through COVID-19
+    callout_title: Resources to support your people through COVID-19
     callout_description: CMHAA’s counterparts in the United Kingdom and Hong Kong
       have worked with businesses from across their international membership,
       guided by mental health experts, to develop a range of evidence-informed

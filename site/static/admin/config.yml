@@ -170,3 +170,12 @@ collections: # A list of collections the CMS should be able to edit
               - { label: Card Image 3, name: card_image_3, widget: image }
               - { label: Card Title 3, name: card_title_3, widget: string }
               - { label: Card Description 3, name: card_description_3, widget: markdown }
+          - label: "Call Out with Image, text & CTA"
+            name: "callout-image-text-cta"
+            widget: object
+            fields:
+              - { label: Call Out Image, name: callout_image, widget: image }
+              - { label: Call Out Title, name: callout_title, widget: string }
+              - { label: Call Out Description, name: callout_description, widget: markdown }
+              - { label: Call Out CTA Link, name: callout_cta_link, widget: string }
+              - { label: Call Out CTA Text, name: callout_cta_text, widget: string }
