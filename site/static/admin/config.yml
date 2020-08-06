@@ -189,3 +189,18 @@ collections: # A list of collections the CMS should be able to edit
               - { label: Stacked Description, name: stacked_description, widget: markdown, required: true }
               - { label: Stacked CTA Link, name: stacked_cta_link, widget: string }
               - { label: Stacked CTA Text, name: stacked_cta_text, widget: string }
+          - label: "Feature Member Stories"
+            name: "feature-member-stories"
+            widget: "list"
+            fields:
+              - {label: Intro, name: feat_member_intro, widget: string, default: "Hear from some of our members and get to know their story.", required: true}
+              - label: Feature Member
+                name: feat_member
+                widget: list
+                allow_add: true
+                fields:
+                  - {label: Feature Member Image, name: feat_member_image, widget: image}
+                  - {label: Feature Member Description, name: feat_member_description, widget: string}
+                  - {label: Feature Member Link, name: feat_member_link, widget: string}
+                  - {label: Feature Member CTA Text, name: feat_member_cta, widget: string}
+              - {label: Read more stories link, name: feat_member_read_more, widget: string}

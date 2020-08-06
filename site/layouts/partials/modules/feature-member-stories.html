@@ -1,0 +1,31 @@
+<div class="uk-section uk-section-muted">
+    <div class="uk-container global-padding-tb-small">
+        <div class="uk-text-left uk-text-center@m">
+            <p class="uk-text-lead">{{ .feat_member_intro }}</p>
+        </div>
+        {{ $feat_members_count := len .feat_member }}
+        <div class="uk-card uk-grid-collapse uk-child-width-1-1 uk-child-width-1-{{$feat_members_count}}@l uk-margin" uk-grid>
+        {{ range $index, $element := .feat_member }}
+            <div class="uk-padding-small">
+                <div class="uk-card uk-card-white uk-card-box-shadow">
+                    <div class="uk-card-media-top">
+                        <img src="{{ $element.feat_member_image }}" alt="image for {{ $element.feat_member_description }}">
+                    </div>
+                    <div class="uk-card-body">
+                        <p>{{ $element.feat_member_description }}</p>
+                        {{if $element.feat_member_link}}
+                        <a href="{{ $element.feat_member_link }}" class="uk-button uk-button-minimal"><span uk-icon="minus"></span> {{ $element.feat_member_cta }}</a>
+                        {{end}}
+                    </div>
+                </div>
+            </div>
+        {{ end }}
+        </div>
+
+        {{if .feat_member_read_more}}
+        <div class="uk-text-left uk-text-center@m uk-padding-large uk-padding-remove-bottom">
+            <a href="{{ .feat_member_read_more }}" class="uk-button uk-button-secondary">READ MORE STORIES <span uk-icon="chevron-right"></span></a>
+        </div>
+        {{end}}
+    </div>
+</div>

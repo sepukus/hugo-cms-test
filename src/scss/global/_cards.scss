@@ -14,3 +14,8 @@
 .uk-card-primary.uk-card-hover:hover {
   background-color: $card-primary-hover-background;
 }
+
+.uk-card-box-shadow {
+  border-radius: 4px;
+  box-shadow: 7px 5px 10px #DEDEDE;
+}
