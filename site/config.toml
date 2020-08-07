@@ -19,6 +19,9 @@ disableKinds = ["RSS"]
 [outputs]
 home = ["HTML", "Algolia"]
 
+[permalinks]
+pages = "/:slug/"
+
 [menu]
   [[menu.main]]
     identifier = "aboutus"
@@ -28,12 +31,12 @@ home = ["HTML", "Algolia"]
   [[menu.main]]
     identifier = "ourstories"
     name = "Our Stories"
-    url = "#"
+    url = "/our-stories"
 
   [[menu.main]]
     identifier = "contactus"
     name = "Contact Us"
-    url = "#"
+    url = "/contact-us"
 
 # Algolia config
 [outputFormats.Algolia]
