@@ -35,11 +35,11 @@
 
     .uk-icon-button {
       background-color: $global-white;
+      color: $brand-secondary;
+      margin-right: 10px;
 
       .uk-icon {
         top: 0;
-        background-color: $global-white;;
-        color: $brand-secondary;
       }
     }
 
