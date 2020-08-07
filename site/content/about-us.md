@@ -23,4 +23,6 @@ modules:
       now the CMHA’s CEO. With seed funding from their respective organisations,
       the three senior business leaders launched CMHA in the UK with 10
       participating firms in October 2012.
+  - type: image
+    image: img/origins.jpg
 ---
