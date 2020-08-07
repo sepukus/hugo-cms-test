@@ -120,14 +120,14 @@ collections: # A list of collections the CMS should be able to edit
             widget: list
             allow_add: true
             fields:
-              - {label: Footer Social URL, name: footer_social_link_url, widget: string}
+              - {label: Footer Social URL, name: footer_social_link_url, widget: string, default: "http://www.twitter.com/"}
               - {label: Footer Social Platform, name: footer_social_link_platform, widget: string, default: "twitter"}
           - label: Footer Privacy Links
             name: footer_pirvacy_link
             widget: list
             allow_add: true
             fields:
-              - {label: Footer Privacy URL, name: footer_pirvacy_link_url, widget: string}
+              - {label: Footer Privacy URL, name: footer_pirvacy_link_url, widget: string, default: "/privacy-policy"}
               - {label: Footer Privacy Text, name: footer_pirvacy_link_text, widget: string, default: "Privacy policy"}
           - { label: Footer Disclaimer Text, name: footer_disclaimer_text, widget: string, default: "ABN 28 638 927 125 | Copyright © 2020 · Corporate Mental Health Alliance Australia", required: true }
       - label: "Modules"
