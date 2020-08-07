@@ -1,6 +1,7 @@
 ---
 page_title: Hello
 title: Hello this is a title
+banner_image: img/about-us.jpg
 footer:
   - footer_text: CMHAA is a part of the CMHA Global network.
     footer_social_link:
