@@ -23,7 +23,7 @@ home = ["HTML", "Algolia"]
   [[menu.main]]
     identifier = "aboutus"
     name = "About us"
-    url = "#"
+    url = "/about-us"
 
   [[menu.main]]
     identifier = "ourstories"

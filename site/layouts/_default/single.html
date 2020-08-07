@@ -1,5 +1,5 @@
 {{ define "main" }}
-  {{ partial "jumbotron" (dict "imageUrl" "/img/about-shade-grown.jpg" "title" "This is where the heading goes" "subtitle" "This is where the subtitle goes") }}
+  {{ partial "jumbotron" (dict "imageUrl" .Params.banner_image "title" .Title "banner_cta_link" .Params.banner_cta_link "banner_cta_text" .Params.banner_cta_text) }}
   {{ range .Params.Modules }}
     {{ $path := printf "%s%s%s" "modules/" .type ".html" }}
     {{ $fullpath := printf "%s%s" "layouts/partials/" $path }}
