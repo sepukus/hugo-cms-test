@@ -11,6 +11,12 @@ modules:
       people. Together, we are leading a movement for positive change across the
       Australian business community.
     title: About us
+  - type: youtube_with_quote
+    youtube_quote_text: “Everyone has mental health in the same way that everyone
+      has physical health. It’s up to us as employers to create an environment
+      where everyone in the workplace feels comfortable.”
+    youtube_quote_author: Bruce Cooper, Chief Executive Partner, Clayton Utz
+    youtube_quote_url: https://www.youtube.com/watch?v=7uWEucoGfG0
   - type: split_title_content
     title: Our origins
     leadtext: In 2011, during an informal conversation, three senior business
