@@ -19,7 +19,7 @@
 // Futura Medium
 @include font-face(
   'Futura',
-  '/fonts/FuturaBT-Medium.ttf',
+  '/fonts/FuturaBT-Medium',
   500,
   normal,
   ttf
@@ -28,7 +28,7 @@
 // Futura Heavy
 @include font-face(
   'Futura',
-  '/fonts/FuturaBT-Heavy',
+  '/fonts/FutureBT-Heavy',
   900,
   bold,
   ttf

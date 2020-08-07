@@ -1,4 +1,4 @@
-import { Component } from "../modules";
+import {Component} from "../modules";
 import debounce from "lodash/debounce";
 
 /**
@@ -23,17 +23,8 @@ class StickyHeader extends Component {
       } else {
         document.body.classList.remove("sticky-header");
       }
-    }, 100);
-
-    // window.onresize = debounce(() => {
-
-    // }, 200);
-    //}
+    }, 50);
   }
-
-  // function setBannerHeight() {
-
-  // }
 }
 
-export { StickyHeader };
+export {StickyHeader};
