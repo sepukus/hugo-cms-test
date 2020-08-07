@@ -12,7 +12,7 @@ import {Namespace, Browser, Accordions, StickyHeader, Statistics, Members} from 
 UIkit.use(Icons);
 
 // components can be called from the imported UIkit reference
-UIkit.notification("Hello world.");
+// UIkit.notification("Hello world.");
 
 document.addEventListener("DOMContentLoaded", function () {
   /**

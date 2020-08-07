@@ -102,6 +102,34 @@ collections: # A list of collections the CMS should be able to edit
       - { label: "Banner Image", name: "banner_image", widget: "image", required: false }
       - { label: "Banner CTA Link", name: "banner_cta_link", widget: "string", required: false }
       - { label: "Banner CTA Text", name: "banner_cta_text", widget: "string", required: false }
+      - label: "Footer"
+        name: "footer"
+        widget: "list"
+        fields:
+          - { label: Intro, name: footer_text, widget: string, default: "CMHAA is a part of the CMHA Global network.", required: true }
+          - label: Footer GLobal Links
+            name: footer_global_link
+            widget: list
+            allow_add: true
+            fields:
+              - {label: Footer Link Country, name: footer_global_link_country, widget: string}
+              - {label: Footer Link URL, name: footer_global_link_url, widget: string}
+              - {label: Footer Link URL Text, name: footer_global_link_url_text, widget: string}
+          - label: Footer Social Links
+            name: footer_social_link
+            widget: list
+            allow_add: true
+            fields:
+              - {label: Footer Social URL, name: footer_social_link_url, widget: string}
+              - {label: Footer Social Platform, name: footer_social_link_platform, widget: string, default: "twitter"}
+          - label: Footer Privacy Links
+            name: footer_pirvacy_link
+            widget: list
+            allow_add: true
+            fields:
+              - {label: Footer Privacy URL, name: footer_pirvacy_link_url, widget: string}
+              - {label: Footer Privacy Text, name: footer_pirvacy_link_text, widget: string, default: "Privacy policy"}
+          - { label: Footer Disclaimer Text, name: footer_disclaimer_text, widget: string, default: "ABN 28 638 927 125 | Copyright © 2020 · Corporate Mental Health Alliance Australia", required: true }
       - label: "Modules"
         name: "modules"
         widget: "list"

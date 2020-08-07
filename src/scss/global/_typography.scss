@@ -123,3 +123,9 @@ h4 {
   position: relative;
   top: -2px;
 }
+
+.social-icons {
+  .uk-icon-button {
+    color: $brand-secondary;
+  }
+}
