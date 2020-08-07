@@ -17,6 +17,7 @@ modules:
       where everyone in the workplace feels comfortable.”
     youtube_quote_author: Bruce Cooper, Chief Executive Partner, Clayton Utz
     youtube_quote_url: c2pz2mlSfXA
+    youtube_quote_id: c2pz2mlSfXA
   - type: split_title_content
     title: Our origins
     leadtext: In 2011, during an informal conversation, three senior business
