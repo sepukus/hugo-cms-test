@@ -1,5 +1,5 @@
 ---
-title: Footer Settings
+title: Footer Settings23
 footer:
   - footer_text: CMHAA is a part of the CMHA Global network.
     footer_social_link:
