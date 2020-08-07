@@ -134,7 +134,7 @@ collections: # A list of collections the CMS should be able to edit
             fields:
               - { label: Title, name: title, widget: string, required: true }
               - { label: Lead Text, name: leadtext, widget: markdown, required: true }
-              - { label: Content, name: content, widget: markdown }
+              - { label: Content, name: content, widget: markdown, required: false }
           - label: "Spotlight with Image & Content"
             name: "spotlight_image_content"
             widget: object
@@ -205,6 +205,18 @@ collections: # A list of collections the CMS should be able to edit
                   - {label: Feature Member Link, name: feat_member_link, widget: string}
                   - {label: Feature Member CTA Text, name: feat_member_cta, widget: string}
               - {label: Read more stories link, name: feat_member_read_more, widget: string}
+          - label: "Image"
+            name: "image"
+            widget: object
+            fields:
+              - { label: Image, name: image, widget: image, required: true }
+          - label: "Youtube with Quote"
+            name: "youtube_with_quote"
+            widget: object
+            fields:
+              - { label: Youtube ID, name: youtube_quote_id, widget: string, required: false, default: "7uWEucoGfG0" }
+              - { label: Quote Text, name: youtube_quote_text, widget: markdown }
+              - { label: Quote Author, name: youtube_quote_author, widget: string }
 
   - name: "settings"
     label: "Global Settings"
