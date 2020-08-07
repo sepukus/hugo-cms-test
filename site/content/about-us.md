@@ -11,6 +11,8 @@ modules:
       people. Together, we are leading a movement for positive change across the
       Australian business community.
     title: About us
+  - type: image
+    image: img/origins.jpg
   - type: split_title_content
     title: Our origins
     leadtext: In 2011, during an informal conversation, three senior business
@@ -23,6 +25,4 @@ modules:
       now the CMHA’s CEO. With seed funding from their respective organisations,
       the three senior business leaders launched CMHA in the UK with 10
       participating firms in October 2012.
-  - type: image
-    image: img/origins.jpg
 ---
