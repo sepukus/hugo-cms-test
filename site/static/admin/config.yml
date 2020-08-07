@@ -133,8 +133,8 @@ collections: # A list of collections the CMS should be able to edit
             widget: object
             fields:
               - { label: Title, name: title, widget: string, required: true }
-              - { label: Lead Text, name: leadtext, widget: string, required: true }
-              - { label: Content, name: content, widget: markdown, required: true }
+              - { label: Lead Text, name: leadtext, widget: markdown, required: true }
+              - { label: Content, name: content, widget: markdown }
           - label: "Spotlight with Image & Content"
             name: "spotlight_image_content"
             widget: object
