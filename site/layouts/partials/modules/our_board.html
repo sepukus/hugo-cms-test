@@ -20,6 +20,7 @@
         <!-- loop board members, with lightbox functionality -->
         {{ $members_count := len .board }}
         <div class="uk-grid-small uk-child-width-1-2 uk-child-width-1-4@l uk-flex-center uk-text-center uk-grid" uk-grid>
+            {{ $members_count_real := (sub $members_count 1) }}
             {{ range $index, $element := .board }}
             <div class="C13-our-board__member C13-our-board__member{{$index}}">
                 <a href="#modal-group-{{$index}}" uk-toggle>
@@ -38,10 +39,12 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     </div>
                     <div class="uk-modal-footer uk-text-right">
-                        {{$index}}
-                        {{$members_count}}
-                        {{ if eq (sub $members_count 1) $index}}<a href="#modal-group-{{sub $index 1}}" class="uk-button uk-button-primary" uk-toggle>Previous</a>{{end}}
-                        {{ if (le $index 0) }}<a href="#modal-group-{{add $index 1}}" class="uk-button uk-button-primary" uk-toggle>Next</a>{{end}}
+                        <!-- if it doesn't equal first item -->
+                        {{ if (ne $index 0) }}<a href="#modal-group-{{sub $index 1}}" class="uk-button uk-button-primary" uk-toggle>Previous</a>{{end}}
+                        {{ if or (ne $index $members_count_real) }}
+                        <!-- if it doesn't equal  the last item -->
+                        <a href="#modal-group-{{add $index 1}}" class="uk-button uk-button-primary" uk-toggle>Next</a>
+                        {{end}}
                     </div>
                 </div>
             </div>
