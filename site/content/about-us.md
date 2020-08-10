@@ -11,6 +11,7 @@ modules:
       people. Together, we are leading a movement for positive change across the
       Australian business community.
     title: About us
+    image: img/guiding-principles.jpg
   - type: youtube_with_quote
     youtube_quote_text: “Everyone has mental health in the same way that everyone
       has physical health. It’s up to us as employers to create an environment
