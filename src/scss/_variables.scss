@@ -25,7 +25,7 @@ $global-inverse-color:                           #fff !default;
 
 $global-background:                              #fff !default;
 
-$global-muted-background:                        #f8f8f8 !default;
+$global-muted-background:                        #F0F0F0 !default;
 $global-primary-background:                      $brand-primary;
 $global-secondary-background:                    #222 !default;
 
@@ -54,3 +54,9 @@ $global-secondary-background: $brand-secondary;
 
 // cards
 $card-default-background: $grey-lightest;
+
+// modal
+$modal-dialog-width: 100%;
+$modal-padding-horizontal: 12px !default;
+$modal-padding-horizontal-m: 72px !default;
+$modal-background: rgba(0,0,0,0.2) !default;
