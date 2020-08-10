@@ -300,4 +300,28 @@ modules:
     our_board_exec_description: Lorem ipsum dolor sit amet, consectetur adipiscing
       elit. Quisque tincidunt, odio ac lacinia faucibus, orci elit finibus nisl,
       ut ullamcorper enim purus ut nisl.
+  - type: friends_cmhaa
+    friends_cmhaa_title: Friends of CMHAA
+    friends_cmhaa_description: "CMHAA is guided by a group of mental health experts
+      from across Australia. We call this group the Friends of CMHAA:"
+    friend:
+      - friend_text: Ben Bars, weareunity
+      - friend_text: Michelle Baxter, SafeWork Australia
+      - friend_text: Lucy Brogden, National Mental Health Commission
+      - friend_text: "Prof. Pat Dudgeon (NATSILMH) "
+      - friend_text: Georgie Drury, SpringDay
+      - friend_text: Professor Geoff Gallop
+      - friend_text: "Georgie Harman, CEO, Beyond Blue "
+      - friend_text: Associate Professor Samuel Harvey, Black Dog Institute, University
+          of NSW
+      - friend_text: Jack Heath, CEO, SANE Australia
+      - friend_text: "Professor Ian Hickie, Co-Director of Health and Policy, Brain and
+          Mind Centre, University of Sydney "
+      - friend_text: "Dawn Hough, ACON "
+      - friend_text: "Professor David Kavanagh, QLD University of Technology "
+      - friend_text: Dr Angela Martin, University of Tasmania
+      - friend_text: Greg Miller, Faethm
+      - friend_text: "Colin Seery, CEO, Lifeline "
+      - friend_text: Mitch Wallis, Heart on my sleeve movement (HOMS)
+      - friend_text: Jennifer Westacott, Business Council of Australia (BCA)
 ---
