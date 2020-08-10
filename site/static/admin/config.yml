@@ -133,7 +133,8 @@ collections: # A list of collections the CMS should be able to edit
             widget: object
             fields:
               - { label: Title, name: title, widget: string, required: true }
-              - { label: Lead Text, name: leadtext, widget: markdown, required: true }
+              - { label: Image, name: image, widget: image, required: false }
+              - { label: Lead Text, name: leadtext, widget: markdown, required: false }
               - { label: Content, name: content, widget: markdown, required: false }
           - label: "Spotlight with Image & Content"
             name: "spotlight_image_content"
@@ -217,6 +218,13 @@ collections: # A list of collections the CMS should be able to edit
               - { label: Youtube ID, name: youtube_quote_id, widget: string, required: false, default: "7uWEucoGfG0" }
               - { label: Quote Text, name: youtube_quote_text, widget: markdown }
               - { label: Quote Author, name: youtube_quote_author, widget: string }
+          - label: "Split Title with Content & Background"
+            name: "split_title_content_background"
+            widget: object
+            fields:
+              - { label: Title, name: title, widget: string, required: true }
+              - { label: Lead Text, name: leadtext, widget: markdown, required: false }
+              - { label: Content, name: content, widget: markdown, required: false }
 
   - name: "settings"
     label: "Global Settings"

@@ -1,0 +1,4 @@
+.C12-split-title-content-background {
+  @include componentSpacingCompile();
+  background-color: $grey-lightest;
+}
