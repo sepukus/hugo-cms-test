@@ -32,4 +32,25 @@ modules:
       participating firms in October 2012.
   - type: image
     image: img/origins.jpg
+  - type: split_title_content_background
+    title: What we do
+    content: >-
+      CMHAA works hand in hand with members, at a leadership and operational
+      level, to facilitate change and embed good mental health practice within
+      workplaces in a practical, sustainable and measurable way. We do this by:
+
+
+      Socialising mental heath into the business. Increasing understanding of mental health, challenging any stigma, and fostering a culture of openness within the workplace.
+
+
+
+      Developing skills and mental health literacy. Providing all employees with the appropriate language and confidence to talk about mental health, as well as facilitating training and sharing best practice.
+
+
+
+      Sustaining and embedding the change. Helping to ensure that good mental health practice is lead and owned by business leaders and becomes integrated into the business’s strategic priorities. 
+
+
+
+      Our strength lies in the unique collaboration of our members, working together to draw upon the vast pool of knowledge and experience from across business, and with guidance from our expert advisors, to find, test and deliver solutions that work for our members.
 ---
