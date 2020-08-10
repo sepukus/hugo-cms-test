@@ -248,6 +248,18 @@ collections: # A list of collections the CMS should be able to edit
                   - {label: Board Quote, name: our_board_quote, widget: string, required: false}
                   - {label: Board Description, name: our_board_description, widget: markdown, required: false}
                   - {label: Board LinkedIn, name: our_board_linkedin, widget: string, required: false}
+          - label: "Friends of CMHAA"
+            name: "friends_cmhaa"
+            widget: "list"
+            fields:
+              - {label: Title, name: friends_cmhaa_title, widget: string, default: "Friends of CMHAA", required: true}
+              - {label: Description, name: friends_cmhaa_description, widget: markdown, default: "CMHAA is guided by a group of mental health experts from across Australia. We call this group the Friends of CMHAA:"}
+              - label: Friends
+                name: friend
+                widget: list
+                allow_add: true
+                fields:
+                  - {label: Our friend, name: friend_text, widget: string}
 
   - name: "settings"
     label: "Global Settings"

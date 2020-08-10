@@ -1,0 +1,40 @@
+.C14-friends-cmhaa {
+  @include componentSpacingCompile();
+
+  &__svg {
+    padding-bottom: 60px;
+    width: 100%;
+
+    @media (max-width: $breakpoint-medium) {
+      padding-bottom: 40px;
+    }
+
+    @media (max-width: $breakpoint-small) {
+      display: none;
+      padding-bottom: 20px;
+    }
+
+    &-mobile {
+      display: none;
+
+      @media (max-width: $breakpoint-small) {
+        width: 100%;
+        display: block;
+        padding-bottom: 20px;
+      }
+    }
+
+  }
+
+  &__button {
+    &-shown,
+    &-hidden {
+      margin: 0 auto;
+      display: block;
+
+      &.hidden {
+        display: none;
+      }
+    }
+  }
+}
