@@ -18,6 +18,13 @@
     transition: all 0.2s ease-in-out;
     position: relative;
 
+    &.logo-link {
+      &:before,
+      &:after {
+        display: none;
+      }
+    }
+
     &:before,
     &:after {
       content: "";
