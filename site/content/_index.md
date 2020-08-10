@@ -234,7 +234,7 @@ modules:
           where everyone in the workplace feels comfortable."'
       - our_board_name: BRIAN LONG
         our_board_image: img/brian-long.jpg
-        our_board_title: Executive Safety, Health & Wellbeing Leader, Woolworths Group
+        our_board_title: Executive Safety, Health & Wellbeing Leader, Woolworths Group
         our_board_linkedin: https://www.linkedin.com/
         our_board_description: Lorem Ipsum in hac habitasse platea dictumst. Ut
           sollicitudin a neque ac placerat. Cras mattis consequat ex, et posuere
@@ -261,12 +261,12 @@ modules:
         our_board_quote: '"Everyone has mental health in the same way that everyone has
           physical health. It’s up to us as employers to create an environment
           where everyone in the workplace feels comfortable."'
-        our_board_title: Chief Legal Counsel, Johnson & Johnson
+        our_board_title: Chief Legal Counsel, Johnson & Johnson
         our_board_image: img/felicity-mcdowell.jpg
         our_board_linkedin: https://www.linkedin.com/
       - our_board_name: MELINDA UPTON
         our_board_image: img/melinda-upton.jpg
-        our_board_title: "Global Co-Chair, Intellectual Property & Technology, DLA Piper "
+        our_board_title: "Global Co-Chair, Intellectual Property & Technology, DLA Piper "
         our_board_linkedin: https://www.linkedin.com/
         our_board_description: Lorem Ipsum in hac habitasse platea dictumst. Ut
           sollicitudin a neque ac placerat. Cras mattis consequat ex, et posuere
@@ -297,7 +297,7 @@ modules:
           physical health. It’s up to us as employers to create an environment
           where everyone in the workplace feels comfortable."'
       - our_board_name: HELEN SILVER
-        our_board_title: Governance & Conduct, Allianz Australia
+        our_board_title: Governance & Conduct, Allianz Australia
         our_board_image: img/helen-silver.jpg
         our_board_linkedin: https://www.linkedin.com/
         our_board_description: Lorem Ipsum in hac habitasse platea dictumst. Ut
@@ -344,7 +344,7 @@ modules:
           where everyone in the workplace feels comfortable."'
         our_board_image: img/steven-worrall.jpg
         our_board_name: STEVEN WORRALL
-        our_board_title: Chair, CMHAA , Managing Director, Microsoft Australia
+        our_board_title: Chair, CMHAA, Managing Director, Microsoft Australia
     our_board_title: Our board
     our_board_exec_name: Vicki Forbes
     our_board_description: CMHAA is governed by a Board comprised of leaders from

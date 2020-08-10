@@ -225,6 +225,29 @@ collections: # A list of collections the CMS should be able to edit
               - { label: Title, name: title, widget: string, required: true }
               - { label: Lead Text, name: leadtext, widget: markdown, required: false }
               - { label: Content, name: content, widget: markdown, required: false }
+          - label: "Our Board"
+            name: "our_board"
+            widget: "list"
+            fields:
+              - {label: Title, name: our_board_title, widget: string, default: "Our Board", required: true}
+              - {label: Description, name: our_board_description, widget: markdown, default: "Description goes here", required: false}
+              - {label: Executive Name, name: our_board_exec_name, widget: string, required: true}
+              - {label: Executive Description, name: our_board_exec_description, widget: markdown, default: "Description goes here", required: true}
+              - {label: Executive Image, name: our_board_exec_image, widget: image, required: true}
+              - {label: Executive Title, name: our_board_exec_title, widget: string, required: true}
+              - {label: Executive Quote, name: our_board_exec_quote, widget: markdown, required: false}
+              - {label: Executive LinkedIn, name: our_board_exec_linkedin, widget: string, required: false}
+              - label: Board
+                name: board
+                widget: list
+                allow_add: true
+                fields:
+                  - {label: Board Name, name: our_board_name, widget: string, required: true}
+                  - {label: Board Image, name: our_board_image, widget: image, required: true}
+                  - {label: Board Title, name: our_board_title, widget: string, required: true}
+                  - {label: Board Quote, name: our_board_quote, widget: string, required: false}
+                  - {label: Board Description, name: our_board_description, widget: markdown, required: false}
+                  - {label: Board LinkedIn, name: our_board_linkedin, widget: string, required: false}
 
   - name: "settings"
     label: "Global Settings"
