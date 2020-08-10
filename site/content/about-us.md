@@ -64,13 +64,13 @@ modules:
 
       * We are business-led and expert-guided.
 
-        We recognise mental health as essential to our people’s ability to thrive in the workplace and beyond.
+      * We recognise mental health as essential to our people’s ability to thrive in the workplace and beyond.
 
-        We acknowledge that we don’t have all of the answers, and we take our time to do things well. 
+      * We acknowledge that we don’t have all of the answers, and we take our time to do things well. 
 
-        We identify gaps and opportunities through careful and broad consultation.
+      * We identify gaps and opportunities through careful and broad consultation.
 
-        We create tools and resources with members to achieve sustainable improvement for mental health in the workplace.
+      * We create tools and resources with members to achieve sustainable improvement for mental health in the workplace.
 
-        We share our successes widely with others to accelerate learning and enhance people’s experiences in the workplace.
+      * We share our successes widely with others to accelerate learning and enhance people’s experiences in the workplace.
 ---
