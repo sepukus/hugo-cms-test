@@ -53,4 +53,24 @@ modules:
 
 
       Our strength lies in the unique collaboration of our members, working together to draw upon the vast pool of knowledge and experience from across business, and with guidance from our expert advisors, to find, test and deliver solutions that work for our members.
+  - type: split_title_content
+    image: img/guiding-principles.jpg
+    title: Our guiding principles
+    content: >-
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+      tincidunt, odio ac lacinia faucibus, orci elit finibus nisl, ut
+      ullamcorper enim purus ut nisl. 
+
+
+      * We are business-led and expert-guided.
+
+        We recognise mental health as essential to our people’s ability to thrive in the workplace and beyond.
+
+        We acknowledge that we don’t have all of the answers, and we take our time to do things well. 
+
+        We identify gaps and opportunities through careful and broad consultation.
+
+        We create tools and resources with members to achieve sustainable improvement for mental health in the workplace.
+
+        We share our successes widely with others to accelerate learning and enhance people’s experiences in the workplace.
 ---
