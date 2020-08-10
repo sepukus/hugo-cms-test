@@ -20,7 +20,7 @@
             <div class="uk-grid-small uk-child-width-1-2 uk-child-width-1-4@l uk-flex-center uk-text-center uk-grid" uk-grid>
             {{ range $index, $element := .member }}
                 {{ if le $index 7 }}
-                <div>
+                <div class="C09-our-members__member C09-our-members__member{{$index}}">
                     <a href="{{ $element.our_member_link }}" target="_blank">
                         <img src="{{ $element.our_member_image }}" alt="image for {{ $element.our_member_link }}">
                     </a>
@@ -37,7 +37,7 @@
                     <div class="uk-grid-small uk-child-width-1-2 uk-child-width-1-4@l uk-flex-center uk-text-center uk-grid uk-margin-small-top" uk-grid>
                         {{ range $index, $element := .member }}
                         {{ if ge $index 8 }}
-                        <div>
+                        <div class="C09-our-members__member C09-our-members__member{{$index}}">
                             <a href="{{ $element.our_member_link }}" target="_blank">
                                 <img src="{{ $element.our_member_image }}" alt="image for {{ $element.our_member_link }}">
                             </a>

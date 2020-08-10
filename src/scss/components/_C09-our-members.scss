@@ -25,6 +25,53 @@
     }
   }
 
+  &__member {
+    a {
+      display: block;
+    }
+
+    &0,
+    &4,
+    &8,
+    &12,
+    &16,
+    &20 {
+      a {
+        border-top: 4px solid $brand-secondary-red;
+      }
+    }
+    &1,
+    &5,
+    &9,
+    &13,
+    &17,
+    &21 {
+      a {
+        border-top: 4px solid $brand-secondary-raspberry;
+      }
+    }
+    &2,
+    &6,
+    &10,
+    &14,
+    &18,
+    &22 {
+      a {
+        border-top: 4px solid $brand-secondary-teal;
+      }
+    }
+    &3,
+    &7,
+    &11,
+    &15,
+    &19,
+    &23 {
+      a {
+        border-top: 4px solid $brand-secondary-green;
+      }
+    }
+  }
+
   &__button {
     &-shown,
     &-hidden {
