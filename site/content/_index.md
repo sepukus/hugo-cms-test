@@ -139,23 +139,212 @@ modules:
       - our_board_image: img/david-brewster.jpg
         our_board_name: DAVID BREWSTER
         our_board_title: Chief Legal Officer, Coles
-        our_board_quote: Quote "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Quisque tincidunt, odio ac lacinia faucibus, orci elit finibus nisl,
-          ut ullamcorper enim purus ut nisl."
-        our_board_description: Everyone has mental health in the same way that everyone
-          has physical health. It’s up to us as employers to create an
-          environment where everyone in the workplace feels comfortable”
+        our_board_quote: '"Everyone has mental health in the same way that everyone has
+          physical health. It’s up to us as employers to create an environment
+          where everyone in the workplace feels comfortable."'
+        our_board_description: Lorem Ipsum in hac habitasse platea dictumst. Ut
+          sollicitudin a neque ac placerat. Cras mattis consequat ex, et posuere
+          nibh dictum eu. Pellentesque habitant morbi tristique senectus et
+          netus et malesuada fames ac turpis egestas. Pellentesque efficitur
+          eros et diam porttitor, sed laoreet erat aliquam. Nulla et nulla
+          turpis. Proin efficitur sapien at consequat faucibus. Aliquam in
+          mauris finibus, lobortis mi ac, hendrerit purus. Vestibulum quis
+          aliquet dolor. In consequat risus lacus, id accumsan dui vulputate at.
+          Integer ac pellentesque est. Maecenas commodo semper hendrerit.
         our_board_linkedin: https://www.linkedin.com/
       - our_board_image: img/andrew-culleton.jpg
         our_board_name: ANDREW CULLETON
         our_board_title: Executive General Manager Group People Services, CBA
-        our_board_quote: Quote "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Quisque tincidunt, odio ac lacinia faucibus, orci elit finibus nisl,
-          ut ullamcorper enim purus ut nisl."
-        our_board_description: Everyone has mental health in the same way that everyone
-          has physical health. It’s up to us as employers to create an
-          environment where everyone in the workplace feels comfortable”
+        our_board_quote: '"Everyone has mental health in the same way that everyone has
+          physical health. It’s up to us as employers to create an environment
+          where everyone in the workplace feels comfortable."'
+        our_board_description: Lorem Ipsum in hac habitasse platea dictumst. Ut
+          sollicitudin a neque ac placerat. Cras mattis consequat ex, et posuere
+          nibh dictum eu. Pellentesque habitant morbi tristique senectus et
+          netus et malesuada fames ac turpis egestas. Pellentesque efficitur
+          eros et diam porttitor, sed laoreet erat aliquam. Nulla et nulla
+          turpis. Proin efficitur sapien at consequat faucibus. Aliquam in
+          mauris finibus, lobortis mi ac, hendrerit purus. Vestibulum quis
+          aliquet dolor. In consequat risus lacus, id accumsan dui vulputate at.
+          Integer ac pellentesque est. Maecenas commodo semper hendrerit.
         our_board_linkedin: https://www.linkedin.com/
+      - our_board_name: BRUCE COOPER
+        our_board_image: img/bruce-cooper.jpg
+        our_board_title: Chief Executive Partner Clayton Utz
+        our_board_quote: '"Everyone has mental health in the same way that everyone has
+          physical health. It’s up to us as employers to create an environment
+          where everyone in the workplace feels comfortable."'
+        our_board_description: Lorem Ipsum in hac habitasse platea dictumst. Ut
+          sollicitudin a neque ac placerat. Cras mattis consequat ex, et posuere
+          nibh dictum eu. Pellentesque habitant morbi tristique senectus et
+          netus et malesuada fames ac turpis egestas. Pellentesque efficitur
+          eros et diam porttitor, sed laoreet erat aliquam. Nulla et nulla
+          turpis. Proin efficitur sapien at consequat faucibus. Aliquam in
+          mauris finibus, lobortis mi ac, hendrerit purus. Vestibulum quis
+          aliquet dolor. In consequat risus lacus, id accumsan dui vulputate at.
+          Integer ac pellentesque est. Maecenas commodo semper hendrerit.
+        our_board_linkedin: https://www.linkedin.com/
+      - our_board_name: BERKELEY COX
+        our_board_image: img/berkely-cox.jpg
+        our_board_title: Chief Executive Partner, KWM Australia
+        our_board_quote: '"Everyone has mental health in the same way that everyone has
+          physical health. It’s up to us as employers to create an environment
+          where everyone in the workplace feels comfortable."'
+        our_board_description: Lorem Ipsum in hac habitasse platea dictumst. Ut
+          sollicitudin a neque ac placerat. Cras mattis consequat ex, et posuere
+          nibh dictum eu. Pellentesque habitant morbi tristique senectus et
+          netus et malesuada fames ac turpis egestas. Pellentesque efficitur
+          eros et diam porttitor, sed laoreet erat aliquam. Nulla et nulla
+          turpis. Proin efficitur sapien at consequat faucibus. Aliquam in
+          mauris finibus, lobortis mi ac, hendrerit purus. Vestibulum quis
+          aliquet dolor. In consequat risus lacus, id accumsan dui vulputate at.
+          Integer ac pellentesque est. Maecenas commodo semper hendrerit.
+        our_board_linkedin: https://www.linkedin.com/
+      - our_board_name: ELLEN DERRICK
+        our_board_image: img/ellen-derrick.jpg
+        our_board_title: National Leader, Public Sector and Public Policy, Deloitte
+        our_board_linkedin: https://www.linkedin.com/
+        our_board_description: Lorem Ipsum in hac habitasse platea dictumst. Ut
+          sollicitudin a neque ac placerat. Cras mattis consequat ex, et posuere
+          nibh dictum eu. Pellentesque habitant morbi tristique senectus et
+          netus et malesuada fames ac turpis egestas. Pellentesque efficitur
+          eros et diam porttitor, sed laoreet erat aliquam. Nulla et nulla
+          turpis. Proin efficitur sapien at consequat faucibus. Aliquam in
+          mauris finibus, lobortis mi ac, hendrerit purus. Vestibulum quis
+          aliquet dolor. In consequat risus lacus, id accumsan dui vulputate at.
+          Integer ac pellentesque est. Maecenas commodo semper hendrerit.
+        our_board_quote: '"Everyone has mental health in the same way that everyone has
+          physical health. It’s up to us as employers to create an environment
+          where everyone in the workplace feels comfortable."'
+      - our_board_name: ANNETTE KIMMITT
+        our_board_image: img/annette-kimmitt.jpg
+        our_board_title: CEO and Managing Partner, MinterEllison
+        our_board_linkedin: https://www.linkedin.com/
+        our_board_description: Lorem Ipsum in hac habitasse platea dictumst. Ut
+          sollicitudin a neque ac placerat. Cras mattis consequat ex, et posuere
+          nibh dictum eu. Pellentesque habitant morbi tristique senectus et
+          netus et malesuada fames ac turpis egestas. Pellentesque efficitur
+          eros et diam porttitor, sed laoreet erat aliquam. Nulla et nulla
+          turpis. Proin efficitur sapien at consequat faucibus. Aliquam in
+          mauris finibus, lobortis mi ac, hendrerit purus. Vestibulum quis
+          aliquet dolor. In consequat risus lacus, id accumsan dui vulputate at.
+          Integer ac pellentesque est. Maecenas commodo semper hendrerit.
+        our_board_quote: '"Everyone has mental health in the same way that everyone has
+          physical health. It’s up to us as employers to create an environment
+          where everyone in the workplace feels comfortable."'
+      - our_board_name: BRIAN LONG
+        our_board_image: img/brian-long.jpg
+        our_board_title: Executive Safety, Health & Wellbeing Leader, Woolworths Group
+        our_board_linkedin: https://www.linkedin.com/
+        our_board_description: Lorem Ipsum in hac habitasse platea dictumst. Ut
+          sollicitudin a neque ac placerat. Cras mattis consequat ex, et posuere
+          nibh dictum eu. Pellentesque habitant morbi tristique senectus et
+          netus et malesuada fames ac turpis egestas. Pellentesque efficitur
+          eros et diam porttitor, sed laoreet erat aliquam. Nulla et nulla
+          turpis. Proin efficitur sapien at consequat faucibus. Aliquam in
+          mauris finibus, lobortis mi ac, hendrerit purus. Vestibulum quis
+          aliquet dolor. In consequat risus lacus, id accumsan dui vulputate at.
+          Integer ac pellentesque est. Maecenas commodo semper hendrerit.
+        our_board_quote: '"Everyone has mental health in the same way that everyone has
+          physical health. It’s up to us as employers to create an environment
+          where everyone in the workplace feels comfortable."'
+      - our_board_name: FELICITY MCDOWELL
+        our_board_description: Lorem Ipsum in hac habitasse platea dictumst. Ut
+          sollicitudin a neque ac placerat. Cras mattis consequat ex, et posuere
+          nibh dictum eu. Pellentesque habitant morbi tristique senectus et
+          netus et malesuada fames ac turpis egestas. Pellentesque efficitur
+          eros et diam porttitor, sed laoreet erat aliquam. Nulla et nulla
+          turpis. Proin efficitur sapien at consequat faucibus. Aliquam in
+          mauris finibus, lobortis mi ac, hendrerit purus. Vestibulum quis
+          aliquet dolor. In consequat risus lacus, id accumsan dui vulputate at.
+          Integer ac pellentesque est. Maecenas commodo semper hendrerit.
+        our_board_quote: '"Everyone has mental health in the same way that everyone has
+          physical health. It’s up to us as employers to create an environment
+          where everyone in the workplace feels comfortable."'
+        our_board_title: Chief Legal Counsel, Johnson & Johnson
+        our_board_image: img/felicity-mcdowell.jpg
+        our_board_linkedin: https://www.linkedin.com/
+      - our_board_name: MELINDA UPTON
+        our_board_image: img/melinda-upton.jpg
+        our_board_title: "Global Co-Chair, Intellectual Property & Technology, DLA Piper "
+        our_board_linkedin: https://www.linkedin.com/
+        our_board_description: Lorem Ipsum in hac habitasse platea dictumst. Ut
+          sollicitudin a neque ac placerat. Cras mattis consequat ex, et posuere
+          nibh dictum eu. Pellentesque habitant morbi tristique senectus et
+          netus et malesuada fames ac turpis egestas. Pellentesque efficitur
+          eros et diam porttitor, sed laoreet erat aliquam. Nulla et nulla
+          turpis. Proin efficitur sapien at consequat faucibus. Aliquam in
+          mauris finibus, lobortis mi ac, hendrerit purus. Vestibulum quis
+          aliquet dolor. In consequat risus lacus, id accumsan dui vulputate at.
+          Integer ac pellentesque est. Maecenas commodo semper hendrerit.
+        our_board_quote: '"Everyone has mental health in the same way that everyone has
+          physical health. It’s up to us as employers to create an environment
+          where everyone in the workplace feels comfortable."'
+      - our_board_name: MICHAEL SCHNEIDER
+        our_board_image: img/michael-schneider.jpg
+        our_board_title: Managing Director, Bunnings Group Limited
+        our_board_linkedin: https://www.linkedin.com/
+        our_board_description: Lorem Ipsum in hac habitasse platea dictumst. Ut
+          sollicitudin a neque ac placerat. Cras mattis consequat ex, et posuere
+          nibh dictum eu. Pellentesque habitant morbi tristique senectus et
+          netus et malesuada fames ac turpis egestas. Pellentesque efficitur
+          eros et diam porttitor, sed laoreet erat aliquam. Nulla et nulla
+          turpis. Proin efficitur sapien at consequat faucibus. Aliquam in
+          mauris finibus, lobortis mi ac, hendrerit purus. Vestibulum quis
+          aliquet dolor. In consequat risus lacus, id accumsan dui vulputate at.
+          Integer ac pellentesque est. Maecenas commodo semper hendrerit.
+        our_board_quote: '"Everyone has mental health in the same way that everyone has
+          physical health. It’s up to us as employers to create an environment
+          where everyone in the workplace feels comfortable."'
+      - our_board_name: HELEN SILVER
+        our_board_title: Governance & Conduct, Allianz Australia
+        our_board_image: img/helen-silver.jpg
+        our_board_linkedin: https://www.linkedin.com/
+        our_board_description: Lorem Ipsum in hac habitasse platea dictumst. Ut
+          sollicitudin a neque ac placerat. Cras mattis consequat ex, et posuere
+          nibh dictum eu. Pellentesque habitant morbi tristique senectus et
+          netus et malesuada fames ac turpis egestas. Pellentesque efficitur
+          eros et diam porttitor, sed laoreet erat aliquam. Nulla et nulla
+          turpis. Proin efficitur sapien at consequat faucibus. Aliquam in
+          mauris finibus, lobortis mi ac, hendrerit purus. Vestibulum quis
+          aliquet dolor. In consequat risus lacus, id accumsan dui vulputate at.
+          Integer ac pellentesque est. Maecenas commodo semper hendrerit.
+        our_board_quote: '"Everyone has mental health in the same way that everyone has
+          physical health. It’s up to us as employers to create an environment
+          where everyone in the workplace feels comfortable."'
+      - our_board_name: DEBORAH YATES
+        our_board_image: img/deborah-yates.jpg
+        our_board_title: "National Managing Partner People, Corporate Affairs and
+          Corporate Citizenship, KPMG "
+        our_board_linkedin: https://www.linkedin.com/
+        our_board_quote: '"Everyone has mental health in the same way that everyone has
+          physical health. It’s up to us as employers to create an environment
+          where everyone in the workplace feels comfortable."'
+        our_board_description: Lorem Ipsum in hac habitasse platea dictumst. Ut
+          sollicitudin a neque ac placerat. Cras mattis consequat ex, et posuere
+          nibh dictum eu. Pellentesque habitant morbi tristique senectus et
+          netus et malesuada fames ac turpis egestas. Pellentesque efficitur
+          eros et diam porttitor, sed laoreet erat aliquam. Nulla et nulla
+          turpis. Proin efficitur sapien at consequat faucibus. Aliquam in
+          mauris finibus, lobortis mi ac, hendrerit purus. Vestibulum quis
+          aliquet dolor. In consequat risus lacus, id accumsan dui vulputate at.
+          Integer ac pellentesque est. Maecenas commodo semper hendrerit.
+      - our_board_linkedin: https://www.linkedin.com/
+        our_board_description: Lorem Ipsum in hac habitasse platea dictumst. Ut
+          sollicitudin a neque ac placerat. Cras mattis consequat ex, et posuere
+          nibh dictum eu. Pellentesque habitant morbi tristique senectus et
+          netus et malesuada fames ac turpis egestas. Pellentesque efficitur
+          eros et diam porttitor, sed laoreet erat aliquam. Nulla et nulla
+          turpis. Proin efficitur sapien at consequat faucibus. Aliquam in
+          mauris finibus, lobortis mi ac, hendrerit purus. Vestibulum quis
+          aliquet dolor. In consequat risus lacus, id accumsan dui vulputate at.
+          Integer ac pellentesque est. Maecenas commodo semper hendrerit.
+        our_board_quote: '"Everyone has mental health in the same way that everyone has
+          physical health. It’s up to us as employers to create an environment
+          where everyone in the workplace feels comfortable."'
+        our_board_image: img/steven-worrall.jpg
+        our_board_name: STEVEN WORRALL
+        our_board_title: Chair, CMHAA , Managing Director, Microsoft Australia
     our_board_title: Our board
     our_board_exec_name: Vicki Forbes
     our_board_description: CMHAA is governed by a Board comprised of leaders from
