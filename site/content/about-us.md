@@ -291,7 +291,7 @@ modules:
       within our Founding Member organisations, and is supported at an
       operational level through each member's sponsorship of a Functional Lead
       representative.
-    our_board_exec_title: Vicki Forbes
+    our_board_exec_title: Program Director, CMHAA
     our_board_exec_image: img/vicki-forbes.jpg
     our_board_exec_quote: '**Quote "**Lorem ipsum dolor sit amet, consectetur
       adipiscing elit. Quisque tincidunt, odio ac lacinia faucibus, orci elit
