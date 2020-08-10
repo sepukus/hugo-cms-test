@@ -25,4 +25,44 @@
     }
 
   }
+
+  &__member {
+    a.uk-card {
+      h6 {
+        font-size: 18px;
+        line-height: 140%;
+        font-weight: 500;
+        margin-bottom: 5px;
+        text-decoration: underline;
+      }
+
+      &-body {
+        padding: 0;
+      }
+
+      &-media-left {
+        width: 140px;
+
+        img {
+          width: 118px;
+          height: 118px;
+          overflow: hidden;
+        }
+      }
+
+      &:hover {
+        text-decoration: none;
+        h6 {
+          color: $brand-secondary-raspberry;
+        }
+      }
+    }
+    &-title {
+      color: $brand-secondary;
+      font-size: 16px;
+      line-height: 140%;
+      margin-top: 0;
+      padding-top: 0;
+    }
+  }
 }
