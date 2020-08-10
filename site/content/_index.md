@@ -134,4 +134,41 @@ modules:
         feat_member_link: /link-to-member
         feat_member_cta: HEAR HER STORY
     feat_member_read_more: /link-to-more-stories
+  - our_board_exec_linkedin: https://www.linkedin.com/
+    board:
+      - our_board_image: img/david-brewster.jpg
+        our_board_name: DAVID BREWSTER
+        our_board_title: Chief Legal Officer, Coles
+        our_board_quote: Quote "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Quisque tincidunt, odio ac lacinia faucibus, orci elit finibus nisl,
+          ut ullamcorper enim purus ut nisl."
+        our_board_description: Everyone has mental health in the same way that everyone
+          has physical health. It’s up to us as employers to create an
+          environment where everyone in the workplace feels comfortable”
+        our_board_linkedin: https://www.linkedin.com/
+      - our_board_image: img/andrew-culleton.jpg
+        our_board_name: ANDREW CULLETON
+        our_board_title: Executive General Manager Group People Services, CBA
+        our_board_quote: Quote "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Quisque tincidunt, odio ac lacinia faucibus, orci elit finibus nisl,
+          ut ullamcorper enim purus ut nisl."
+        our_board_description: Everyone has mental health in the same way that everyone
+          has physical health. It’s up to us as employers to create an
+          environment where everyone in the workplace feels comfortable”
+        our_board_linkedin: https://www.linkedin.com/
+    our_board_title: Our board
+    our_board_exec_name: Vicki Forbes
+    our_board_description: CMHAA is governed by a Board comprised of leaders from
+      within our Founding Member organisations, and is supported at an
+      operational level through each member's sponsorship of a Functional Lead
+      representative.
+    our_board_exec_title: Vicki Forbes
+    our_board_exec_image: img/vicki-forbes.jpg
+    our_board_exec_quote: '**Quote "**Lorem ipsum dolor sit amet, consectetur
+      adipiscing elit. Quisque tincidunt, odio ac lacinia faucibus, orci elit
+      finibus nisl, ut ullamcorper enim purus ut nisl."'
+    type: our_board
+    our_board_exec_description: Lorem ipsum dolor sit amet, consectetur adipiscing
+      elit. Quisque tincidunt, odio ac lacinia faucibus, orci elit finibus nisl,
+      ut ullamcorper enim purus ut nisl.
 ---
