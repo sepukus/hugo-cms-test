@@ -1,6 +1,6 @@
 ---
 page_title: Contact us
-banner_title: Contact us this is a long description sentence over 3 lines
+banner_title: Contact us this is a long description sentence over 3 lines.
 banner_image: img/contact-us.jpg
 modules:
   - type: contact-form
