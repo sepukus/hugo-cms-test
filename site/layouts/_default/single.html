@@ -1,6 +1,6 @@
 {{ define "main" }}
-  {{ partial "jumbotron" (dict "imageUrl" .Params.banner_image "title" .Title "banner_cta_link" .Params.banner_cta_link "banner_cta_text" .Params.banner_cta_text) }}
-  {{ range .Params.Modules }}
+{{ partial "jumbotron" (dict "imageUrl" .Params.banner_image "banner_title" .Params.banner_title "banner_description" .Params.banner_description "banner_cta_link" .Params.banner_cta_link "banner_cta_text" .Params.banner_cta_text) }}
+{{ range .Params.Modules }}
     {{ $path := printf "%s%s%s" "modules/" .type ".html" }}
     {{ $fullpath := printf "%s%s" "layouts/partials/" $path }}
     {{ if (fileExists $fullpath) -}}
