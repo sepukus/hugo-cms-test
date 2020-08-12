@@ -64,3 +64,34 @@
   }
 }
 
+@mixin unorderList() {
+  // UL Lists
+  /* ========================================================================
+     Component: Uk-List
+     Using it as a default as there is no way to target it from within
+     markdown richtext editor content
+   ========================================================================== */
+
+  ul {
+    padding: 0;
+    list-style: none;
+  }
+  ul > * > :last-child { margin-bottom: 0; }
+  ul > :nth-child(n+2),
+  ul > * > ul { margin-top: $list-margin-top; }
+  ul > * { padding-left: $list-padding-left; }
+  ul > ::before {
+    content: '';
+    position: relative;
+    left: (-$list-padding-left);
+    width: $list-padding-left;
+    height: $list-marker-height;
+    margin-bottom: (-$list-marker-height);
+    display: list-item;
+    list-style-position: inside;
+    text-align: right;
+  }
+  ul > ::before { list-style-type: disc; }
+  ul > ::before { color: $brand-secondary-raspberry !important; }
+}
+
