@@ -6,6 +6,17 @@
   z-index: 1000;
   transition: $transition-fast;
 
+  .uk-navbar-nav > li {
+    &.active {
+      > a {
+        &:before,
+        &:after {
+          width: 100%;
+          opacity: 1;
+        }
+      }
+    }
+  }
   .uk-navbar-nav > li > a,
   a {
     color: white;
@@ -53,6 +64,17 @@
   .sticky-header & {
     background: white;
 
+    .uk-navbar-nav > li {
+      &.active {
+        > a {
+          &:before,
+          &:after {
+            width: 100%;
+            opacity: 1;
+          }
+        }
+      }
+    }
     .uk-navbar-nav > li > a,
     a {
       color: $global-black;
