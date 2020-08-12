@@ -348,4 +348,9 @@ modules:
       * Build a more diverse workforce – mental health is an inclusion issue
     cta_text: ENQUIRE
     cta_link: /link-to-page
+  - type: quote
+    quote_text: “Everyone has mental health in the same way that everyone has
+      physical health. It’s up to us as employers to create an environment where
+      everyone in the workplace feels comfortable”
+    quote_author: Melinda Upton, Partner, DLA Piper
 ---
