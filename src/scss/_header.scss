@@ -6,6 +6,17 @@
   z-index: 1000;
   transition: $transition-fast;
 
+  .uk-navbar-nav > li {
+    &.active {
+      > a {
+        &:before,
+        &:after {
+          width: 100%;
+          opacity: 1;
+        }
+      }
+    }
+  }
   .uk-navbar-nav > li > a,
   a {
     color: white;
@@ -15,14 +26,58 @@
     font-size: 18px;
     line-height: 140%;
     text-transform: inherit;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+
+    &.logo-link {
+      &:before,
+      &:after {
+        display: none;
+      }
+    }
+
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      width: 0;
+      height: 2px;
+      margin: 0;
+      transition: all 0.2s ease-in-out;
+      transition-duration: 0.15s;
+      opacity: 0;
+      background-color: darken($brand-primary,5%);
+      left: 0;
+    }
+
+    &:hover {
+      cursor: pointer;
+      &:before,
+      &:after {
+        width: 100%;
+        opacity: 1;
+      }
+    }
   }
 
   .sticky-header & {
     background: white;
 
+    .uk-navbar-nav > li {
+      &.active {
+        > a {
+          &:before,
+          &:after {
+            width: 100%;
+            opacity: 1;
+          }
+        }
+      }
+    }
     .uk-navbar-nav > li > a,
     a {
-      color: $grey-light;
+      color: $global-black;
       transition: all 0.2s ease-in-out;
       position: relative;
 

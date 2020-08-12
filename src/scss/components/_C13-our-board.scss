@@ -1,0 +1,173 @@
+.C13-our-board {
+  @include componentSpacingCompile();
+
+  &__svg {
+    padding-bottom: 60px;
+    width: 100%;
+
+    @media (max-width: $breakpoint-medium) {
+      padding-bottom: 40px;
+    }
+
+    @media (max-width: $breakpoint-small) {
+      display: none;
+      padding-bottom: 20px;
+    }
+
+    &-mobile {
+      display: none;
+
+      @media (max-width: $breakpoint-small) {
+        width: 100%;
+        display: block;
+        padding-bottom: 20px;
+      }
+    }
+
+  }
+
+  &__count {
+    padding-top: 64px;
+  }
+
+  &__member {
+    a.uk-card {
+      h6 {
+        font-size: 18px;
+        line-height: 140%;
+        font-weight: 500;
+        margin-bottom: 5px;
+        text-decoration: underline;
+      }
+
+      &-body {
+        padding: 0;
+      }
+
+      &-media-left {
+        width: 140px;
+
+        img {
+          width: 118px;
+          height: 118px;
+          overflow: hidden;
+        }
+      }
+
+      &:hover {
+        text-decoration: none;
+        h6 {
+          color: $brand-secondary-raspberry;
+        }
+      }
+    }
+    &-title {
+      color: $brand-secondary;
+      font-size: 16px;
+      line-height: 140%;
+      margin-top: 0;
+      padding-top: 0;
+    }
+    &-image {
+      max-width: 328px;
+      @media (max-width: $breakpoint-small) {
+        max-width: 100%;
+      }
+    }
+    &-content {
+      font-size: 20px;
+      line-height: 140%;
+    }
+  }
+
+  &__executive {
+    border-radius: 4px;
+    margin-top: 80px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+
+    @media (max-width: $breakpoint-small) {
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+
+    .C13-our-board__member {
+      padding-top: 40px;
+    }
+
+    &-image {
+      width: 140px;
+      display: inline-block;
+      img {
+        width: 118px;
+        height: 118px;
+        overflow: hidden;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      &:hover {
+        h6 {
+          color: $brand-secondary-raspberry;
+        }
+      }
+    }
+
+    &-content {
+      display: inline-block;
+      text-align: left;
+      vertical-align: middle;
+
+      h6 {
+        font-size: 18px;
+        line-height: 140%;
+        font-weight: 500;
+        margin-bottom: 5px;
+        text-decoration: underline;
+      }
+      p {
+        color: $brand-secondary;
+        font-size: 16px;
+        line-height: 140%;
+        margin-top: 0;
+        padding-top: 0;
+      }
+    }
+
+    .uk-card {
+      width: fit-content;
+      margin: 0 auto;
+
+      &-media-left {
+        width: 140px;
+
+        img {
+          width: 118px;
+          height: 118px;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+
+  .uk-modal-footer,
+  .uk-modal-header {
+    border: none;
+  }
+  .uk-modal-header {
+    padding: 24px 24px 0 0;
+  }
+  .uk-modal-footer {
+    padding-bottom: 40px;
+  }
+  .uk-modal-body {
+    .uk-icon-button {
+      color: $global-black;
+    }
+  }
+
+  hr {
+    border-top: 1px solid $global-black;
+  }
+}

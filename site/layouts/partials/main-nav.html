@@ -10,13 +10,15 @@
       <span class="hamburger-inner"></span>
     </button>
     <ul class="uk-navbar-nav" id="main-nav">
+      {{ $currentPage := . }}
       {{ range .Site.Menus.main }}
-        <li>
-          <a href="{{ .URL }}" title="{{ .Title }}">
+        {{ $active := or (eq $.URL .URL) (or ($currentPage.HasMenuCurrent "main" .) ($currentPage.IsMenuCurrent "main" .)) }}
+        <li class="{{ if $active }}active{{ end }}">
+          <a href="{{ .URL | relURL }}" title="{{ .Title }}">
             {{ .Name }}
           </a>
         </li>
       {{ end }}
-    </ul>  
+    </ul>
   </div>
 </nav>

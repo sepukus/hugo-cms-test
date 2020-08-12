@@ -1,8 +1,11 @@
 $brand-primary: #F59C00;
 $brand-primary-darker: #EF8F00;
 $brand-secondary: #6A6D71;
-$brand-secondary-darker: #6A6D71;
+$brand-secondary-darker: #595B5F;
 $brand-secondary-raspberry: #B60057;
+$brand-secondary-red: #E54820;
+$brand-secondary-teal: #007E97;
+$brand-secondary-green: #8ABD24;
 
 $grey-light: #999;
 $grey-lighter: #D0D0D0;
@@ -22,7 +25,7 @@ $global-inverse-color:                           #fff !default;
 
 $global-background:                              #fff !default;
 
-$global-muted-background:                        #f8f8f8 !default;
+$global-muted-background:                        $grey-lightest !default;
 $global-primary-background:                      $brand-primary;
 $global-secondary-background:                    #222 !default;
 
@@ -39,6 +42,9 @@ $global-font-size: 20px;
 // spacing
 $global-padding: 80px;
 $global-padding-mobile: 40px;
+$global-padding-minimal: 20px;
+$global-padding-minimal-mobile: 10px;
+$global-medium-gutter: 20px !default;
 
 // colours
 $global-black: #000;
@@ -48,3 +54,9 @@ $global-secondary-background: $brand-secondary;
 
 // cards
 $card-default-background: $grey-lightest;
+
+// modal
+$modal-dialog-width: 100%;
+$modal-padding-horizontal: 12px !default;
+$modal-padding-horizontal-m: 72px !default;
+$modal-background: rgba(0,0,0,0.2) !default;

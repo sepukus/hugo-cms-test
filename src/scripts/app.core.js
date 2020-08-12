@@ -6,13 +6,13 @@ window.UIkit = UIkit;
  * Import Classes
  */
 // import $ from 'jquery';
-import {Namespace, Browser, Accordions, StickyHeader, Statistics} from "./modules";
+import {Namespace, Browser, Accordions, StickyHeader, Statistics, Members, Friends} from "./modules";
 
 // loads the Icon plugin
 UIkit.use(Icons);
 
 // components can be called from the imported UIkit reference
-UIkit.notification("Hello world.");
+// UIkit.notification("Hello world.");
 
 document.addEventListener("DOMContentLoaded", function () {
   /**
@@ -27,6 +27,8 @@ document.addEventListener("DOMContentLoaded", function () {
   new Accordions();
   new StickyHeader();
   new Statistics();
+  new Members();
+  new Friends();
 });
 
 // HMR (Hot Module Replacement)

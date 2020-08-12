@@ -101,6 +101,10 @@ h4 {
   }
 }
 
+.uk-text-italic {
+  font-style: italic;
+}
+
 .uk-text-small {
   font-family: Futura;
   font-style: normal;
@@ -122,4 +126,10 @@ h4 {
 .uk-icon {
   position: relative;
   top: -2px;
+}
+
+.social-icons {
+  .uk-icon-button {
+    color: $brand-secondary;
+  }
 }

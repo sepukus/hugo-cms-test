@@ -23,7 +23,7 @@ class Statistics extends Component {
       // set to false to show once
       let showing = false;
       // Setup a timer
-      var timeout;
+      let timeout;
 
       // couldn't get scrollspy to work
       // also re-using debounce from sticky header made sticky header component not work

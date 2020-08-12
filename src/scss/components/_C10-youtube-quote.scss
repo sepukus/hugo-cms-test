@@ -1,0 +1,32 @@
+.C10-youtube-quote {
+  @include componentSpacingCompile();
+  background-color: $grey-lightest;
+
+  &__info {
+    padding: 20px 0;
+  }
+
+  &__author {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 140%;
+  }
+
+  &__iframe {
+    position: relative;
+    padding-bottom: 36%;
+    height: 0;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    max-width: 752px;
+
+    @media (max-width: $breakpoint-small) {
+      padding-bottom: 56.25%;
+    }
+
+    iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    }
+  }
+}

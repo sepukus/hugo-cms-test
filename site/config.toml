@@ -19,21 +19,27 @@ disableKinds = ["RSS"]
 [outputs]
 home = ["HTML", "Algolia", "TaxRelationships"]
 
+[permalinks]
+pages = "/:slug/"
+
 [menu]
   [[menu.main]]
-    identifier = "aboutus"
+    identifier = "about-us"
     name = "About us"
-    url = "#"
+    url = "/about-us/"
+    weight = 1
 
   [[menu.main]]
-    identifier = "ourstories"
+    identifier = "our-stories"
     name = "Our Stories"
-    url = "#"
+    url = "/our-stories/"
+    weight = 2
 
   [[menu.main]]
-    identifier = "contactus"
+    identifier = "contact-us"
     name = "Contact Us"
-    url = "#"
+    url = "/contact-us/"
+    weight = 3
 
 # Algolia config
 [outputFormats.Algolia]

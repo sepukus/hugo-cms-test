@@ -1,0 +1,11 @@
+.global-padding-tb {
+  @include componentSpacingCompile();
+}
+
+.global-padding-tb-small {
+  @include componentSpacingCompile($small:true);
+}
+
+.uk-padding-remove-bottom {
+  padding-bottom: 0;
+}

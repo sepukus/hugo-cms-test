@@ -1,0 +1,18 @@
+<div class="uk-container global-padding-tb">
+    <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+        <div class="uk-card-media-left uk-cover-container">
+            <img src="{{ .callout_image }}" alt="image for {{ .callout_title }}" uk-cover>
+            <canvas width="600" height="400"></canvas>
+        </div>
+        <div>
+            <div class="uk-card-body">
+                <p class="uk-text-lead">{{ .callout_title }}</p>
+                <p>{{ .callout_description }}</p>
+                {{if .callout_cta_link}}
+                <a href="{{ .callout_cta_link }}" class="uk-button uk-button-secondary">{{ .callout_cta_text }}</a>
+                {{end}}
+            </div>
+        </div>
+    </div>
+
+</div>

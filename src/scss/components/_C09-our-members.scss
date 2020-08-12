@@ -1,0 +1,87 @@
+.C09-our-members {
+  @include componentSpacingCompile();
+
+  &__svg {
+    padding-bottom: 60px;
+    width: 100%;
+
+    @media (max-width: $breakpoint-medium) {
+      padding-bottom: 40px;
+    }
+
+    @media (max-width: $breakpoint-small) {
+      display: none;
+      padding-bottom: 20px;
+    }
+
+    &-mobile {
+      display: none;
+
+      @media (max-width: $breakpoint-small) {
+        width: 100%;
+        display: block;
+        padding-bottom: 20px;
+      }
+    }
+
+  }
+
+  &__member {
+    a {
+      display: block;
+    }
+
+    &0,
+    &4,
+    &8,
+    &12,
+    &16,
+    &20 {
+      a {
+        border-top: 4px solid $brand-secondary-red;
+      }
+    }
+    &1,
+    &5,
+    &9,
+    &13,
+    &17,
+    &21 {
+      a {
+        border-top: 4px solid $brand-secondary-raspberry;
+      }
+    }
+    &2,
+    &6,
+    &10,
+    &14,
+    &18,
+    &22 {
+      a {
+        border-top: 4px solid $brand-secondary-teal;
+      }
+    }
+    &3,
+    &7,
+    &11,
+    &15,
+    &19,
+    &23 {
+      a {
+        border-top: 4px solid $brand-secondary-green;
+      }
+    }
+  }
+
+  &__button {
+    &-shown,
+    &-hidden {
+      margin: 0 auto;
+      display: block;
+
+      &.hidden {
+        display: none;
+      }
+    }
+  }
+}

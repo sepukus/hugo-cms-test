@@ -1,48 +1,48 @@
-<footer class="bg-black uk-container white">
-	<div class="uk-column-1-2">
+{{ with .Site.GetPage "/settings/settings.md" }}
 
-		<img src="/img/logo.svg" alt="Kaldi logo" class="db w4 center mb4 br0">
-		<p class="f3 lh-title light-gray b tc mb2">Newsletter subscribe</p>
-		<p>Get awesome news from us in your inbox every two weeks. Be the first to learn about new products.</p>
+  <footer class="footer uk-section uk-background-secondary">
+    <div class="uk-container">
+      <div class="uk-child-width-expand@s uk-text-left uk-flex-middle" uk-grid uk-height-match>
+        <div class="footer-left uk-light">
+          <div class="uk-text-left" uk-grid>
+            <div class="uk-width-1-1@s uk-width-3-4@m">
+              {{range $key,$val := .Params.footer}}
+                <p class="uk-text-lead">{{.footer_text}}</p>
 
-		{{ partial "newsletter-form" . }}
+                {{ range .footer_global_link }}
+                  <p class="footer-left__global">{{.footer_global_link_country}} | <a href="{{.footer_global_link_url}}" target="_blank">{{.footer_global_link_url_text}}</a></p>
+                {{ end }}
 
-	</div>
+                {{ range .footer_social_link }}
+                  <a href="{{.footer_social_link_url}}" class="uk-icon-button">
+                    <span uk-icon="{{.footer_social_link_platform}}"></span>
+                  </a>
+                {{ end }}
+              {{end}}
+            </div>
+          </div>
+          <div class="footer-left__bottom">
+            {{range $key,$val := .Params.footer}}
+              {{ range .footer_pirvacy_link }}
+                <a href="{{.footer_pirvacy_link_url}}" target="_self" class="footer__disclaimer">{{.footer_pirvacy_link_text}}</a>
+              {{ end }}
+              <p class="footer__abn">{{.footer_disclaimer_text}}</p>
+            {{end}}
+          </div>
+        </div>
+        <div class="footer-right">
+          {{ partial "newsletter-form" . }}
 
-	<div class="uk-column-1-2">
-
-		<div>
-			<h3 class="f4 b lh-title mb1 primary">Kaldi</h3>
-			<ul class="mb3">
-				<li><a href="/" class="link">Home</a></li>
-				<li><a href="/products" class="link">Our products</a></li>
-				<li><a href="/values" class="link">About</a></li>
-				<li><a href="/post" class="link">Blog</a></li>
-				<li><a href="/contact" class="link">Contact</a></li>
-			</ul>
-		</div>
-
-		<div>
-			<h3 class="f4 b lh-title mb1 primary">Find out more</h3>
-			<ul class="mb3">
-				<li><a href="/post/jamaica-blue/" class="link">Latest offers</a></li>
-				<li><a href="/contact" class="link">Schedule and appointment</a></li>
-			</ul>
-		</div>
-
-		<div>
-			<h3 class="f4 b lh-title mb2 primary">Social media</h3>
-			<ul class="mhn2">
-				{{ partial "social-icon" (dict "link" "#" "svg" "icons-facebook") }}
-				{{ partial "social-icon" (dict "link" "#" "svg" "icons-twitter") }}
-				{{ partial "social-icon" (dict "link" "#" "svg" "icons-instagram") }}
-				{{ partial "social-icon" (dict "link" "#" "svg" "icons-vimeo") }}
-			</ul>
-		</div>
-
-	</div>
-
-
-</footer>
-
-{{ partial "svg" . }}
+          <div class="footer-left__bottom-mobile uk-hidden@s">
+            {{range $key,$val := .Params.footer}}
+            {{ range .footer_pirvacy_link }}
+            <a href="{{.footer_pirvacy_link_url}}" target="_self" class="footer__disclaimer">{{.footer_pirvacy_link_text}}</a>
+            {{ end }}
+            <p class="footer__abn">{{.footer_disclaimer_text}}</p>
+            {{end}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+{{ end }}
