@@ -1,43 +1,40 @@
 .jumbotron {
-  &.C01-hero {
+  .uk-background-cover {
+    padding-top: 250px;
+    padding-bottom: 150px;
+
+    @media (max-width: $breakpoint-small) {
+      padding-top: 150px;
+      padding-bottom: 0;
+    }
+  }
+  .uk-background-transparent {
+    $border-radius: 0;
+    $border-radius-small: $border-radius/2;
+
+    position: relative;
+    max-width: 556px;
+    padding: 60px;
+    border-top-left-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+
+    @media (max-width: $breakpoint-small) {
+      max-width: 100%;
+      padding: 60px 5px 30px;
+    }
+  }
+
+  .C01-hero__title {
+    color: white;
+  }
+
+  &.C01-hero__noimage {
     .uk-background-cover {
-      padding-top: 250px;
-      padding-bottom: 150px;
-
-      @media (max-width: $breakpoint-small) {
-        padding-top: 150px;
-        padding-bottom: 0;
-      }
+      background-color: $grey-lightest;
     }
-
-    .uk-background-transparent {
-      $border-radius: 0;
-      $border-radius-small: $border-radius/2;
-
-      position: relative;
-      max-width: 556px;
-      padding: 60px;
-      border-top-left-radius: $border-radius;
-      border-bottom-left-radius: $border-radius;
-      border-bottom-right-radius: $border-radius;
-
-      @media (max-width: $breakpoint-small) {
-        max-width: 100%;
-        padding: 60px 5px 30px;
-      }
-    }
-
-    &__title {
-      color: white;
-    }
-
-    &__noimage {
-      .uk-background-cover {
-        background-color: $grey-lightest;
-      }
-      .C01-hero__title {
-        color: $global-black;
-      }
+    .C01-hero__title {
+      color: $global-black;
     }
   }
 }
