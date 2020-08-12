@@ -99,7 +99,8 @@ collections: # A list of collections the CMS should be able to edit
     slug: "{{fields.page_title}}"
     fields:
       - { label: "Page Title", name: "page_title", widget: "string" }
-      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Banner Title", name: "banner_title", widget: "string" }
+      - { label: "Banner Description", name: "banner_description", widget: "string", required: false }
       - { label: "Banner Image", name: "banner_image", widget: "image", required: false }
       - { label: "Banner CTA Link", name: "banner_cta_link", widget: "string", required: false }
       - { label: "Banner CTA Text", name: "banner_cta_text", widget: "string", required: false }

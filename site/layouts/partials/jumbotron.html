@@ -1,11 +1,13 @@
-<div class="jumbotron" uk-grid>
-  <div class="uk-background-cover uk-width-1-1"
-      style="background-image: url({{.imageUrl}});">
+<div data-id="C01" class="jumbotron C01-hero {{if .imageUrl }}{{ else }}C01-hero__noimage{{end}}" uk-grid>
+  <div class="uk-background-cover uk-width-1-1 {{if .imageUrl }}uk-background-cover__image {{end}}" {{if .imageUrl }} style="background-image: url({{.imageUrl}});"{{ end }}>
     <div class="uk-container">
       <div class="uk-background-transparent">
-        <h1 class="jumbotron__title mb3">{{.title}}</h1>
+        <h1 class="C01-hero__title mb3">{{- .banner_title -}}</h1>
+        {{if .banner_description }}
+          <p>{{- .banner_description -}}</p>
+        {{ end }}
         {{if .banner_cta_link }}
-          <a href="{{.banner_cta_link }}" target="_self" class="mb3 mw6 uk-button uk-button-primary"> {{.banner_cta_text }} <span uk-icon="chevron-right"></span></a>
+          <a href="{{.banner_cta_link }}" target="_self" class="uk-button uk-button-primary"> {{- .banner_cta_text -}} <span uk-icon="chevron-right"></span></a>
         {{end}}
       </div>
     </div>
