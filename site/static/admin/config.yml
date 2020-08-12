@@ -21,8 +21,9 @@ collections: # A list of collections the CMS should be able to edit
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Banner Image", name: "banner_image", widget: "image", required: false }
-      - { label: "Banner Subcontent", name: "banner_subcontent", widget: markdown, required: false }
+      - { label: "Banner Title", name: "banner_title", widget: "string", required: false }
+      - { label: "Banner Description", name: "banner_description", widget: "string", required: false }
+      - { label: "Banner Background Image", name: "banner_image", widget: "image", required: false }
       - label: "Category"
         name: "category"
         widget: "select"
