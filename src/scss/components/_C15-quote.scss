@@ -1,0 +1,14 @@
+.C15-quote {
+  @include componentSpacingCompile();
+
+  &__info {
+    padding: 20px 0;
+  }
+
+  &__author {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 140%;
+  }
+}

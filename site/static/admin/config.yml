@@ -262,6 +262,12 @@ collections: # A list of collections the CMS should be able to edit
                 allow_add: true
                 fields:
                   - {label: Our friend, name: friend_text, widget: string}
+          - label: "Quote"
+            name: "quote"
+            widget: object
+            fields:
+              - { label: Quote Text, name: quote_text, widget: markdown }
+              - { label: Quote Author, name: quote_author, widget: string }
 
   - name: "settings"
     label: "Global Settings"
