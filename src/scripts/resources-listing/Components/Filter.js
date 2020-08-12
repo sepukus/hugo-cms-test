@@ -6,9 +6,14 @@ const Filter = (props) => {
   const title = prettifyName(props.name);
 
   const categories = props.categories.map((el) => {
-    const activeClass = el.active ? "active" : "";
+    let labelClass = "";
+    labelClass += el.active ? "active" : "";
+    labelClass += el.enabled ? "" : " disabled";
+    labelClass = labelClass.trim();
+
+    const name = prettifyName(el.name);
     return (
-      <label key={el.name} className={activeClass}>
+      <label key={el.name} className={labelClass}>
         <input
           type="checkbox"
           checked={el.active}
@@ -17,7 +22,7 @@ const Filter = (props) => {
             props.update(el);
           }}
         />
-        {el.name}
+        {name}
       </label>
     );
   });

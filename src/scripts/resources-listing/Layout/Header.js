@@ -12,7 +12,9 @@ const Header = (props) => {
 
   return (
     <section className="resource-listing__header">
-      <button onClick={toggleFilters}>Hide filters</button>
+      <button className="hide-filters" onClick={toggleFilters}>
+        Hide filters
+      </button>
       <button onClick={toggleOrder}>Most Recent</button>
     </section>
   );

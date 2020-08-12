@@ -1,14 +1,26 @@
 .resource-listing {
   &__header {
     background-color: #f0f0f0;
+    padding: 28px 75px;
+    display: flex;
+    justify-content: space-between;
+
+    .hide-filters {
+      background: url('/img/icons/filter.svg') no-repeat;
+      background-position: 12px center;
+      border-radius: 4px;
+      border: none;
+      background: #595B5F;
+      color: #fff;
+      padding: 9px 12px 9px 12px;
+    }
   }
 
   &__filter-bar {
     background-color: #f8f8f8;
     flex-shrink: 0;
     transition: transform 200ms ease-out 380ms, width 400ms ease 0ms, opacity 100ms ease-out 400ms;
-    width: 25%;
-    
+    width: 25%;    
     
     &.hidden {
       opacity: 0;
@@ -136,13 +148,59 @@
 
   label {
     font-size: 16px;
+    display: flex;
+    position: relative;
 
     + label {
       margin-top: 20px;
     }
 
+    input {
+      opacity: 0;
+      position: absolute;
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      position: relative;
+      width: 24px;
+      height: 24px;
+      border-radius: 2px;
+      transition: 50ms ease-out;
+      flex-shrink: 0;
+    }
+
+    &:before {
+      border: 2px solid #6a6d71;
+      margin-right: 10px;
+    }
+
+    &:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: url('/img/icons/tick.svg') no-repeat;
+      background-position: center;
+      margin: 2px;
+      opacity: 0;
+    }
+
     &.active {
       font-weight: 500;
+
+      &:before {
+        background: #6a6d71;
+      }
+
+      &:after {
+        opacity: 1;
+      }
+    }
+
+    &.disabled {
+      opacity: 0.4;
     }
   }
 }
