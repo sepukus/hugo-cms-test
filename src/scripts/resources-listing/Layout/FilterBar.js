@@ -14,13 +14,18 @@ const FilterBar = (props) => {
     );
   });
 
-  return (
-    <section>
-      <h2>Filters</h2>
-      <button>Clear filters</button>
-      <hr></hr>
+  let visibleClass = props.visible ? "" : " hidden";
 
-      {filters}
+  return (
+    <section className={`resource-listing__filter-bar${visibleClass}`}>
+      <div className="inner">
+        <div className="filter-bar__header">
+          <h2>Filters</h2>
+          <button onClick={props.clear}>Clear filters</button>
+        </div>
+
+        {filters}
+      </div>
     </section>
   );
 };

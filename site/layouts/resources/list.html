@@ -1,55 +1,34 @@
 {{ define "main" }}
 
-{{ partial "jumbotron" (dict "imageUrl" "/img/blog-index.jpg" "title" "Latest stories") }}
+  {{ partial "jumbotron" (dict "imageUrl" "/img/blog-index.jpg" "title" "Latest stories") }}
 
-<div class="mw7 center">
-  <ul class="flex-ns flex-wrap mhn1-ns pa3">
-    {{/* Get number of all categories */}}
-    {{ $countAll := 0}}
-    {{ range $key, $filter := $.Site.Taxonomies.category }}
-        {{ $countAll = add $countAll $filter.Count }}
+  {{/* Get number of all categories */}}
+  {{ $countAll := 0}}
+  {{ range $key, $filter := $.Site.Taxonomies.category }}
+      {{ $countAll = add $countAll $filter.Count }}
+  {{ end }}
+  {{/* 
+        Loop over our filter taxonomies, add the name and amount of articles
+        within those taxonomies to a dictionary then parse that as json to
+        the resource listing app for initial population
+  */}}
+  {{ $filters := slice "category" "focus" "role" "organisation_size" "industry" }}
+  {{- $.Scratch.Add "index" dict -}}
+  {{ range $filter := $filters }}
+    {{ $tax := index $.Site.Taxonomies $filter}}
+    {{ $.Scratch.Add "filterData" slice }}
+    {{/* Add all with all counted resources to category */}}
+    {{ if eq $filter "category" }}
+      {{- $.Scratch.Add "filterData" (dict "name" "all" "active" true "parent" $filter "enabled" true) -}}
     {{ end }}
-    {{/* 
-          Loop over our filter taxonomies, add the name and amount of articles
-          within those taxonomies to a dictionary then parse that as json to
-          the resource listing app for initial population
-    */}}
-    {{ $filters := slice "category" "focus" "role" "organisation_size" "industry" }}
-    {{- $.Scratch.Add "index" dict -}}
-    {{ range $filter := $filters }}
-      {{ $tax := index $.Site.Taxonomies $filter}}
-      {{ $.Scratch.Add "filterData" slice }}
-      {{/* Add all with all counted resources to category */}}
-      {{ if eq $filter "category" }}
-        {{- $.Scratch.Add "filterData" (dict "name" "all" "count" $countAll "active" true "parent" $filter) -}}
+    {{ range $name, $taxonomy := $tax }}
+      {{ with $.Site.GetPage (printf "/%s" $name) }} {{/* doing this we can use .LinkTitle to get taxonomy human friendly name */}}
+        {{- $.Scratch.Add "filterData" (dict "name" .LinkTitle "active" false "parent" $filter "enabled" true) -}}
       {{ end }}
-      {{ range $name, $taxonomy := $tax }}
-        {{ with $.Site.GetPage (printf "/%s" $name) }} {{/* doing this we can use .LinkTitle to get taxonomy human friendly name */}}
-          {{- $.Scratch.Add "filterData" (dict "name" .LinkTitle "count" $taxonomy.Count "active" false "parent" $filter) -}}
-        {{ end }}
-      {{ end }}
-      {{ $filterData := $.Scratch.Get "filterData" }}
-      {{- $.Scratch.SetInMap "index" $filter $filterData -}}
-      {{- $.Scratch.Delete "filterData" -}}
     {{ end }}
-
-    
-    <!-- {{ range $name, $tax := $.Site.Taxonomies.category }}
-    {{ with $.Site.GetPage (printf "/%s" $name) }}
-        {{ .LinkTitle }}
-        {{ printf "%#v" $name | humanize }} {{ printf "%#v" $tax }}<br>
-      {{ end }}
-    {{ end }} -->
-    
-    <div id='resource-listing'>{{- $.Scratch.Get "index" | jsonify -}}</div>   
-
-    {{/* {{ range (.Paginator 4).Pages.ByPublishDate.Reverse }}
-      <div class="w-50-ns ph1-ns flex">
-        {{ .Render "li"}}
-      </div>
-    {{ end }} */}}
-  </ul>
-  {{/*  {{ partial "pagination" . }} */}}
-</div>
-
+    {{ $filterData := $.Scratch.Get "filterData" }}
+    {{- $.Scratch.SetInMap "index" $filter $filterData -}}
+    {{- $.Scratch.Delete "filterData" -}}
+  {{ end }}
+  <div id='resource-listing'>{{- $.Scratch.Get "index" | jsonify -}}</div>
 {{end}}

@@ -1,0 +1,17 @@
+.C04-spotlight-image-content {
+  @include componentSpacingCompile();
+
+  h1,
+  h2,
+  h3 {
+    margin-top: 0;
+  }
+
+  &__svg {
+    padding-bottom: 10px;
+
+    @media (max-width: $breakpoint-small) {
+      display: block;
+    }
+  }
+}

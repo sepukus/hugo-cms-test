@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 
 const Header = (props) => {
   const toggleFilters = () => {
-    console.log("filter toggled");
+    props.filterToggle();
   };
 
   const toggleOrder = () => {
@@ -11,7 +11,7 @@ const Header = (props) => {
   };
 
   return (
-    <section>
+    <section className="resource-listing__header">
       <button onClick={toggleFilters}>Hide filters</button>
       <button onClick={toggleOrder}>Most Recent</button>
     </section>

@@ -1,0 +1,22 @@
+.C05-statistics {
+  @include componentSpacingCompile();
+
+  h1 {
+    color: $brand-secondary-raspberry;
+  }
+
+  &__number {
+    margin-right: -10px;
+  }
+
+  .uk-card {
+    background: transparent;
+    box-shadow: none;
+
+    p {
+      font-size: 20px;
+      line-height: 140%;
+      text-align: center;
+    }
+  }
+}

@@ -1,7 +1,12 @@
 $brand-primary: #F59C00;
+$brand-primary-darker: #EF8F00;
 $brand-secondary: #6A6D71;
+$brand-secondary-darker: #6A6D71;
+$brand-secondary-raspberry: #B60057;
 
 $grey-light: #999;
+$grey-lighter: #D0D0D0;
+$grey-lightest: #F0F0F0;
 
 $transition-fast: 200ms ease-out;
 
@@ -24,3 +29,22 @@ $global-secondary-background:                    #222 !default;
 $global-success-background:                      #32d296 !default;
 $global-warning-background:                      #faa05a !default;
 $global-danger-background:                       #f0506e !default;
+
+$container-max-width: 1144px;
+$global-link-color: $brand-primary;
+
+//font-size
+$global-font-size: 20px;
+
+// spacing
+$global-padding: 80px;
+$global-padding-mobile: 40px;
+
+// colours
+$global-black: #000;
+$global-white: #FFF;
+$global-primary-background: $brand-primary;
+$global-secondary-background: $brand-secondary;
+
+// cards
+$card-default-background: $grey-lightest;

@@ -1,0 +1,125 @@
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body,
+p {
+  font-family: Futura;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 20px;
+  line-height: 140%;
+  color: $global-black;
+
+  @media (max-width: $breakpoint-medium) {
+    font-size: 18px;
+  }
+
+  @media (max-width: $breakpoint-small) {
+    font-size: 17px;
+  }
+}
+
+h1 {
+  font-family: Futura;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 44px;
+  line-height: 125%;
+
+  @media (max-width: $breakpoint-medium) {
+    font-size: 34px;
+  }
+
+  @media (max-width: $breakpoint-small) {
+    font-size: 26px;
+  }
+}
+
+h2 {
+  font-family: Futura;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 38px;
+  line-height: 125%;
+
+  @media (max-width: $breakpoint-medium) {
+    font-size: 30px;
+  }
+
+  @media (max-width: $breakpoint-small) {
+    font-size: 22px;
+  }
+}
+
+h3 {
+  font-family: Futura;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 125%;
+
+  @media (max-width: $breakpoint-medium) {
+    font-size: 26px;
+  }
+
+  @media (max-width: $breakpoint-small) {
+    font-size: 20px;
+  }
+}
+
+h4 {
+  font-family: Futura;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 140%;
+
+  @media (max-width: $breakpoint-medium) {
+    font-size: 19px;
+  }
+
+  @media (max-width: $breakpoint-small) {
+    font-size: 18px;
+  }
+}
+
+.uk-text-lead {
+  font-family: Futura;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 28px;
+  line-height: 140%;
+
+  @media (max-width: $breakpoint-medium) {
+    font-size: 24px;
+  }
+
+  @media (max-width: $breakpoint-small) {
+    font-size: 20px;
+  }
+}
+
+.uk-text-small {
+  font-family: Futura;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 16px;
+  line-height: 140%;
+  color: $global-black;
+
+  @media (max-width: $breakpoint-medium) {
+    font-size: 16px;
+  }
+
+  @media (max-width: $breakpoint-small) {
+    font-size: 15px;
+  }
+}
+
+// ICONS
+.uk-icon {
+  position: relative;
+  top: -2px;
+}

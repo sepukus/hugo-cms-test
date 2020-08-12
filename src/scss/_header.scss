@@ -9,6 +9,12 @@
   .uk-navbar-nav > li > a,
   a {
     color: white;
+    font-family: Futura;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 140%;
+    text-transform: inherit;
   }
 
   .sticky-header & {
@@ -17,11 +23,47 @@
     .uk-navbar-nav > li > a,
     a {
       color: $grey-light;
+      transition: all 0.2s ease-in-out;
+      position: relative;
+
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        width: 0;
+        height: 2px;
+        margin: 0;
+        transition: all 0.2s ease-in-out;
+        transition-duration: 0.15s;
+        opacity: 0;
+        background-color: darken($brand-primary,5%);
+        left: 0;
+      }
+
+      &:hover {
+        cursor: pointer;
+        &:before,
+        &:after {
+          width: 100%;
+          opacity: 1;
+        }
+      }
+    }
+
+    .main-nav-toggle {
+      .hamburger-inner {
+        &,
+        &:before,
+        &:after {
+          background: $global-black;
+        }
+      }
     }
   }
 
   .logo {
-    align-self: center; 
+    align-self: center;
     transition: $transition-fast;
     flex-shrink: 0;
 

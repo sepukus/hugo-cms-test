@@ -1,15 +1,13 @@
-<div class="jumbotron uk-child-width-1-2@s uk-light" uk-grid>
-  <div class="uk-background-cover"
+<div class="jumbotron" uk-grid>
+  <div class="uk-background-cover uk-width-1-1"
       style="background-image: url({{.imageUrl}});">
     <div class="uk-container">
-      <div class="uk-background-primary has-text-white">
-        <h1 class="has-text-white uk-margin-remove">{{.title}}</h1>
-        {{ if .subtitle }}
-          <p class="b f4 di lh-title mb3 white mw6 bg-primary">
-            {{.subtitle}}
-          </p>
-        {{ end }}
-      </div>            
+      <div class="uk-background-transparent">
+        <h1 class="jumbotron__title mb3">{{.title}}</h1>
+        {{if .banner_cta_link }}
+          <a href="{{.banner_cta_link }}" target="_self" class="mb3 mw6 uk-button uk-button-primary"> {{.banner_cta_text }} <span uk-icon="chevron-right"></span></a>
+        {{end}}
+      </div>
     </div>
   </div>
 </div>

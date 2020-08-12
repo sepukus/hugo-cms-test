@@ -1,0 +1,57 @@
+{{- $filters := slice "category" "focus" "role" "organisation_size" "industry" -}}
+{{- $.Scratch.Add "taxrel_index" dict -}}
+{{- /* First Loop - First Taxonomy */ -}}
+{{- range $primaryFilter := $filters -}}
+  {{- $.Scratch.Add "primaryFilter" dict -}}
+  {{- $primaryTaxonomies := index $.Site.Taxonomies $primaryFilter -}}  
+  {{- /* Second Loop - First Taxonomy Taxonomies */ -}}
+  {{- range $primaryTax, $p := $primaryTaxonomies -}}
+    {{- with $.Site.GetPage (printf "/%s" $primaryTax) -}} {{/* we do this to get the proper taxonomy title rather than a urlized value */}}
+      {{- $primaryTitle := .LinkTitle -}}      
+      {{- $.Scratch.Add "secondaryFilter" dict -}}
+      
+      {{- /* Third Loop - Second Taxonomy */ -}}
+      {{- range $secondaryFilter := $filters -}}        
+        {{- if ne $primaryFilter $secondaryFilter -}}
+          {{- $secondaryTaxonomies := index $.Site.Taxonomies $secondaryFilter -}}  
+          {{- $.Scratch.Add "numRelations" dict -}}
+
+          {{- /* Fourth Loop - Second Taxonomy Taxonomies */ -}}
+          {{- range $secondaryTax, $s := $secondaryTaxonomies -}}
+            {{- with $.Site.GetPage (printf "/%s" $secondaryTax) -}} {{/* we do this to get the proper taxonomy title rather than a urlized value */}}
+              {{- $secondaryTitle := .LinkTitle -}}
+              {{- $primaryParam := print ".Params." $primaryFilter -}}
+              {{- $secondaryParam := print ".Params." $secondaryFilter -}}
+              
+              {{- /* Get an Intersection of Pages where First Taxonomy and Second Taxonomy both set: then get the number of pages */ -}}                
+              {{- $v1 := where .Site.Pages $primaryParam $primaryTitle -}}
+              {{- $v2 := where .Site.Pages $secondaryParam $secondaryTitle -}}
+              {{- $filtered := $v1 | intersect $v2 -}}
+              {{- $filteredLen := len $filtered -}}
+              
+              {{- /* Assign to a map with Taxonomy title as key */ -}}
+              {{- $.Scratch.SetInMap "numRelations" $secondaryTitle $filteredLen -}}              
+            {{- end -}}
+          {{- end -}}
+
+          {{- /* Assign to a map with Taxonomy type of second Taxonomy  as key */ -}}
+          {{- $relationData := $.Scratch.Get "numRelations" -}}
+          {{- $.Scratch.SetInMap "secondaryFilter" $secondaryFilter $relationData -}}
+          {{- $.Scratch.Delete "numRelations" -}}
+
+          {{- end -}}
+        {{- end -}}   
+        
+      {{- /* Assign to a map with Taxonomy title of first Taxonomy  as key */ -}}
+      {{- $secondaryData := $.Scratch.Get "secondaryFilter" -}}
+      {{- $.Scratch.SetInMap "primaryFilter" $primaryTitle $secondaryData -}}
+      {{- $.Scratch.Delete "secondaryFilter" -}}
+    {{- end -}}
+  {{- end -}}
+  {{- /* Assign to a map with Taxonomy type of first Taxonomy  as key */ -}}
+  {{- $primaryData := $.Scratch.Get "primaryFilter" -}}
+  {{- $.Scratch.SetInMap "taxrel_index" $primaryFilter $primaryData -}}
+  {{- $.Scratch.Delete "primaryFilter" -}}
+{{- end -}}
+{{- $.Scratch.Get "taxrel_index" | jsonify -}}
+

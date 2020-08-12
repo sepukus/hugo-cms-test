@@ -12,78 +12,129 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      initialFilters: this._sortInitialFilters(props.filters),
-      filters: {},
+      filters: this._sortInitialFilters(props.filters),
+      relationships: {},
       searchResults: [],
+      filtersVisible: true,
+      loading: false,
     };
 
+    /* Bind this to functions */
     this._filterUpdate = this._filterUpdate.bind(this);
+    this._clearFilters = this._clearFilters.bind(this);
+    this._filterToggle = this._filterToggle.bind(this);
 
-    const client = algoliasearch(
-      process.env.ALGOLIA_APP_ID,
-      process.env.ALGOLIA_SEARCH_KEY
-    );
+    /* Setup Algolia */
+    const client = algoliasearch(process.env.ALGOLIA_APP_ID, process.env.ALGOLIA_SEARCH_KEY);
 
     this.searchindex = client.initIndex(process.env.ALGOLIA_INDEX_NAME);
   }
 
   componentDidMount() {
-    this.setState({
-      filters: this.state.initialFilters,
-    });
+    fetch("/taxrelationships.json")
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState({
+          relationships: data,
+        });
+      });
   }
 
-  componentDidUpdate() {
-    console.log("state", this.state);
-  }
+  componentDidUpdate() {}
 
   /*
    * Get query and send to algolia
    */
   _querySearch() {
     const query = this._buildQuery();
-
-    this.searchindex
-      .search("", {
-        filters: query,
-        hitsPerPage: 1000,
-      })
-      .then(({ hits }) => {
-        this._filterAvailable(hits);
-      })
-      .catch((err) => {
-        console.log("error", err);
-      });
+    this.setState(
+      {
+        loading: true,
+      },
+      () => {
+        this.searchindex
+          .search("", {
+            filters: query,
+            hitsPerPage: 1000,
+          })
+          .then(({ hits }) => {
+            this._filterAvailable(hits);
+          })
+          .catch((err) => {
+            console.log("error", err);
+          });
+        this._filterAvailable([]);
+      }
+    );
   }
 
   _filterAvailable(searchResults) {
     this.setState((currentState) => {
-      const filterable = ["focus", "role", "organisation_size"];
+      const filterable = ["category", "focus", "role", "organisation_size"];
+      const { filters, relationships } = currentState;
 
-      // Reset count to 0
-      let filters = currentState.filters;
-      filterable.forEach((filterName) => {
-        filters[filterName].forEach((el) => {
-          el.count = 0;
-        });
-      });
+      const newFilters = {
+        category: [],
+        focus: [],
+        role: [],
+        organisation_size: [],
+      };
 
-      // Loop over search results and increase count on filters found
-      searchResults.forEach((result) => {
-        filterable.forEach((filterName) => {
-          const resultValue = result[filterName];
-          const filterIndex = filters[filterName].findIndex(
-            (el) => el.name === resultValue
-          );
-          if (filterIndex != -1) {
-            filters[filterName][filterIndex].count++;
+      const activeFilters = [];
+
+      filterable.forEach((key) => {
+        filters[key].forEach((filter) => {
+          if (filter.active === true) {
+            activeFilters.push(filter);
           }
         });
       });
 
+      filterable.forEach((key) => {
+        filters[key].forEach((filter) => {
+          if (filter.parent === "category" && filter.name === "all") {
+            newFilters[key].push(filter);
+            return;
+          }
+
+          const relationship = {};
+
+          for (const activeKey in activeFilters) {
+            const active = activeFilters[activeKey];
+
+            if (active.parent === "category" && active.name === "all") {
+              continue;
+            }
+
+            if (active.parent === filter.parent) {
+              continue;
+            }
+
+            if (typeof relationship[active.parent] === "undefined") {
+              relationship[active.parent] = false;
+            }
+
+            const hasRelationship = relationships[filter.parent][filter.name][active.parent][active.name];
+
+            if (hasRelationship > 0) {
+              relationship[active.parent] = true;
+            }
+          }
+
+          const isEnabled = Object.keys(relationship).every((el) => {
+            return relationship[el];
+          });
+
+          filter.enabled = isEnabled;
+
+          newFilters[key].push(filter);
+        });
+      });
+
       return {
-        filters,
         searchResults,
+        filters: newFilters,
+        loading: false,
       };
     });
   }
@@ -138,9 +189,7 @@ class App extends React.Component {
     let newFilters = this.state.filters;
     const allKey = "all";
 
-    const filterIndex = this.state.filters[value.parent].findIndex(
-      (el) => el.name === value.name
-    );
+    const filterIndex = this.state.filters[value.parent].findIndex((el) => el.name === value.name);
 
     if (value.name == allKey) {
       newFilters[value.parent] = newFilters[value.parent].map((el, i) => {
@@ -148,13 +197,9 @@ class App extends React.Component {
         return el;
       });
     } else {
-      const allIndex = newFilters[value.parent].findIndex(
-        (el) => el.name == allKey
-      );
+      const allIndex = newFilters[value.parent].findIndex((el) => el.name == allKey);
       newFilters[value.parent][allIndex].active = false;
-      newFilters[value.parent][filterIndex].active = !newFilters[value.parent][
-        filterIndex
-      ].active;
+      newFilters[value.parent][filterIndex].active = !newFilters[value.parent][filterIndex].active;
     }
 
     this.setState(
@@ -177,13 +222,9 @@ class App extends React.Component {
 
     const newFilters = this.state.filters;
 
-    const filterIndex = this.state.filters[value.parent].findIndex(
-      (el) => el.name === value.name
-    );
+    const filterIndex = this.state.filters[value.parent].findIndex((el) => el.name === value.name);
 
-    newFilters[value.parent][filterIndex].active = !newFilters[value.parent][
-      filterIndex
-    ].active;
+    newFilters[value.parent][filterIndex].active = !newFilters[value.parent][filterIndex].active;
 
     this.setState(
       {
@@ -191,6 +232,28 @@ class App extends React.Component {
       },
       this._querySearch
     );
+  }
+
+  /*
+   * Reset filters
+   */
+  _clearFilters() {
+    this.setState((currentState) => {
+      let filters = currentState.filters;
+
+      Object.keys(filters).forEach((filter) => {
+        filters[filter].forEach((el) => {
+          el.active = false;
+        });
+      });
+
+      const allIndex = filters.category.findIndex((el) => el.name == "all");
+      filters.category[allIndex].active = true;
+
+      return {
+        filters,
+      };
+    }, this._querySearch);
   }
 
   /*
@@ -205,12 +268,20 @@ class App extends React.Component {
     };
   }
 
+  _filterToggle() {
+    this.setState({
+      filtersVisible: !this.state.filtersVisible,
+    });
+  }
+
   render() {
     return (
       <div className="resource-listing">
-        <Header />
-        <FilterBar filters={this.state.filters} update={this._filterUpdate} />
-        <Listing results={this.state.searchResults} />
+        <Header filterToggle={this._filterToggle} />
+        <div className="resource-listing__body">
+          <FilterBar visible={this.state.filtersVisible} filters={this.state.filters} update={this._filterUpdate} clear={this._clearFilters} />
+          <Listing results={this.state.searchResults} loading={this.state.loading} />
+        </div>
       </div>
     );
   }

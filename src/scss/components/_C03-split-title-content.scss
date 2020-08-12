@@ -1,0 +1,16 @@
+.C03-split-title-content {
+  @include componentSpacingCompile();
+
+  &__svg {
+    padding-bottom: 60px;
+
+    @media (max-width: $breakpoint-medium) {
+      padding-bottom: 40px;
+    }
+
+    @media (max-width: $breakpoint-small) {
+      display: block;
+      padding-bottom: 20px;
+    }
+  }
+}
