@@ -324,4 +324,28 @@ modules:
       - friend_text: "Colin Seery, CEO, Lifeline "
       - friend_text: Mitch Wallis, Heart on my sleeve movement (HOMS)
       - friend_text: Jennifer Westacott, Business Council of Australia (BCA)
+  - type: split_title_content_background
+    title: Our members
+    leadtext: "CMHAA welcomes businesses of all sizes and from all sectors, to join
+      the CMHAA member community. By becoming a CMHAA member, your business
+      will:"
+    content: >-
+      * Achieve a healthier, more engaged and resilient workforce where everyone
+      has an opportunity to thrive
+
+      * Reduce the costs associated with poor mental health; absenteeism, presenteeism, staff turnover, compensation claims and negative brand reputation
+
+      * Socialise mental health into the business, increasing understanding of mental health, challenging stigma, and fostering a culture of openness within the workplace
+
+      * Develop the skills and mental health literacy of employees working at all levels 
+
+      * Sustain and embed a workplace culture that facilitates positive mental health in the workplace, by helping to ensure that good mental health practice is led and owned by business leaders and becomes integrated into the business’s strategic priorities
+
+      * Upskill, attract, recruit and retain talent from a wider pool
+
+      * Learn from other leading businesses on how they are supporting the mental health of their people 
+
+      * Build a more diverse workforce – mental health is an inclusion issue
+    cta_text: ENQUIRE
+    cta_link: /link-to-page
 ---
