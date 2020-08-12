@@ -1,0 +1,45 @@
+<div class="uk-container C16-contact-form">
+  <svg class="C16-contact-form__svg" width="100%" height="2" viewBox="0 0 1144 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <line x1="1" y1="1" x2="42" y2="1" stroke="#F59C00" stroke-width="2" stroke-linecap="round"/>
+    <line x1="56" y1="1" x2="1143" y2="1" stroke="#D0D0D0" stroke-width="2" stroke-linecap="round"/>
+  </svg>
+  <svg class="C16-contact-form__svg-mobile" width="100%" height="2" viewBox="0 0 272 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <line x1="1" y1="1" x2="31" y2="1" stroke="#F59C00" stroke-width="2" stroke-linecap="round"/>
+    <line x1="41" y1="1" x2="271" y2="1" stroke="#D0D0D0" stroke-width="2" stroke-linecap="round"/>
+  </svg>
+  <div class="uk-text-left" uk-grid>
+    <div class="uk-width-1-1@s uk-width-1-4@l">
+      <h3>{{ .contact_title }}</h3>
+    </div>
+    <div class="uk-width-1-1@s uk-width-3-4@l">
+      {{if .contact_lead }}
+        <p class="uk-text-lead">{{ .contact_lead }}</p>
+      {{ end }}
+      {{if .contact_description }}
+        {{- .contact_description | markdownify -}}
+      {{ end }}
+
+      <form class="uk-form" name="contact" method="POST" data-netlify="true">
+        <div class="uk-margin">
+          <label class="uk-form-label">Name</label>
+          <div class="uk-form-controls">
+            <input class="uk-input" aria-label="Name" id="name" maxlength="200" name="name" placeholder="Adam">
+          </div>
+        </div>
+        <div class="uk-margin">
+          <label class="uk-form-label">Email Address</label>
+          <div class="uk-form-controls">
+            <input class="uk-input" aria-label="Name" id="email" maxlength="200" name="email" placeholder="e.g adam@emailaddress.com.au">
+          </div>
+        </div>
+        <div class="uk-margin">
+          <label class="uk-form-label">Message or comment</label>
+          <textarea class="uk-textarea" rows="5" placeholder="Type your message"></textarea>
+        </div>
+        <p>
+          <button type="submit" class="uk-button uk-button-secondary">SUBMIT</button>
+        </p>
+      </form>
+    </div>
+  </div>
+</div>
