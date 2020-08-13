@@ -1,15 +1,44 @@
-<div data-id="C01" class="jumbotron C01-hero {{if .imageUrl }}{{ else }}C01-hero__noimage{{end}}" uk-grid>
+<div data-id="C01" class="jumbotron C01-hero {{if .imageUrl }}{{ else }}C01-hero__noimage{{end}} {{if .banner_right_image}}C01-hero__right-image{{end}}" uk-grid>
   <div class="uk-background-cover uk-width-1-1 {{if .imageUrl }}uk-background-cover__image {{end}}" {{if .imageUrl }} style="background-image: url({{.imageUrl}});"{{ end }}>
+    {{ if and (eq .Site.Params.HomePageSection true) (.IsHome)}}<h1>IS HOME KENT!</h1>{{end}}
+    {{if .banner_right_image}}
     <div class="uk-container">
-      <div class="uk-background-transparent">
-        <h1 class="C01-hero__title mb3">{{- .banner_title -}}</h1>
-        {{if .banner_description }}
-          <p>{{- .banner_description -}}</p>
-        {{ end }}
-        {{if .banner_cta_link }}
-          <a href="{{.banner_cta_link }}" target="_self" class="uk-button uk-button-primary"> {{- .banner_cta_text -}} <span uk-icon="chevron-right"></span></a>
-        {{end}}
+        <div class="uk-child-width-expand@s uk-flex-middle" uk-grid>
+          <div class="uk-grid-item-match">
+            <h1 class="C01-hero__title mb3">{{- .banner_title -}}</h1>
+            {{if .banner_description }}
+              <p>{{- .banner_description -}}</p>
+            {{ end }}
+            {{if .banner_cta_link }}
+              <a href="{{.banner_cta_link }}" target="_self" class="uk-button uk-button-primary"> {{- .banner_cta_text -}} <span uk-icon="chevron-right"></span></a>
+            {{end}}
+            <svg class="C01-hero__svg-horizontal" width="204" height="24" viewBox="0 0 204 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 6.69732C1 3.54845 3.54845 1 6.69732 1L23 1L23 17.3027C23 20.4515 20.4515 23 17.3027 23L6.69732 23C3.54845 23 1 20.4515 1 17.3027L1 6.69732Z" stroke="#F59C00" stroke-width="2"/>
+              <path d="M37 6.69732C37 3.54845 39.5485 1 42.6973 1L59 1V17.3027C59 20.4515 56.4515 23 53.3027 23L42.6973 23C39.5485 23 37 20.4515 37 17.3027V6.69732Z" stroke="#6A6D71" stroke-width="2"/>
+              <path d="M73 6.69732C73 3.54845 75.5485 1 78.6973 1L95 1V17.3027C95 20.4515 92.4515 23 89.3027 23L78.6973 23C75.5485 23 73 20.4515 73 17.3027V6.69732Z" stroke="#B60057" stroke-width="2"/>
+              <path d="M109 6.69732C109 3.54845 111.548 1 114.697 1L131 1V17.3027C131 20.4515 128.452 23 125.303 23L114.697 23C111.548 23 109 20.4515 109 17.3027V6.69732Z" stroke="#E54820" stroke-width="2"/>
+              <path d="M145 6.69732C145 3.54845 147.548 1 150.697 1L167 1V17.3027C167 20.4515 164.452 23 161.303 23L150.697 23C147.548 23 145 20.4515 145 17.3027V6.69732Z" stroke="#007E97" stroke-width="2"/>
+              <path d="M181 6.69732C181 3.54845 183.548 1 186.697 1L203 1V17.3027C203 20.4515 200.452 23 197.303 23L186.697 23C183.548 23 181 20.4515 181 17.3027V6.69732Z" stroke="#8ABD24" stroke-width="2"/>
+            </svg>
+          </div>
+          <div>
+            <img src="{{.banner_right_image}}" alt="">
+          </div>
+        </div>
       </div>
     </div>
+    {{else}}
+      <div class="uk-container">
+        <div class="uk-background-transparent">
+          <h1 class="C01-hero__title mb3">{{- .banner_title -}}</h1>
+          {{if .banner_description }}
+            <p>{{- .banner_description -}}</p>
+          {{ end }}
+          {{if .banner_cta_link }}
+            <a href="{{.banner_cta_link }}" target="_self" class="uk-button uk-button-primary"> {{- .banner_cta_text -}} <span uk-icon="chevron-right"></span></a>
+          {{end}}
+        </div>
+      </div>
+    {{end}}
   </div>
 </div>

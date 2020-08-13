@@ -20,5 +20,18 @@
         </li>
       {{ end }}
     </ul>
+    <div class="uk-navbar-nav uk-navbar-mobile uk-height-1-1">
+      <div class="uk-flex-middle uk-height-1-1" uk-grid>
+        <div class="uk-width-1-1">
+          {{ $currentPage := . }}
+          {{ range .Site.Menus.main }}
+          {{ $active := or (eq $.URL .URL) (or ($currentPage.HasMenuCurrent "main" .) ($currentPage.IsMenuCurrent "main" .)) }}
+            <a class="uk-button uk-button-minimal" href="{{ .URL | relURL }}" title="{{ .Title }}">
+              {{ .Name }}
+            </a>
+          {{ end }}
+        </div>
+      </div>
+    </div>
   </div>
 </nav>

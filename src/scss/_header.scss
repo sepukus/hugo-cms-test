@@ -61,7 +61,8 @@
     }
   }
 
-  .sticky-header & {
+  .sticky-header &,
+  .uk-navbar-white & {
     background: white;
 
     .uk-navbar-nav > li {
@@ -123,7 +124,8 @@
     flex-shrink: 0;
 
     &--white {
-      .sticky-header & {
+      .sticky-header &,
+      .uk-navbar-white &, {
         opacity: 0;
       }
     }
@@ -134,7 +136,9 @@
       left: 0;
       opacity: 0;
 
-      .sticky-header & {
+      .sticky-header &,
+      .uk-navbar-white &,
+      {
         opacity: 1;
       }
     }
@@ -208,7 +212,7 @@
         &,
         &:before,
         &:after {
-          background-color: $brand-secondary;
+          background-color: $global-black;
         }
 
         &::after {
@@ -226,6 +230,10 @@
         }
       }
     }
+  }
+
+  .uk-navbar-mobile {
+    display: none;
   }
 }
 
@@ -252,7 +260,32 @@
     }
 
     .nav-active & {
-      background: white;
+      background: $grey-lightest;
+
+      @media (max-width: $breakpoint-medium) {
+        // turn off main nav
+        .uk-navbar-nav {
+          display: none;
+        }
+        // switch to full width nav
+        .uk-navbar-mobile {
+          display: flex;
+          background: $grey-lightest;
+
+          .uk-button {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 140%;
+            width: 100%;
+            text-align: left;
+            border-bottom: 2px solid black;
+            border-radius: 0;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+          }
+        }
+      }
 
       .logo--white {
         opacity: 0;

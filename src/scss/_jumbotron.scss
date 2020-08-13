@@ -37,4 +37,26 @@
       color: $global-black;
     }
   }
+
+  &.C01-hero__right-image {
+    .uk-background-cover {
+      padding-top: 80px;
+      padding-bottom: 0;
+
+      @media (max-width: $breakpoint-small) {
+        padding-top: 100px;
+        padding-bottom: 0;
+      }
+
+      h1,
+      p {
+        padding-right: 20px;
+      }
+
+      .C01-hero__svg-horizontal {
+        width: 100%;
+        max-width: 204px;
+      }
+    }
+  }
 }
