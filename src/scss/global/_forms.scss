@@ -21,4 +21,23 @@
       color: #9E9E9E;
     }
   }
+
+  /*
+ * Error
+ */
+
+  .uk-form-danger,
+  .uk-form-danger:focus {
+    color: $form-danger-color;
+    border: 1px solid $form-danger-color;
+  }
+
+  /*
+   * Success
+   */
+
+  .uk-form-success,
+  .uk-form-success:focus  {
+    color: $form-success-color;
+  }
 }

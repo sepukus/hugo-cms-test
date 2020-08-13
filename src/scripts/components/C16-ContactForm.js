@@ -22,13 +22,14 @@ class ContactForm extends Component {
       const messageError  = document.querySelector("#message + span.uk-text-danger");
 
       fullname.addEventListener("input", function(event) {
-        console.log(fullname.validity.valid);
         if (fullname.validity.valid) {
           fullnameError.innerHTML = "";
           fullnameError.className = "uk-text-danger";
+          fullname.classList.remove("uk-form-danger");
         }
         else {
           self.showError();
+          fullname.classList.add("uk-form-danger");
         }
       });
 
@@ -36,27 +37,38 @@ class ContactForm extends Component {
         if (email.validity.valid) {
           emailError.innerHTML = "";
           emailError.className = "uk-text-danger";
+          email.classList.remove("uk-form-danger");
         }
-        else {self.showError();}
+        else {
+          self.showError();
+          email.classList.add("uk-form-danger");
+        }
       });
 
       message.addEventListener("input", function(event) {
         if (message.validity.valid) {
           messageError.innerHTML = "";
           messageError.className = "uk-text-danger";
+          message.classList.remove("uk-form-danger");
         }
-        else {self.showError();}
+        else {
+          self.showError();
+          message.classList.add("uk-form-danger");
+        }
       });
 
       form.addEventListener("submit", function(event) {
         if (!fullname.validity.valid) {
           self.showError();
+          fullname.classList.add("uk-form-danger");
         }
         if (!email.validity.valid) {
           self.showError();
+          email.classList.add("uk-form-danger");
         }
         if (!message.validity.valid) {
           self.showError();
+          message.classList.add("uk-form-danger");
         }
 
         event.preventDefault();
@@ -106,7 +118,7 @@ class ContactForm extends Component {
       messageError.textContent = `The field must contain minimum ${message.maxLength} characters; you have inserted ${message.value.length}.`;
     }
 
-    // Aggiungo la classe per mostrare l'errore
+    // add the class to show the error
     fullnameError.className = "uk-text-danger uk-text-small";
     emailError.className    = "uk-text-danger uk-text-small";
     messageError.className  = "uk-text-danger uk-text-small";
