@@ -40,8 +40,6 @@ class App extends React.Component {
       });
   }
 
-  componentDidUpdate() {}
-
   /*
    * Get query and send to algolia
    */
@@ -58,12 +56,13 @@ class App extends React.Component {
             hitsPerPage: 1000,
           })
           .then(({ hits }) => {
+            console.log(hits);
             this._filterAvailable(hits);
           })
           .catch((err) => {
             console.log("error", err);
+            this._filterAvailable([]);
           });
-        this._filterAvailable([]);
       }
     );
   }
