@@ -1,8 +1,7 @@
-<div data-id="C01" class="jumbotron C01-hero {{if .imageUrl }}{{ else }}C01-hero__noimage{{end}} {{if .banner_right_image}}C01-hero__right-image{{end}}" uk-grid>
+<div data-id="C01" class="jumbotron C01-hero {{if .isHome}}isHome{{end}} {{if .imageUrl }}{{ else }}C01-hero__noimage {{if .banner_right_image}}C01-hero__right-image{{else}}C01-hero__no-right-image{{end}} {{end}}" uk-grid>
   <div class="uk-background-cover uk-width-1-1 {{if .imageUrl }}uk-background-cover__image {{end}}" {{if .imageUrl }} style="background-image: url({{.imageUrl}});"{{ end }}>
-    {{ if and (eq .Site.Params.HomePageSection true) (.IsHome)}}<h1>IS HOME KENT!</h1>{{end}}
     {{if .banner_right_image}}
-    <div class="uk-container">
+      <div class="uk-container">
         <div class="uk-child-width-expand@s uk-flex-middle" uk-grid>
           <div class="uk-grid-item-match">
             <h1 class="C01-hero__title mb3">{{- .banner_title -}}</h1>
@@ -21,24 +20,59 @@
               <path d="M181 6.69732C181 3.54845 183.548 1 186.697 1L203 1V17.3027C203 20.4515 200.452 23 197.303 23L186.697 23C183.548 23 181 20.4515 181 17.3027V6.69732Z" stroke="#8ABD24" stroke-width="2"/>
             </svg>
           </div>
-          <div>
-            <img src="{{.banner_right_image}}" alt="">
+          <div class="C01-hero__banner-right-container">
+              <img src="{{.banner_right_image}}" alt="">
+            </div>
+  </div>
+      </div>
+    {{else}}
+      <!-- if background image, show this template -->
+      {{if .imageUrl}}
+        <div class="uk-container">
+          <div class="uk-background-transparent">
+            <h1 class="C01-hero__title mb3">{{- .banner_title -}}</h1>
+            {{if .banner_description }}
+            <p>{{- .banner_description -}}</p>
+            {{ end }}
+            {{if .banner_cta_link }}
+            <a href="{{.banner_cta_link }}" target="_self" class="uk-button uk-button-primary"> {{- .banner_cta_text -}} <span uk-icon="chevron-right"></span></a>
+            {{end}}
           </div>
         </div>
-      </div>
-    </div>
-    {{else}}
-      <div class="uk-container">
-        <div class="uk-background-transparent">
-          <h1 class="C01-hero__title mb3">{{- .banner_title -}}</h1>
-          {{if .banner_description }}
-            <p>{{- .banner_description -}}</p>
-          {{ end }}
-          {{if .banner_cta_link }}
-            <a href="{{.banner_cta_link }}" target="_self" class="uk-button uk-button-primary"> {{- .banner_cta_text -}} <span uk-icon="chevron-right"></span></a>
-          {{end}}
+      {{else}}
+        <!-- standard template -->
+        <div class="uk-container">
+          <div class="uk-child-width-expand@s uk-flex-middle" uk-grid>
+            <div class="uk-grid-item-match">
+              <h1 class="C01-hero__title mb3">{{- .banner_title -}}</h1>
+              {{if .banner_description }}
+              <p>{{- .banner_description -}}</p>
+              {{ end }}
+              {{if .banner_cta_link }}
+              <a href="{{.banner_cta_link }}" target="_self" class="uk-button uk-button-primary"> {{- .banner_cta_text -}} <span uk-icon="chevron-right"></span></a>
+              {{end}}
+              <svg class="C01-hero__svg-horizontal" width="204" height="24" viewBox="0 0 204 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 6.69732C1 3.54845 3.54845 1 6.69732 1L23 1L23 17.3027C23 20.4515 20.4515 23 17.3027 23L6.69732 23C3.54845 23 1 20.4515 1 17.3027L1 6.69732Z" stroke="#F59C00" stroke-width="2"/>
+                <path d="M37 6.69732C37 3.54845 39.5485 1 42.6973 1L59 1V17.3027C59 20.4515 56.4515 23 53.3027 23L42.6973 23C39.5485 23 37 20.4515 37 17.3027V6.69732Z" stroke="#6A6D71" stroke-width="2"/>
+                <path d="M73 6.69732C73 3.54845 75.5485 1 78.6973 1L95 1V17.3027C95 20.4515 92.4515 23 89.3027 23L78.6973 23C75.5485 23 73 20.4515 73 17.3027V6.69732Z" stroke="#B60057" stroke-width="2"/>
+                <path d="M109 6.69732C109 3.54845 111.548 1 114.697 1L131 1V17.3027C131 20.4515 128.452 23 125.303 23L114.697 23C111.548 23 109 20.4515 109 17.3027V6.69732Z" stroke="#E54820" stroke-width="2"/>
+                <path d="M145 6.69732C145 3.54845 147.548 1 150.697 1L167 1V17.3027C167 20.4515 164.452 23 161.303 23L150.697 23C147.548 23 145 20.4515 145 17.3027V6.69732Z" stroke="#007E97" stroke-width="2"/>
+                <path d="M181 6.69732C181 3.54845 183.548 1 186.697 1L203 1V17.3027C203 20.4515 200.452 23 197.303 23L186.697 23C183.548 23 181 20.4515 181 17.3027V6.69732Z" stroke="#8ABD24" stroke-width="2"/>
+              </svg>
+            </div>
+            <div class="C01-hero__svg-container uk-align-right">
+              <svg class="C01-hero__svg-vertical uk-align-right" width="32" height="272" viewBox="0 0 32 272" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 8.92976C1 4.54718 4.54718 1 8.92976 1L31 1L31 23.0702C31 27.4528 27.4528 31 23.0702 31L8.92976 31C4.54718 31 1 27.4528 1 23.0702L1 8.92976Z" stroke="#F59C00" stroke-width="2"/>
+                <path d="M1 56.9298C1 52.5472 4.54718 49 8.92976 49L31 49L31 71.0702C31 75.4528 27.4528 79 23.0702 79H8.92976C4.54718 79 1 75.4528 1 71.0702L1 56.9298Z" stroke="#6A6D71" stroke-width="2"/>
+                <path d="M1 104.93C1 100.547 4.54718 97 8.92976 97H31L31 119.07C31 123.453 27.4528 127 23.0702 127H8.92976C4.54718 127 1 123.453 1 119.07L1 104.93Z" stroke="#B60057" stroke-width="2"/>
+                <path d="M1 152.93C1 148.547 4.54718 145 8.92976 145H31L31 167.07C31 171.453 27.4528 175 23.0702 175H8.92976C4.54718 175 1 171.453 1 167.07L1 152.93Z" stroke="#E54820" stroke-width="2"/>
+                <path d="M1 200.93C1 196.547 4.54718 193 8.92976 193H31L31 215.07C31 219.453 27.4528 223 23.0702 223H8.92976C4.54718 223 1 219.453 1 215.07L1 200.93Z" stroke="#007E97" stroke-width="2"/>
+                <path d="M1 248.93C1 244.547 4.54718 241 8.92976 241H31L31 263.07C31 267.453 27.4528 271 23.0702 271H8.92976C4.54718 271 1 267.453 1 263.07L1 248.93Z" stroke="#8ABD24" stroke-width="2"/>
+              </svg>
+            </div>
+          </div>
         </div>
-      </div>
+      {{end}}
     {{end}}
   </div>
 </div>
