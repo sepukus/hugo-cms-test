@@ -2,7 +2,9 @@
 <html lang="{{ $.Site.Language.Lang }}">
 {{ partial "header" . }}
 
-<body class="sans-serif">
+<body class="sans-serif {{ if .IsHome }}{{else}}{{if .Params.imageUrl}}{{else}}uk-navbar-white{{end}}{{end}}">
+
+
   {{ block "head" . }}
   <header class="header-main">
     <div class="uk-container">
