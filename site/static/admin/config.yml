@@ -293,10 +293,11 @@ collections: # A list of collections the CMS should be able to edit
     folder: "site/content/settings"
     slug: "settings"
     fields:
-      - { label: "Title", name: "title", widget: "string", pattern: ['.{Footer Settings}', "Sorry, This cannot be changed"], default: "Footer Settings" }
+      - { label: "Title", name: "title", widget: "string", default: "Footer Settings" }
       - label: "Footer"
         name: "footer"
         widget: "list"
+        allow_add: false
         fields:
           - { label: Intro, name: footer_text, widget: string, default: "CMHAA is a part of the CMHA Global network.", required: true }
           - label: Footer GLobal Links
