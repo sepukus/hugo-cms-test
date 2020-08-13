@@ -21,9 +21,11 @@ modules:
       achieved for our people, and for the wider community.
 
 
-
-
-      youtube 6V6V_tGTTjc
+      <div class="uk-container C17-youtube">
+          <div class="C17-youtube">
+              <iframe class="uk-align-center " src="https://www.youtube-nocookie.com/embed/6V6V_tGTTjc?autoplay=0&amp;showinfo=0&amp;rel=0&amp;modestbranding=1" width="" height="" frameborder="0" uk-responsive uk-video="automute: false"></iframe>
+          </div>
+      </div>
   - type: spotlight_image_content
     image: img/ourvision.jpg
     title1: Our vision
