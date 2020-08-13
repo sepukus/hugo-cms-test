@@ -12,20 +12,12 @@ modules:
       leaders who have come together for the first time, united in our focus to
       facilitate change and embed good mental health practice within workplaces
       in a sustainable and measurable way.
-    content: >-
-      Why? Because we know that we can do better, and that doing better begins
-      with business leaders prioritising mental health in ways that are
+    content: Why? Because we know that we can do better, and that doing better
+      begins with business leaders prioritising mental health in ways that are
       experienced by all of their employees. We also know that when businesses
       pool their knowledge and resources and work with each other in a
       collaborative, non-competitive way, more sustainable outcomes can be
       achieved for our people, and for the wider community.
-
-
-      <div class="uk-container C17-youtube">
-          <div class="C17-youtube">
-              <iframe class="uk-align-center " src="https://www.youtube-nocookie.com/embed/6V6V_tGTTjc?autoplay=0&amp;showinfo=0&amp;rel=0&amp;modestbranding=1" width="" height="" frameborder="0" uk-responsive uk-video="automute: false"></iframe>
-          </div>
-      </div>
   - type: spotlight_image_content
     image: img/ourvision.jpg
     title1: Our vision
