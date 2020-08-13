@@ -47,7 +47,7 @@ module.exports = {
         ],
       },
 
-      { test: /\.json$/, loader: "json-loader" },
+      {test: /\.json$/, loader: "json-loader"},
 
       {
         test: /\.(woff|woff2|ttf|otf)$/,
@@ -92,7 +92,7 @@ module.exports = {
         loader: "babel-loader",
         test: /\.js?$/,
         exclude: /node_modules/,
-        query: { cacheDirectory: true },
+        query: {cacheDirectory: true},
       },
     ],
   },
