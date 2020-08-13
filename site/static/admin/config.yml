@@ -277,6 +277,11 @@ collections: # A list of collections the CMS should be able to edit
               - { label: Title, name: contact_title, widget: string, required: true }
               - { label: Lead, name: contact_lead, widget: string, required: false }
               - { label: Description, name: contact_description, widget: markdown, required: false }
+          - label: "Youtube"
+            name: "youtube"
+            widget: object
+            fields:
+              - { label: Youtube ID, name: youtube, widget: string, required: false, default: "7uWEucoGfG0" }
 
   - name: "settings"
     label: "Global Settings"
