@@ -1,5 +1,5 @@
 ---
-title: Footer Settings
+title: Footer Settingsas
 footer:
   - footer_text: CMHAA is a part of the CMHA Global network.
     footer_disclaimer_text: ABN 28 638 927 125 | Copyright © 2020 · Corporate Mental
@@ -16,6 +16,8 @@ footer:
         footer_social_link_url: http://linkedin.com/
       - footer_social_link_platform: twitter
         footer_social_link_url: http://twitter.com/
+      - footer_social_link_url: http://www.facebook.com/
+        footer_social_link_platform: facebook
     footer_pirvacy_link:
       - footer_pirvacy_link_text: Privacy policy
         footer_pirvacy_link_url: /privacy-policy
