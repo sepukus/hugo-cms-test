@@ -8,10 +8,14 @@ banner_cta_text: FIND OUT HOW
 modules:
   - type: split_title_content
     title: Who we are
-    leadtext: "We are a business-led, expert-guided alliance of Australian business
+    leadtext: >-
+      We are a business-led, expert-guided alliance of Australian business
       leaders who have come together for the first time, united in our focus to
       facilitate change and embed good mental health practice within workplaces
-      in a sustainable and measurable way. "
+      in a sustainable and measurable way. 
+
+
+      youtube 6V6V_tGTTjc
     content: Why? Because we know that we can do better, and that doing better
       begins with business leaders prioritising mental health in ways that are
       experienced by all of their employees. We also know that when businesses
