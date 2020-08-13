@@ -95,3 +95,28 @@
   ul > ::before { color: $brand-secondary-raspberry !important; }
 }
 
+@mixin svgLine() {
+  &__svg {
+    padding-bottom: 60px;
+    width: 100%;
+
+    @media (max-width: $breakpoint-medium) {
+      padding-bottom: 40px;
+    }
+
+    @media (max-width: $breakpoint-small) {
+      display: none;
+      padding-bottom: 20px;
+    }
+
+    &-mobile {
+      display: none;
+
+      @media (max-width: $breakpoint-small) {
+        width: 100%;
+        display: block;
+        padding-bottom: 20px;
+      }
+    }
+  }
+}

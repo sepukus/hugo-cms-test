@@ -1,30 +1,6 @@
 .C13-our-board {
   @include componentSpacingCompile();
-
-  &__svg {
-    padding-bottom: 60px;
-    width: 100%;
-
-    @media (max-width: $breakpoint-medium) {
-      padding-bottom: 40px;
-    }
-
-    @media (max-width: $breakpoint-small) {
-      display: none;
-      padding-bottom: 20px;
-    }
-
-    &-mobile {
-      display: none;
-
-      @media (max-width: $breakpoint-small) {
-        width: 100%;
-        display: block;
-        padding-bottom: 20px;
-      }
-    }
-
-  }
+  @include svgLine();
 
   &__count {
     padding-top: 64px;

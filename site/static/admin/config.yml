@@ -282,6 +282,11 @@ collections: # A list of collections the CMS should be able to edit
             widget: object
             fields:
               - { label: Youtube ID, name: youtube, widget: string, required: false, default: "7uWEucoGfG0" }
+          - label: "Rich Text"
+            name: "rich-text"
+            widget: object
+            fields:
+              - { label: Rich Text Content, name: richtext, widget: markdown, required: true }
 
   - name: "settings"
     label: "Global Settings"
