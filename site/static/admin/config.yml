@@ -323,3 +323,4 @@ collections: # A list of collections the CMS should be able to edit
               - {label: Footer Privacy URL, name: footer_pirvacy_link_url, widget: string, default: "/privacy-policy"}
               - {label: Footer Privacy Text, name: footer_pirvacy_link_text, widget: string, default: "Privacy policy"}
           - { label: Footer Disclaimer Text, name: footer_disclaimer_text, widget: string, default: "ABN 28 638 927 125 | Copyright © 2020 · Corporate Mental Health Alliance Australia", required: true }
+          - { label: Google Analytics ID, name: footer_ga, widget: string, default: "UA-175325361-1", required: true }

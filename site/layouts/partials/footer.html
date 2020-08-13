@@ -45,4 +45,18 @@
       </div>
     </div>
   </footer>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  {{range $key,$val := .Params.footer}}
+    {{if .footer_ga}}
+      <script async src="https://www.googletagmanager.com/gtag/js?id={{.footer_ga}}"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', '{{.footer_ga}}');
+      </script>
+    {{end}}
+  {{end}}
 {{ end }}
