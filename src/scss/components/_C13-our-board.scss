@@ -7,7 +7,7 @@
   }
 
   &__member {
-    a.uk-card {
+    .uk-card {
       h6 {
         font-size: 18px;
         line-height: 140%;
@@ -69,6 +69,7 @@
 
     .C13-our-board__member {
       padding-top: 40px;
+      width: fit-content;
     }
 
     &-image {
@@ -114,6 +115,18 @@
     .uk-card {
       width: fit-content;
       margin: 0 auto;
+
+      &-body {
+        padding: 0;
+        h6 {
+          font-size: 18px;
+          line-height: 140%;
+          font-weight: 500;
+          margin-bottom: 5px;
+          text-decoration: underline;
+          padding: 0;
+        }
+      }
 
       &-media-left {
         width: 140px;
