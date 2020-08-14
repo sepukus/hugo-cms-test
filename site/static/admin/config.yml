@@ -298,6 +298,16 @@ collections: # A list of collections the CMS should be able to edit
             fields:
               - { label: Rich text top section, name: richtext_top, widget: boolean, default: true, required: false }
               - { label: Rich Text Content, name: richtext, widget: markdown, required: true }
+          - label: "Image Gallery"
+            name: "image_gallery"
+            widget: "list"
+            fields:
+              - label: Gallery
+                name: gallery
+                widget: list
+                allow_add: true
+                fields:
+                  - {label: Image, name: gallery_image, widget: image}
 
   - name: "settings"
     label: "Global Settings"

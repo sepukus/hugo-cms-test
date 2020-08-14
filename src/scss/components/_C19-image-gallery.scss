@@ -1,0 +1,17 @@
+.C19-image-gallery {
+  @include componentSpacingCompile();
+
+  .uk-slidenav {
+    transition: background-color 0.1s ease-in-out;
+    background: rgba(255, 255, 255, 0.3);
+    margin-left: 0;
+    margin-right: 0;
+    padding: 10px 15px;
+
+    &:hover,
+    &:focus {
+      background: rgba(255, 255, 255, 0.8);
+      color: $brand-secondary-raspberry;
+    }
+  }
+}

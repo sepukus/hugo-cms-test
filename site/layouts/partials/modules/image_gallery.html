@@ -1,0 +1,18 @@
+<div class="uk-container uk-container-xsmall C19-image-gallery">
+    <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="animation: push">
+
+        <ul class="uk-slideshow-items">
+            {{ range $index, $element := .gallery }}
+            <li>
+                <div class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-left">
+                    <img src="{{ $element.gallery_image }}" alt="Gallery Image {{$index}}" uk-cover>
+                </div>
+            </li>
+            {{end}}
+        </ul>
+
+        <a class="uk-position-center-left uk-position-small" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+        <a class="uk-position-center-right uk-position-small" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+
+    </div>
+</div>

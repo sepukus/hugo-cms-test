@@ -1,4 +1,9 @@
 .jumbotron {
+  .uk-icon {
+    position: relative;
+    top: -2px;
+  }
+
   &.isHome {
     .uk-background-cover {
       padding-top: 280px;

@@ -75,5 +75,11 @@
   }
 }
 
-
 .uk-list-secondary-raspberry > ::before { color: $brand-secondary-raspberry !important; }
+
+.uk-icon-adjust {
+  .uk-icon {
+    position: relative;
+    top: -2px;
+  }
+}

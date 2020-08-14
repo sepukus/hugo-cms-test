@@ -11,7 +11,7 @@
                     <div class="uk-card-media-top">
                         <img src="{{ $element.feat_member_image }}" alt="image for {{ $element.feat_member_description }}">
                     </div>
-                    <div class="uk-card-body">
+                    <div class="uk-card-body uk-icon-adjust">
                         <p>{{ $element.feat_member_description }}</p>
                         {{if $element.feat_member_link}}
                         <a href="{{ $element.feat_member_link }}" class="uk-button uk-button-minimal"><span uk-icon="minus"></span> {{ $element.feat_member_cta }}</a>
@@ -23,7 +23,7 @@
         </div>
 
         {{if .feat_member_read_more}}
-        <div class="uk-text-left uk-text-center@m uk-padding-large uk-padding-remove-bottom">
+        <div class="uk-text-left uk-text-center@m uk-padding-large uk-padding-remove-bottom uk-icon-adjust">
             <a href="{{ .feat_member_read_more }}" class="uk-button uk-button-secondary">READ MORE STORIES <span uk-icon="chevron-right"></span></a>
         </div>
         {{end}}
