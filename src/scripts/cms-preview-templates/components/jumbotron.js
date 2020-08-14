@@ -9,6 +9,8 @@ export default class Jumbotron extends React.Component {
       }}>
         <div className="mw7 center ph3">
           <div className="db mb3">
+            <p>banner image:</p>
+            { banner_image && <img src={ banner_image } /> }
             <div className="mw7 relative bg-fix-primary mb3">
               <h1 className="f2 f1-l b di lh-title mb3 white mw6 bg-primary">
                 { banner_title }
@@ -18,7 +20,7 @@ export default class Jumbotron extends React.Component {
               {banner_description && <p className="b f4 di lh-title mb3 white mw6 bg-primary">{ banner_description }</p>}
             </div>
             <p>banner image right:</p>
-            <img src={banner_right_image} />
+            { banner_right_image && <img src={ banner_right_image } alt={ banner_title } /> }
           </div>
         </div>
       </div>
