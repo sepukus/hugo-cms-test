@@ -98,6 +98,8 @@ collections: # A list of collections the CMS should be able to edit
     folder: "site/content"
     create: true
     slug: "{{fields.title}}"
+    editor:
+      preview: false
     fields:
       - { label: "Title", name: "title", widget: "string", required: true }
       - { label: "Banner Title", name: "banner_title", widget: "string", required: false }
