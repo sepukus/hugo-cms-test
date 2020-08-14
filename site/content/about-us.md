@@ -293,6 +293,26 @@ modules:
       operational level through each member's sponsorship of a Functional Lead
       representative.
     our_board_exec_title: Program Director, CMHAA
+    exec_board:
+      - exec_board_description: >-
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+          tincidunt, odio ac lacinia faucibus, orci elit finibus nisl, ut
+          ullamcorper enim purus ut nisl. Lorem ipsum dolor sit amet,
+          consectetur adipiscing elit. Quisque tincidunt, odio ac lacinia
+          faucibus, orci elit finibus nisl, ut ullamcorper enim purus ut nisl.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+          tincidunt, odio ac lacinia faucibus, orci elit finibus nisl, ut
+          ullamcorper enim purus ut nisl.
+
+
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt, odio ac lacinia faucibus, orci elit finibus nisl, ut ullamcorper enim purus ut nisl.
+        exec_board_name: Vicki Forbes
+        exec_board_image: img/vicki-forbes.jpg
+        exec_board_title: Program Director, CMHAA
+        exec_board_quote: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Quisque tincidunt, odio ac lacinia faucibus, orci elit finibus nisl,
+          ut ullamcorper enim purus ut nisl."'
+        exec_board_linkedin: http://www.linkedin.com/
     our_board_exec_image: img/vicki-forbes.jpg
     our_board_exec_quote: '**Quote "**Lorem ipsum dolor sit amet, consectetur
       adipiscing elit. Quisque tincidunt, odio ac lacinia faucibus, orci elit
