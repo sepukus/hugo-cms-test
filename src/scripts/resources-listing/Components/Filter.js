@@ -1,6 +1,6 @@
 import React from "react";
 
-import prettifyName from "../utils/prettyName";
+import prettifyName from "../Utils/prettyName";
 
 const Filter = (props) => {
   const title = prettifyName(props.name);
