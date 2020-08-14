@@ -16,11 +16,11 @@
     }
   }
   .uk-background-cover {
-    padding-top: 250px;
-    padding-bottom: 150px;
+    padding-top: 150px;
+    padding-bottom: 100px;
 
     @media (max-width: $breakpoint-small) {
-      padding-top: 150px;
+      padding-top: 100px;
       padding-bottom: 0;
     }
   }
