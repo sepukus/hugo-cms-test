@@ -7,17 +7,9 @@ import Jumbotron from "./components/jumbotron";
 export default class PostPreview extends React.Component {
   render() {
     const {entry, getAsset} = this.props;
-    let banner_image = getAsset(entry.get("banner_image"));
-    let banner_right_image = getAsset(entry.get("banner_right_image"));
 
-    // Bit of a nasty hack to make relative paths work as expected as a background image here
-    if (banner_image && !banner_image.fileObj) {
-      banner_image = window.parent.location.protocol + "//trusting-saha-d11303.netlify.app/" + banner_image;
-    }
-
-    if (banner_right_image && !banner_right_image.fileObj) {
-      banner_right_image = window.parent.location.protocol + "//trusting-saha-d11303.netlify.app/" + banner_right_image;
-    }
+    const banner_image = entry.getIn(["data", "banner_image"]);
+    const banner_right_image = entry.getIn(["data", "banner_right_image"]);
 
     return <div>
       <Jumbotron banner_image={banner_image} banner_right_image={banner_right_image} banner_title={entry.getIn(["data", "banner_title"])} banner_description={entry.getIn(["data", "banner_description"])}/>
