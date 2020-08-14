@@ -17,7 +17,7 @@ disableKinds = ["RSS"]
   industry = "industry"
 
 [outputs]
-home = ["HTML", "Algolia"]
+home = ["HTML", "Algolia", "TaxRelationships"]
 
 [permalinks]
 pages = "/:slug/"
@@ -49,5 +49,16 @@ mediaType = "application/json"
 notAlternative = true
 
 [params.algolia]
+vars = ["title", "category"]
+params = ["category"]
+
+# Taxonomy Relationships
+[outputFormats.TaxRelationships]
+baseName = "taxrelationships"
+isPlainText = true
+mediaType = "application/json"
+notAlternative = true
+
+[params.taxrelationships]
 vars = ["title", "category"]
 params = ["category"]

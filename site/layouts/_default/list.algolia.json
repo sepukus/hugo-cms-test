@@ -2,9 +2,10 @@
 {{- $.Scratch.Add "index" slice -}}
 {{- $section := $.Site.GetPage "section" .Section }}
 {{- range .Site.AllPages.ByPublishDate -}}
-  {{- if and (eq .Type "resources") (ne .URL "/resources/") -}}
+  {{- if and (eq .Type "resources") (ne .Permalink "/resources/") -}}
     {{- if or (and (.IsDescendant $section) (and (not .Draft) (not .Params.private))) $section.IsHome -}}
-      {{- $.Scratch.Add "index" (dict "objectID" .UniqueID "permalink" .Permalink "title" .Title "type" .Type "category" .Params.category "focus" .Params.focus "role" .Params.role "organisation_size" .Params.organisation_size "industry" .Params.industry )}}
+      {{ $post_date := dateFormat "Jan 01, 2006" .Params.date }}
+      {{- $.Scratch.Add "index" (dict "objectID" .File.UniqueID "permalink" .Permalink "title" .Title "post_date" $post_date "banner_image" .Params.banner_image "type" .Type "category" .Params.category "focus" .Params.focus "role" .Params.role "organisation_size" .Params.organisation_size "industry" .Params.industry )}}
     {{- end -}}
   {{- end -}}
 {{- end -}}

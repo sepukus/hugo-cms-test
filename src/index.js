@@ -9,3 +9,5 @@ require("offline-plugin/runtime").install();
 import "./scss/main.scss";
 
 import "./scripts/app.core.js";
+
+import "./scripts/resources-listing/app.js";

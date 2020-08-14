@@ -1,4 +1,4 @@
-import {Component} from "../modules";
+import { Component } from "../modules";
 import debounce from "lodash/debounce";
 
 /**
@@ -18,22 +18,26 @@ class StickyHeader extends Component {
     let timeout;
 
     // if (super.exists()) {
-    window.addEventListener("scroll", function(event) {
-      // If there's a timer, cancel it
-      if (timeout) {
-        window.cancelAnimationFrame(timeout);
-      }
-
-      // Setup the new requestAnimationFrame()
-      timeout = window.requestAnimationFrame(function() {
-        if (window.pageYOffset > 20) {
-          document.body.classList.add("sticky-header");
-        } else {
-          document.body.classList.remove("sticky-header");
+    window.addEventListener(
+      "scroll",
+      function (event) {
+        // If there's a timer, cancel it
+        if (timeout) {
+          window.cancelAnimationFrame(timeout);
         }
-      }, false);
-    }, 50);
+
+        // Setup the new requestAnimationFrame()
+        timeout = window.requestAnimationFrame(function () {
+          if (window.pageYOffset > 20) {
+            document.body.classList.add("sticky-header");
+          } else {
+            document.body.classList.remove("sticky-header");
+          }
+        }, false);
+      },
+      50
+    );
   }
 }
 
-export {StickyHeader};
+export { StickyHeader };

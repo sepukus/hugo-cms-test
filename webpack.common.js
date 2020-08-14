@@ -6,6 +6,7 @@ const AssetsPlugin = require("assets-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const Dotenv = require("dotenv-webpack");
 
 module.exports = {
   mode: "development",
@@ -90,7 +91,7 @@ module.exports = {
 
       {
         loader: "babel-loader",
-        test: /\.js?$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         query: {cacheDirectory: true},
       },
@@ -120,5 +121,6 @@ module.exports = {
       template: "src/cms.html",
       inject: false,
     }),
+    new Dotenv(),
   ],
 };
