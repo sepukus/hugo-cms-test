@@ -2,6 +2,11 @@
   @include componentSpacingCompile();
   @include unorderList();
   background-color: $grey-lightest;
+  margin-bottom: 30px;
+
+  @media (max-width: $breakpoint-small) {
+    margin-bottom: 10px;
+  }
 
   &__small-padding {
     padding-top: $global-padding-medium;

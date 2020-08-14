@@ -1,5 +1,6 @@
 .C17-youtube {
   @include componentSpacingCompile($small:false);
+  padding-top: 0;
 
   &__iframe {
     position: relative;
