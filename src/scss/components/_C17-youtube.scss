@@ -1,17 +1,13 @@
 .C17-youtube {
-  @include componentSpacingCompile();
+  @include componentSpacingCompile($small:false);
 
   &__iframe {
     position: relative;
-    padding-bottom: 36%;
+    padding-bottom: 56.25%;
     height: 0;
     margin: 0 auto 20px;
     overflow: hidden;
-    max-width: 752px;
-
-    @media (max-width: $breakpoint-small) {
-      padding-bottom: 56.25%;
-    }
+    width: 100%;
 
     iframe {
       position: absolute; top: 0; left: 0; width: 100%; height: 100%;

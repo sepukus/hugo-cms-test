@@ -1,9 +1,14 @@
 .C10-youtube-quote {
-  @include componentSpacingCompile();
   background-color: $grey-lightest;
 
+  @media (max-width: $breakpoint-small) {
+    &__iframe-container {
+      padding: 0;
+    }
+  }
+
   &__info {
-    padding: 20px 0;
+    padding: 20px 0 0;
   }
 
   &__author {
@@ -15,14 +20,13 @@
 
   &__iframe {
     position: relative;
-    padding-bottom: 36%;
+    padding-bottom: 56.25%;
     height: 0;
-    margin: 0 auto 20px;
+    margin: 60px auto 20px;
     overflow: hidden;
-    max-width: 752px;
 
     @media (max-width: $breakpoint-small) {
-      padding-bottom: 56.25%;
+      margin: 0;
     }
 
     iframe {
