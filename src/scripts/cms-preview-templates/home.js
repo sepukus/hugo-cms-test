@@ -6,16 +6,23 @@ import Jumbotron from "./components/jumbotron";
 export default class PostPreview extends React.Component {
   render() {
     const {entry, getAsset} = this.props;
-    let image = getAsset(entry.getIn(["data", "image"]));
+    let banner_image = getAsset(entry.getIn(["data", "banner_image"]));
+    let banner_right_image = getAsset(entry.getIn(["data", "banner_right_image"]));
 
     // Bit of a nasty hack to make relative paths work as expected as a background image here
-    if (image && !image.fileObj) {
-        image = window.parent.location.protocol + "//" + window.parent.location.host + image;
+    if (banner_image && !banner_image.fileObj) {
+      banner_image = window.parent.location.protocol + "//" + window.parent.location.host + banner_image;
+    }
+
+    if (banner_right_image && !banner_right_image.fileObj) {
+      banner_right_image = window.parent.location.protocol + "//" + window.parent.location.host + banner_right_image;
     }
 
     return <div>
-        <Jumbotron image={image} title={entry.getIn(["data", "title"])} subtitle={entry.getIn(["data", "subtitle"])}/>
+        <Jumbotron banner_image={banner_image} banner_right_image={banner_right_image} title={entry.getIn(["data", "title"])} subtitle={entry.getIn(["data", "subtitle"])}/>
 
+
+        <h1>homepage test</h1>
         <div className="bg-grey-1 pv4">
           <div className="flex-l mhn1-l ph3 center mw7">
             <h2 className="f2 b lh-title mb2 w-40-l">{entry.getIn(["data", "blurb", "heading"])}</h2>

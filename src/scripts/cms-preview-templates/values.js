@@ -21,20 +21,21 @@ const MediaBlock = ({heading, text, imageUrl, reverse}) => {
 export default class ValuesPreview extends React.Component {
   render() {
     const {entry, getAsset} = this.props;
-    
+
     let image = getAsset(entry.getIn(["data", "image"]));
 
     // Bit of a nasty hack to make relative paths work as expected as a background image here
     if (image && !image.fileObj) {
       image = window.parent.location.protocol + "//" + window.parent.location.host + image;
     }
-    
+
     const entryValues = entry.getIn(["data", "values"]);
     const values = entryValues ? entryValues.toJS() : [];
-    
+
     return <div>
       <Jumbotron image={image} title={entry.getIn(["data", "title"])} />
       <div className="bg-off-white pv4">
+        <h1>values this is a test</h1>
         <div className="mw7 center ph3 pt4">
           {values.map(({text, heading, imageUrl}, i) =>
             <MediaBlock key={i} text={text} heading={heading} imageUrl={imageUrl} reverse={i % 2 === 0} />
