@@ -64,6 +64,15 @@
     color: $brand-secondary;
     border-color: $grey-lighter;
   }
+
+  // margins
+  &-margin-small {
+    margin: 30px 0px;
+
+    @media (max-width: $breakpoint-small) {
+      margin: 10px 0 0;
+    }
+  }
 }
 
 

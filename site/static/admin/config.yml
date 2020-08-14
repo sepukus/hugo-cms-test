@@ -227,6 +227,7 @@ collections: # A list of collections the CMS should be able to edit
             name: "split_title_content_background"
             widget: object
             fields:
+              - { label: Disable Left Right, name: disable_leftright, widget: boolean, default: false }
               - { label: Title, name: title, widget: string, required: true }
               - { label: Lead Text, name: leadtext, widget: markdown, required: false }
               - { label: Content, name: content, widget: markdown, required: false }

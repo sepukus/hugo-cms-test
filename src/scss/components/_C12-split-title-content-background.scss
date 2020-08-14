@@ -2,4 +2,14 @@
   @include componentSpacingCompile();
   @include unorderList();
   background-color: $grey-lightest;
+
+  &__small-padding {
+    padding-top: $global-padding-medium;
+    padding-bottom: $global-padding-medium / 2;
+
+    @media (max-width: $breakpoint-small) {
+      padding-top: $global-padding-medium-mobile;
+      padding-bottom: $global-padding-medium-mobile / 2;
+    }
+  }
 }
