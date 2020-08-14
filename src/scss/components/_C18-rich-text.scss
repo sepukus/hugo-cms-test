@@ -1,5 +1,8 @@
 .C17-rich-text {
-  @include componentSpacingCompile();
-  @include svgLine();
   @include unorderList();
+
+  &-top {
+    @include componentSpacingCompile();
+    @include svgLine();
+  }
 }

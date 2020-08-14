@@ -289,6 +289,7 @@ collections: # A list of collections the CMS should be able to edit
             name: "rich-text"
             widget: object
             fields:
+              - { label: Rich text top section, name: richtext_top, widget: boolean, default: true }
               - { label: Rich Text Content, name: richtext, widget: markdown, required: true }
 
   - name: "settings"

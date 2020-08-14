@@ -1,13 +1,14 @@
-<div class="uk-container C17-rich-text">
-    <svg class="C17-rich-text__svg" width="100%" height="2" viewBox="0 0 1144 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+<div class="C17-rich-text {{if .richtext_top}}uk-container C17-rich-text-top{{end}}">
+    {{if .richtext_top}}
+    <svg class="C17-rich-text-top__svg" width="100%" height="2" viewBox="0 0 1144 2" fill="none" xmlns="http://www.w3.org/2000/svg">
         <line x1="1" y1="1" x2="42" y2="1" stroke="#F59C00" stroke-width="2" stroke-linecap="round"/>
         <line x1="56" y1="1" x2="1143" y2="1" stroke="#D0D0D0" stroke-width="2" stroke-linecap="round"/>
     </svg>
-    <svg class="C17-rich-text__svg-mobile" width="100%" height="2" viewBox="0 0 272 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg class="C17-rich-text-top__svg-mobile" width="100%" height="2" viewBox="0 0 272 2" fill="none" xmlns="http://www.w3.org/2000/svg">
         <line x1="1" y1="1" x2="31" y2="1" stroke="#F59C00" stroke-width="2" stroke-linecap="round"/>
         <line x1="41" y1="1" x2="271" y2="1" stroke="#D0D0D0" stroke-width="2" stroke-linecap="round"/>
     </svg>
-
+    {{end}}
     <div class="uk-text-left" uk-grid>
         <div class="uk-width-1-1@s uk-width-3-4@l uk-align-center">
             {{if .richtext}}
