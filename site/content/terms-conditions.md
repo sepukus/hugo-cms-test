@@ -46,4 +46,8 @@ modules:
       * The Samaritans is one of PwC’s partner charities. As part of this the firm holds ‘One Firm One Brew’ events where people have a cup of tea, cake and talk whilst also making a donation to the Samaritans.
 
       * Walk n’ Talks. Organizing times where people can go for a lunchtime walk led by wellbeing champions. This is an opportunity to connect, have conversations and check in with each other.
+  - type: image_gallery
+    gallery:
+      - gallery_image: img/galleryimagetest1.jpg
+      - gallery_image: img/galleryimagetest2.jpg
 ---
