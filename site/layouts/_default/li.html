@@ -1,6 +1,9 @@
-<a href="{{ .RelPermalink }}" class="no-underline pa3 bg-grey-1 br1 mb2 db raise w-100">
-	<h2 class="f3 b lh-title mb1 primary">{{ .Title }}</h2>
-	<p class="mid-gray lh-title mb2">{{ .Date.Format "Mon, Jan 2, 2006" }}</p>
-	<p class="mb0">{{ .Description }}</p>
-	<p class="link b dib black mb0">Read more →</p>
+<a href="{{ .RelPermalink }}" class="uk-card uk-card-default uk-card-small uk-card-box-shadow uk-card-hover uk-card-body uk-light uk-width-1-1 uk-link-toggle">
+	<div class="uk-card-body">
+		<h4 class="uk-link-toggle">{{ .Title }}</h4>
+		<p>{{ .Description }}</p>
+	</div>
+	<div class="uk-card-footer">
+		Read more
+	</div>
 </a>

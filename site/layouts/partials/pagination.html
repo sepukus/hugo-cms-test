@@ -1,18 +1,25 @@
 {{ if gt .Paginator.TotalPages 1 }}
- 
-<nav class="cf pa3">
+
+<nav class="uk-container uk-margin-bottom">
+    <svg class="C13-our-board__svg" width="100%" height="2" viewBox="0 0 1144 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="1" y1="1" x2="42" y2="1" stroke="#F59C00" stroke-width="2" stroke-linecap="round"/>
+        <line x1="56" y1="1" x2="1143" y2="1" stroke="#D0D0D0" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    <svg class="C13-our-board__svg-mobile" width="100%" height="2" viewBox="0 0 272 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="1" y1="1" x2="31" y2="1" stroke="#F59C00" stroke-width="2" stroke-linecap="round"/>
+        <line x1="41" y1="1" x2="271" y2="1" stroke="#D0D0D0" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+
     {{ if .Paginator.HasNext }}
-    <a class="fl dib link dim black f6 f5-ns b pa2" title="Next Page" href="{{ .Paginator.Next.URL }}">
-        &larr; Previous
+    <a title="Next Page" href="{{ .Paginator.Next.URL }}" class="uk-button uk-button-minimal uk-float-right" uk-toggle>
+         Next <span uk-icon="icon: chevron-right"></span>
     </a>
     {{ end }}
-    <div class="pagination">
-        {{ if .Paginator.HasPrev }}
-        <a class="fl dib link dim black f6 f5-ns b pa2" title="Previous Page" href="{{ .Paginator.Prev.URL }}">
-            Next &rarr;
+    {{ if .Paginator.HasPrev }}
+        <a title="Previous Page" href="{{ .Paginator.Prev.URL }}" class="uk-button uk-button-minimal uk-float-left" uk-toggle>
+            <span uk-icon="icon: chevron-left"></span> Previous
         </a>
-        {{ end }}
-    </div>
+    {{ end }}
 </nav>
- 
+
 {{ end }}

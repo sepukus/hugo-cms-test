@@ -9,6 +9,9 @@ collections: # A list of collections the CMS should be able to edit
     create: true # Allow users to create new documents in this collection
     fields: # The fields each document in this collection have
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Banner Title", name: "banner_title", widget: "string", required: false }
+      - { label: "Banner Description", name: "banner_description", widget: "string", required: false }
+      - { label: "Banner Background Image", name: "banner_image", widget: "image", required: false }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Intro Blurb", name: "description", widget: "text" }
       - { label: "Image", name: "image", widget: "image", required: false }
