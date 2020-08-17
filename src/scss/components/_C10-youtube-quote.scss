@@ -1,5 +1,14 @@
 .C10-youtube-quote {
-  background-color: $grey-lightest;
+  @media (max-width: $breakpoint-small) {
+    &.uk-container {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &__container {
+    background-color: $grey-lightest;
+  }
 
   @media (max-width: $breakpoint-small) {
     &__iframe-container {
@@ -9,6 +18,12 @@
 
   &__info {
     padding: 20px 0 0;
+    @media (max-width: $breakpoint-small) {
+      .uk-container {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+    }
   }
 
   &__author {
