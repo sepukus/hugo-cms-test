@@ -6,7 +6,7 @@ window.UIkit = UIkit;
  * Import Classes
  */
 // import $ from 'jquery';
-import {Namespace, Browser, StickyHeader, Statistics, Members, Friends, ContactForm} from "./modules";
+import {Namespace, Browser, StickyHeader, Statistics, Members, Friends, ContactForm, ShareSocial} from "./modules";
 
 // loads the Icon plugin
 UIkit.use(Icons);
@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
   new Members();
   new Friends();
   new ContactForm();
+  new ShareSocial();
 });
 
 // HMR (Hot Module Replacement)

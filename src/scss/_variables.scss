@@ -47,12 +47,14 @@ $global-padding-medium-mobile: 30px;
 $global-padding-minimal: 20px;
 $global-padding-minimal-mobile: 10px;
 $global-medium-gutter: 20px !default;
+$base-hr-border-width: 2px;
 
 // colours
 $global-black: #000;
 $global-white: #FFF;
 $global-primary-background: $brand-primary;
 $global-secondary-background: $brand-secondary;
+$base-hr-border: $grey-lighter;
 
 // cards
 $card-default-background: $grey-lightest;
