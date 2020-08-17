@@ -44,9 +44,11 @@
 }
 
 // global spacing mixing
-@mixin componentSpacingCompile($small: false) {
+@mixin componentSpacingCompile($small: false, $paddingTop: true) {
   @if $small {
-    padding-top: $global-padding-minimal;
+    @if $paddingTop {
+      padding-top: $global-padding-minimal;
+    }
     padding-bottom: $global-padding-minimal / 2;
 
     @media (max-width: $breakpoint-small) {
@@ -54,7 +56,9 @@
       padding-bottom: $global-padding-minimal-mobile / 2;
     }
   } @else {
-    padding-top: $global-padding;
+    @if $paddingTop {
+      padding-top: $global-padding;
+    }
     padding-bottom: $global-padding / 2;
 
     @media (max-width: $breakpoint-small) {

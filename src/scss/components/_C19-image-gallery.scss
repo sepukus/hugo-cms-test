@@ -1,5 +1,5 @@
 .C19-image-gallery {
-  @include componentSpacingCompile();
+  @include componentSpacingCompile($paddingTop:false);
 
   .uk-slidenav {
     transition: background-color 0.1s ease-in-out;
