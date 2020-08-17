@@ -313,6 +313,11 @@ modules:
           Quisque tincidunt, odio ac lacinia faucibus, orci elit finibus nisl,
           ut ullamcorper enim purus ut nisl."'
         exec_board_linkedin: http://www.linkedin.com/
+      - exec_board_description: Description goes here
+        exec_board_name: Hello
+        exec_board_image: img/andrew-culleton.jpg
+        exec_board_title: This is a title
+        exec_board_quote: This is my quote
     our_board_exec_image: img/vicki-forbes.jpg
     our_board_exec_quote: '**Quote "**Lorem ipsum dolor sit amet, consectetur
       adipiscing elit. Quisque tincidunt, odio ac lacinia faucibus, orci elit
