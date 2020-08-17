@@ -112,14 +112,6 @@ collections: # A list of collections the CMS should be able to edit
         name: "modules"
         widget: "list"
         types:
-          - label: "Accordion"
-            name: "accordion"
-            widget: object
-            fields:
-              - { label: Name, name: name, widget: string }
-              - { label: Subtitle, name: subtitle, widget: string }
-              - { label: Description, name: description, widget: markdown }
-              - { label: Image, name: image, widget: image }
           - label: "Our Members"
             name: "our_members"
             widget: "list"

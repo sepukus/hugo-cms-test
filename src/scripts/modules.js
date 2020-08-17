@@ -18,7 +18,6 @@ export * from "./classes/URLParameterChecker";
 export * from "./classes/keyboardWCAG";
 
 // Components
-export * from "./components/C01-Accordion";
 export * from "./components/C02-StickyHeader";
 export * from "./components/C05-Statistics";
 export * from "./components/C09-Members";
