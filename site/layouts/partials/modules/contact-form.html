@@ -28,21 +28,21 @@
             <label>Don’t fill this out if you're human: <input name="bot-field"></label>
           </p>
           <div class="uk-margin">
-            <label class="uk-form-label">Name</label>
+            <label class="uk-form-label">Name<span class="uk-text-danger">*</span></label>
             <div class="uk-form-controls">
               <input id="fullname" class="uk-input" type="text" name="fullname" required minlength="3" maxlength="60" pattern="^[a-zA-Z ]*$">
               <span class="uk-text-danger"></span>
             </div>
           </div>
           <div class="uk-margin">
-            <label class="uk-form-label">Email Address</label>
+            <label class="uk-form-label">Email Address<span class="uk-text-danger">*</span></label>
             <div class="uk-form-controls">
               <input id="email" class="uk-input" type="email" name="email" required pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$">
               <span class="uk-text-danger"></span>
             </div>
           </div>
           <div class="uk-margin">
-            <label class="uk-form-label">Message or comment</label>
+            <label class="uk-form-label">Message or comment<span class="uk-text-danger">*</span></label>
             <textarea id="message" class="uk-textarea uk-height-small" name="message" required maxlength="1000"></textarea>
             <span class="uk-text-danger"></span>
           </div>
