@@ -56,11 +56,22 @@ modules:
         pdf-downloads-list-file: img/dummy.pdf
         pdf-downloads-list-text: Supporting the mental health of furloughed workers
           during the coronavirus outbreak.
+        pdf_downloads_list_file: img/dummy.pdf
+        pdf_downloads_list_heading: PDF Download 1
+        pdf_downloads_list_text: "Supporting the mental health of furloughed workers
+          during the coronavirus outbreak "
       - pdf-downloads-list-heading: PDF Download
         pdf-downloads-list-file: img/dummy.pdf
         pdf-downloads-list-text: MHFA England address your stress toolkit.
+        pdf_downloads_list_heading: PDF Download 2
+        pdf_downloads_list_file: img/dummy.pdf
+        pdf_downloads_list_text: MHFA England address your stress toolkit
       - pdf-downloads-list-heading: PDF Download
         pdf-downloads-list-text: AIA Survey of Health and Wellbeing of employees in Asia-Pacific.
         pdf-downloads-list-file: img/dummy.pdf
+        pdf_downloads_list_heading: PDF Download 3
+        pdf_downloads_list_file: img/dummy.pdf
+        pdf_downloads_list_text: AIA Survey of Health and Wellbeing of employees in Asia-Pacific
     pdf-downloads-heading: Download Resources
+    pdf_downloads_heading: Download resources
 ---
