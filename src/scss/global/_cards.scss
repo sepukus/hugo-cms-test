@@ -4,7 +4,6 @@
 
 .uk-card-white {
   background: $global-white;
-  color: $card-primary-color;
 }
 
 .uk-card-primary .uk-card-title {
@@ -16,8 +15,9 @@
 }
 
 .uk-card-box-shadow {
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #FFFFFF;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08), 0px 6px 16px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
-  box-shadow: 7px 5px 10px #DEDEDE;
 }
 
 .uk-card-no-box-shadow {

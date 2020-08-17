@@ -1,0 +1,20 @@
+<div class="uk-container uk-container-xsmall C20-pdf">
+  <h3>{{ .pdf_downloads_heading }}</h3>
+  <div class="uk-grid-column-small uk-grid-row-small uk-child-width-1-2@s uk-text-left" uk-grid uk-height-match="target: .uk-card">
+    {{ range $index, $element := .pdf_downloads_list }}
+    <div>
+      <a href="{{$element.pdf_downloads_list_file}}" class="uk-card uk-card-white uk-card-box-shadow uk-flex-middle uk-link-toggle" uk-grid>
+        <div class="uk-width-auto">
+          <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M29.8567 14.0308L31.4834 15.6659C32.1722 16.3582 32.1722 17.4777 31.4834 18.1627L17.2457 32.4808C16.5569 33.1731 15.4431 33.1731 14.7616 32.4808L0.516602 18.1627C-0.172201 17.4704 -0.172201 16.3509 0.516602 15.6659L2.14335 14.0308C2.83948 13.3311 3.97527 13.3458 4.65674 14.0603L13.0689 22.9354V1.76766C13.0689 0.788082 13.853 0 14.8276 0H17.1724C18.147 0 18.9311 0.788082 18.9311 1.76766V22.9354L27.3433 14.0603C28.0247 13.3385 29.1605 13.3237 29.8567 14.0308Z" fill="#B60057"/>
+          </svg>
+        </div>
+        <div class="uk-card-body uk-width-expand">
+          <h4 class="C20-pdf__subheading uk-link-heading">{{$element.pdf_downloads_list_heading}}</h4>
+          <p>{{$element.pdf_downloads_list_text}}</p>
+        </div>
+      </a>
+    </div>
+    {{end}}
+  </div>
+</div>
