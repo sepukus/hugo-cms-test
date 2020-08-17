@@ -12,7 +12,7 @@ class ContactForm extends Component {
 
     if (super.exists()) {
       const self = this;
-      const form = document.getElementById("cmhaaForm");
+      const form = document.getElementById("contact");
       const fullname = document.getElementById("fullname");
       const email    = document.getElementById("email");
       const message  = document.getElementById("message");
