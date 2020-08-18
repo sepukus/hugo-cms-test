@@ -14,7 +14,7 @@
       {{- range $secondaryFilter := $filters -}}        
         {{- if ne $primaryFilter $secondaryFilter -}}
           {{- $secondaryTaxonomies := index $.Site.Taxonomies $secondaryFilter -}}  
-          {{- $.Scratch.Add "numRelations" dict -}}
+          {{- $.Scratch.Add "relations" dict -}}
 
           {{- /* Fourth Loop - Second Taxonomy Taxonomies */ -}}
           {{- range $secondaryTax, $s := $secondaryTaxonomies -}}
@@ -27,17 +27,25 @@
               {{- $v1 := where .Site.Pages $primaryParam $primaryTitle -}}
               {{- $v2 := where .Site.Pages $secondaryParam $secondaryTitle -}}
               {{- $filtered := $v1 | intersect $v2 -}}
-              {{- $filteredLen := len $filtered -}}
+
+              {{- $.Scratch.Add "relation_ids" slice -}}
+              {{- range $i, $page := $filtered -}}
+                {{/* $page.File.UniqueID */}}
+                {{- $.Scratch.Add "relation_ids" $page.File.UniqueID }}
+              {{- end -}}
+              {{/*- $filteredLen := len $filtered -*/}}
               
               {{- /* Assign to a map with Taxonomy title as key */ -}}
-              {{- $.Scratch.SetInMap "numRelations" $secondaryTitle $filteredLen -}}              
+              {{- $relationIDs := $.Scratch.Get "relation_ids" -}}
+              {{- $.Scratch.SetInMap "relations" $secondaryTitle $relationIDs -}}              
+              {{- $.Scratch.Delete "relation_ids" -}}
             {{- end -}}
           {{- end -}}
 
           {{- /* Assign to a map with Taxonomy type of second Taxonomy  as key */ -}}
-          {{- $relationData := $.Scratch.Get "numRelations" -}}
+          {{- $relationData := $.Scratch.Get "relations" -}}
           {{- $.Scratch.SetInMap "secondaryFilter" $secondaryFilter $relationData -}}
-          {{- $.Scratch.Delete "numRelations" -}}
+          {{- $.Scratch.Delete "relations" -}}
 
           {{- end -}}
         {{- end -}}   

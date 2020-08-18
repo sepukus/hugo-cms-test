@@ -56,7 +56,6 @@ class App extends React.Component {
             hitsPerPage: 1000,
           })
           .then(({ hits }) => {
-            console.log(hits);
             this._filterAvailable(hits);
           })
           .catch((err) => {
@@ -113,7 +112,21 @@ class App extends React.Component {
               relationship[active.parent] = false;
             }
 
-            const hasRelationship = relationships[filter.parent][filter.name][active.parent][active.name];
+            const hasRelationship = relationships[filter.parent][filter.name][active.parent][active.name].length;
+
+            // Fact sheets
+            // Asseessment ....
+            // Large org size
+            /*if (filter.parent == "organisation_size" && filter.name.indexOf("Large") > -1) {
+              console.log(filter.name);
+              // console.log(hasRelationship);
+
+              console.log(relationships[filter.parent][filter.name]);
+
+              // Object.keys(relationship).every((el) => {
+              //   return relationship[el];
+              // });
+            }*/
 
             if (hasRelationship > 0) {
               relationship[active.parent] = true;
@@ -124,7 +137,9 @@ class App extends React.Component {
             return relationship[el];
           });
 
-          filter.enabled = isEnabled;
+          if (!filter.active) {
+            filter.enabled = isEnabled;
+          }
 
           newFilters[key].push(filter);
         });
