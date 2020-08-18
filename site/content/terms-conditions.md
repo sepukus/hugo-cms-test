@@ -85,4 +85,15 @@ modules:
       - pdf_downloads_list_heading: PDF Download 3
         pdf_downloads_list_file: img/dummy.pdf
         pdf_downloads_list_text: AIA Survey of Health and Wellbeing of employees in Asia-Pacific.
+  - type: split_title_content_background
+    disable_leftright: true
+    title: Want to know more?
+    content: >-
+      Get in touch with our team and we can run you through the success of this
+      bespoke program.
+
+
+      #### Full Name (Functional Lead)\
+
+      <mailto:functionallead@emailaddress.com>
 ---
