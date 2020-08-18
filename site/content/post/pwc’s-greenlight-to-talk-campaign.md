@@ -3,10 +3,12 @@ title: PWC’s Greenlight to talk campaign
 banner_title: PWC’s Greenlight to talk campaign
 banner_description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
   Cras quam libero, luctus et posuere nec, euismod sed consectetur adipiscing.
+banner_image: img/bannerrightimage.jpg
 date: 2020-08-18T00:57:12.401Z
 description: PwC UK wanted to create an open culture, where employees felt
   comfortable talking about mental health, and were more likely to speak up when
   they needed support.
+image: img/galleryimagetest1.jpg
 modules:
   - type: image_gallery
     gallery:
