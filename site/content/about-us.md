@@ -1,6 +1,8 @@
 ---
 page_title: About us
 title: About us
+meta_keywords: Mental Awareness, CMHAA, About Us, Keyword, Keyword.
+meta_description: This is a detailed description of the about us page.
 banner_title: Working together to advance the business community's approach to
   mental health in the workplace.
 banner_image: img/about-us.jpg
