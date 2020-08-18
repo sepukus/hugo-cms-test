@@ -95,5 +95,5 @@ modules:
 
       #### Full Name (Functional Lead)\
 
-      <mailto:functionallead@emailaddress.com>
+      [functionallead@emailaddress.com](mailto:functionallead@emailaddress.com)
 ---
