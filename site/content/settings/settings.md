@@ -24,4 +24,9 @@ footer:
       - footer_pirvacy_link_text: Terms and Conditions
         footer_pirvacy_link_url: /terms-conditions
     footer_ga: UA-175325361-1
+seo:
+  - seo_og_image: img/ogimage.jpg
+    seo_og_url: https://cmhaa.org.au/
+    seo_og_type: website
+    seo_og_twitter: cmhaa
 ---
