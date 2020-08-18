@@ -1,10 +1,11 @@
 ---
-slug: homepage
 title: Homepage
 banner_title: Together in the business of improving workplace mental health
 banner_image: img/main-hero.jpg
 banner_cta_link: /about-us
 banner_cta_text: FIND OUT HOW
+meta_keywords: Keywords, Keywords
+meta_description: This is a description.
 modules:
   - type: split_title_content
     title: Who we are
@@ -134,4 +135,5 @@ modules:
         feat_member_link: /link-to-member
         feat_member_cta: HEAR HER STORY
     feat_member_read_more: /link-to-more-stories
+slug: homepage
 ---
