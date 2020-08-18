@@ -19,4 +19,9 @@
       padding-bottom: $global-padding-medium-mobile / 2;
     }
   }
+
+  a {
+    color: $global-black;
+    text-decoration: underline;
+  }
 }

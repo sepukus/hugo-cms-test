@@ -76,15 +76,22 @@
      markdown richtext editor content
    ========================================================================== */
 
-  ul {
+  ul,
+  ol {
     padding: 0;
     list-style: none;
   }
-  ul > * > :last-child { margin-bottom: 0; }
+  ul > * > :last-child,
+  ol > * > :last-child { margin-bottom: 0; }
   ul > :nth-child(n+2),
-  ul > * > ul { margin-top: $list-margin-top; }
-  ul > * { padding-left: $list-padding-left; }
-  ul > ::before {
+  ol > :nth-child(n+2),
+  ul > * > ul,
+  ol > * > ol { margin-top: $list-margin-top; }
+  ul > *,
+  ol > * { padding-left: $list-padding-left; }
+  ol > * { counter-increment: decimal; }
+  ul > ::before,
+  ol > ::before {
     content: '';
     position: relative;
     left: (-$list-padding-left);
@@ -95,8 +102,16 @@
     list-style-position: inside;
     text-align: right;
   }
-  ul > ::before { list-style-type: disc; }
-  ul > ::before { color: $brand-secondary-raspberry !important; }
+  ul > ::before { list-style-type: disc; color: $brand-secondary-raspberry !important; }
+  ol > ::before {
+    content: counter(decimal, decimal) '\200A.\00A0';
+    color: $brand-secondary-raspberry !important;
+    font-family: Futura;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 140%;
+  }
 }
 
 @mixin svgLine() {

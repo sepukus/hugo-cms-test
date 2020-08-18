@@ -19,4 +19,12 @@
       }
     }
   }
+
+  a.uk-link-heading:hover,
+  .uk-link-heading a:hover,
+  .uk-link-toggle:hover .uk-link-heading,
+  .uk-link-toggle:focus .uk-link-heading {
+    color: $brand-secondary-raspberry;
+    text-decoration: $brand-secondary-raspberry;
+  }
 }
