@@ -7,6 +7,11 @@ date: 2020-08-18T00:57:12.401Z
 description: PwC UK wanted to create an open culture, where employees felt
   comfortable talking about mental health, and were more likely to speak up when
   they needed support.
+modules:
+  - type: image_gallery
+    gallery:
+      - gallery_image: img/galleryimagetest1.jpg
+      - gallery_image: img/galleryimagetest2.jpg
 ---
 ### The challenge
 
