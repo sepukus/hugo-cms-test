@@ -29,4 +29,5 @@ seo:
     seo_og_url: https://cmhaa.org.au/
     seo_og_type: website
     seo_og_twitter: cmhaa
+    seo_og_sitename: Corporate Mental Health Alliance
 ---
