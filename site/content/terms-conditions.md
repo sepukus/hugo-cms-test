@@ -93,7 +93,8 @@ modules:
       bespoke program.
 
 
-      #### Full Name (Functional Lead)\
+      #### Full Name (Functional Lead)
+
 
       [functionallead@emailaddress.com](mailto:functionallead@emailaddress.com)
 ---
