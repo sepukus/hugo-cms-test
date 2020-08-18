@@ -1,0 +1,34 @@
+{{ $related := (where (.Site.RegularPages.Related .) "Type" "post") | first 3 }}
+{{ with $related }}
+<div class="uk-section uk-background-muted">
+  <div class="uk-container">
+    <h3 class="uk-text-center">You might be interested in</h3>
+    <div class="uk-container">
+      <div class="uk-grid-match uk-child-width-expand@s uk-text-center" uk-grid>
+        {{ range . }}
+        <a href="{{ .RelPermalink }}" >
+          <div class="uk-card uk-card-white uk-card-box-shadow">
+            <div class="uk-card-media-left uk-cover-container">
+              {{ if .Params.banner_image}}
+                <img src="{{.Params.banner_image}}" uk-cover>
+              {{ else if .Params.banner_right_image }}
+                <img src="{{.Params.banner_right_image}}" uk-cover>
+              {{ else if .Params.image }}
+                <img src="{{.Params.image}}" uk-cover>
+              {{end}}
+              <canvas width="360" height="210"></canvas>
+            </div>
+            <div class="uk-card-body">
+              <p class="lead mb-0">{{ .Title | markdownify}}</p>
+            </div>
+            <div class="uk-card-footer">
+              <strong>Focus</strong> Assessment of organisational approach
+            </div>
+          </div>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}
