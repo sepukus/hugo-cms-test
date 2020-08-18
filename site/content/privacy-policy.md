@@ -1,5 +1,7 @@
 ---
 title: Privacy Policy
+meta_keywords: Privacy Policy, Mental Awareness, CMHAA, Keyword, Keyword.
+meta_description: This is a detailed description of the page.
 banner_title: Headline over 2 lines
 banner_description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
   Cras quam libero, luctus et posuere nec, euismod sed consectetur adipiscing.
