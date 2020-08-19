@@ -41,8 +41,6 @@ There were three key aspects of the campaign from the beginning:
 2. **Storytelling.** Beyond the Green Light to Talk day, PwC wanted to sustain the change in culture and encourage conversations around mental health all year round. Every month since May 2016,a PwC employee has told their mental health story, creating a simple and personal video. This is shared as part of the ‘Green Light to Talk series’, right across the fim via its intranet news channel.
 3. **Mental Health Advocates.** PwC wanted to create multiple pathways of support and also show strong leadership in this space. A group of six senior partners volunteered to share their mental health story widely and be available to talk to employees who were concerned about themselves or someone else. Their role is to listen in confidence and without judgement, and signpost to the right support. There are now 22 Mental Health Advocates across the UK.
 
-
-
 #### Podcast
 
-<iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/831910681&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/myhealthrevolution" title="My Health Revolution" target="_blank" style="color: #cccccc; text-decoration: none;">My Health Revolution</a> · <a href="https://soundcloud.com/myhealthrevolution/phillippa-powell-wellbeing-at-chorus" title="Phillippa Powell - Wellbeing at Chorus" target="_blank" style="color: #cccccc; text-decoration: none;">Phillippa Powell - Wellbeing at Chorus</a></div>
+Plugin
