@@ -226,6 +226,12 @@ collections: # A list of collections the CMS should be able to edit
                   - { label: Feature Member Link, name: feat_member_link, widget: string }
                   - { label: Feature Member CTA Text, name: feat_member_cta, widget: string }
               - { label: Read more stories link, name: feat_member_read_more, widget: string }
+          - label: "C22: Souncloud"
+            name: "soundcloud"
+            widget: object
+            fields:
+              - { label: Souncloud Heading, name: souncloud_heading, widget: string, required: true }
+              - { label: Souncloud iFrame URL, name: souncloud_url, widget: string, required: true }
 
   - name: "resources"
     label: "Resources"
@@ -528,6 +534,12 @@ collections: # A list of collections the CMS should be able to edit
                   - { label: Feature Member Link, name: feat_member_link, widget: string }
                   - { label: Feature Member CTA Text, name: feat_member_cta, widget: string }
               - { label: Read more stories link, name: feat_member_read_more, widget: string }
+          - label: "C22: Souncloud"
+            name: "souncloud"
+            widget: object
+            fields:
+              - { label: Souncloud Heading, name: souncloud_heading, widget: string, required: true }
+              - { label: Souncloud iFrame URL, name: souncloud_url, widget: string, required: true }
 
   - name: "settings"
     label: "Global Settings"
