@@ -30,9 +30,9 @@ modules:
       - pdf_downloads_list_heading: PDF Download 3
         pdf_downloads_list_file: img/dummy.pdf
         pdf_downloads_list_text: AIA Survey of Health and Wellbeing of employees in Asia-Pacific
-  - type: souncloud
-    souncloud_url: https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/831910681&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true
+  - type: soundcloud
     souncloud_heading: Podcast
+    souncloud_url: https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/831910681&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true
 ---
 ### The challenge
 
