@@ -9,7 +9,11 @@
             <div class="uk-padding-small">
                 <div class="uk-card uk-card-white uk-card-box-shadow">
                     <div class="uk-card-media-top">
-                        <img src="{{ $element.feat_member_image }}" alt="image for {{ $element.feat_member_description }}">
+                        {{if $element.feat_member_image}}
+                            <img src="{{ $element.feat_member_image }}" alt="image for {{ $element.feat_member_description }}">
+                        {{else}}
+                            <img src="/img/placeholder-noimage.gif" alt="image for {{ $element.feat_member_description }}" />
+                        {{end}}
                     </div>
                     <div class="uk-card-body uk-icon-adjust">
                         <p>{{ $element.feat_member_description }}</p>

@@ -510,7 +510,7 @@ collections: # A list of collections the CMS should be able to edit
                 widget: list
                 allow_add: true
                 fields:
-                  - { label: PDF Heading, name: pdf_downloads_list_heading, widget: string, required: false }
+                  - { label: PDF Heading, name: pdf_downloads_list_heading, widget: string, required: true }
                   - { label: PDF File, name: "pdf_downloads_list_file", widget: file, required: true }
                   - { label: PDF Text, name: pdf_downloads_list_text, widget: string, required: false }
           - label: "C21: Feature Member Stories"
