@@ -85,7 +85,7 @@ index = 0
 
 # 6 categories times by i (random)
 for cat in categories:
-  for i in range(random.randrange(10, 20)):
+  for i in range(random.randrange(50, 100)):
     foc = random.choice(focus)
     role = random.choice(roles)
     org = random.choice(organisation_size)
