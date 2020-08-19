@@ -31,4 +31,10 @@ seo:
     seo_og_twitter: cmhaa
     seo_og_sitename: Corporate Mental Health Alliance
     seo_og_description: Corporate Mental Health Alliance description goes here.
+article:
+  - article_title: Want to know more?
+    article_description: Get in touch with our team and we can run you through the
+      success of this bespoke program.
+    article_fullname: Full Name (Functional Lead)
+    article_email: functionallead@emailaddress.com
 ---
