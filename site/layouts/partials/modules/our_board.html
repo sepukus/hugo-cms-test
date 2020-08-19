@@ -23,7 +23,7 @@
         {{ $members_count_real := (sub $members_count 1) }}
         {{ range $index, $element := .board }}
         <div class="C13-our-board__member C13-our-board__member{{$index}} ">
-            <a class="uk-card uk-card-white uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid href="#modal-group-{{$index}}" uk-toggle>
+            <a class="uk-card uk-card-white uk-grid-collapse uk-child-width-1-2 uk-margin" uk-grid href="#modal-group-{{$index}}" uk-toggle>
                 <div class="uk-card-media-left uk-cover-container">
                     <img src="{{ $element.our_board_image }}" alt="image of {{ $element.our_board_name }}">
                 </div>
@@ -112,10 +112,10 @@
                     {{ .our_board_exec_description | markdownify }}
 
                     <div class="uk-container uk-container-xsmall C13-our-board__member uk-align-center">
+                        <div class="uk-text-center" >
                         {{ $exec_count_real := (sub $exec_count 1) }}
                         {{ range $index, $element := .exec_board }}
-                        <div class="uk-child-width-expand@s uk-text-center" uk-grid>
-                            <a uk-grid href="#modal-group-exec{{$index}}" uk-toggle>
+                            <a class="uk-card uk-grid-collapse uk-child-width-1-2 uk-margin" uk-grid href="#modal-group-exec{{$index}}" uk-toggle uk-grid>
                                 <div class="uk-card-media-left uk-cover-container">
                                     <img src="{{ $element.exec_board_image }}" alt="image of {{ $element.exec_board_name }}">
                                 </div>
@@ -127,70 +127,70 @@
                                 </div>
                             </a>
                             <div id="modal-group-exec{{$index}}" uk-modal class="C13-our-board">
-                            <div class="uk-modal-dialog">
-                                <div class="uk-modal-header">
-                                    <button class="uk-modal-close-default uk-float-right" type="button" uk-close></button>
-                                </div>
+                                <div class="uk-modal-dialog">
+                                    <div class="uk-modal-header">
+                                        <button class="uk-modal-close-default uk-float-right" type="button" uk-close></button>
+                                    </div>
 
-                                <div class="uk-modal-body">
-                                    <div class="uk-text-left uk-grid" uk-grid="">
-                                        <div class="uk-width-1-1@s uk-width-1-4@m">
-                                            <img class="C13-our-board__member-image" src="{{ $element.exec_board_image }}" alt="image of {{ $element.exec_board_name }}">
+                                    <div class="uk-modal-body">
+                                        <div class="uk-text-left uk-grid" uk-grid="">
+                                            <div class="uk-width-1-1@s uk-width-1-4@m">
+                                                <img class="C13-our-board__member-image" src="{{ $element.exec_board_image }}" alt="image of {{ $element.exec_board_name }}">
 
-                                            <h3>{{ $element.exec_board_name }}</h3>
-                                            <p>{{ $element.exec_board_title }}</p>
-                                            {{ if $element.exec_board_linkedin }}
-                                            <a href="{{ $element.exec_board_linkedin }}" class="uk-icon-button">
-                                                <span uk-icon="linkedin"></span>
-                                            </a>
-                                            {{ end }}
-                                        </div>
-                                        <div class="uk-width-1-1@s uk-width-2-3@m">
-                                            <hr>
-                                            {{if $element.exec_board_quote}}
-                                            <svg class="uk-align-center" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M2 13.3946C2 7.09691 7.09691 2 13.3946 2H46V34.6054C46 40.9031 40.9031 46 34.6054 46H13.3946C7.09691 46 2 40.9031 2 34.6054V13.3946Z" fill="#007E97" stroke="#007E97" stroke-width="4"/>
-                                                <path d="M14.0996 25.7571C14.0996 23.9331 14.8002 22.1763 16.2015 20.4867C17.6225 18.7971 19.2014 17.5683 20.9382 16.8003L21.5007 17.9523C20.1191 18.7203 18.935 19.6803 17.9482 20.8323C16.9811 21.9651 16.4976 23.1171 16.4976 24.2883C16.4976 24.5187 16.5666 24.6915 16.7048 24.8067C16.8627 24.9219 17.06 24.9795 17.2969 24.9795C18.5797 24.8451 19.2705 24.7779 19.3692 24.7779C20.0205 24.7779 20.7211 25.0083 21.4711 25.4691C22.2408 25.9299 22.6256 26.7171 22.6256 27.8307C22.6256 28.7715 22.3098 29.5683 21.6783 30.2211C21.0467 30.8739 20.1487 31.2003 18.9843 31.2003C17.6225 31.2003 16.4679 30.6915 15.5206 29.6739C14.5733 28.6371 14.0996 27.3315 14.0996 25.7571ZM25.9736 25.9875C25.9736 23.9331 26.6841 22.0803 28.1051 20.4291C29.5458 18.7587 31.1149 17.5491 32.8122 16.8003L33.3747 17.9523C31.9931 18.7203 30.809 19.6707 29.8221 20.8035C28.8551 21.9171 28.3715 23.0595 28.3715 24.2307C28.3715 24.4419 28.4307 24.6243 28.5492 24.7779C28.6676 24.9123 28.8748 24.9795 29.1709 24.9795C30.434 24.8451 31.1247 24.7779 31.2431 24.7779C31.9734 24.7779 32.6938 25.0371 33.4043 25.5555C34.1345 26.0547 34.4996 26.8035 34.4996 27.8019C34.4996 28.5891 34.2134 29.3571 33.6411 30.1059C33.0885 30.8355 32.151 31.2003 30.8287 31.2003C29.4077 31.2003 28.2433 30.6723 27.3354 29.6163C26.4275 28.5411 25.9736 27.3315 25.9736 25.9875Z" fill="white"/>
-                                                <path d="M14.0996 25.7571C14.0996 23.9331 14.8002 22.1763 16.2015 20.4867C17.6225 18.7971 19.2014 17.5683 20.9382 16.8003L21.5007 17.9523C20.1191 18.7203 18.935 19.6803 17.9482 20.8323C16.9811 21.9651 16.4976 23.1171 16.4976 24.2883C16.4976 24.5187 16.5666 24.6915 16.7048 24.8067C16.8627 24.9219 17.06 24.9795 17.2969 24.9795C18.5797 24.8451 19.2705 24.7779 19.3692 24.7779C20.0205 24.7779 20.7211 25.0083 21.4711 25.4691C22.2408 25.9299 22.6256 26.7171 22.6256 27.8307C22.6256 28.7715 22.3098 29.5683 21.6783 30.2211C21.0467 30.8739 20.1487 31.2003 18.9843 31.2003C17.6225 31.2003 16.4679 30.6915 15.5206 29.6739C14.5733 28.6371 14.0996 27.3315 14.0996 25.7571ZM25.9736 25.9875C25.9736 23.9331 26.6841 22.0803 28.1051 20.4291C29.5458 18.7587 31.1149 17.5491 32.8122 16.8003L33.3747 17.9523C31.9931 18.7203 30.809 19.6707 29.8221 20.8035C28.8551 21.9171 28.3715 23.0595 28.3715 24.2307C28.3715 24.4419 28.4307 24.6243 28.5492 24.7779C28.6676 24.9123 28.8748 24.9795 29.1709 24.9795C30.434 24.8451 31.1247 24.7779 31.2431 24.7779C31.9734 24.7779 32.6938 25.0371 33.4043 25.5555C34.1345 26.0547 34.4996 26.8035 34.4996 27.8019C34.4996 28.5891 34.2134 29.3571 33.6411 30.1059C33.0885 30.8355 32.151 31.2003 30.8287 31.2003C29.4077 31.2003 28.2433 30.6723 27.3354 29.6163C26.4275 28.5411 25.9736 27.3315 25.9736 25.9875Z" fill="url(#paint0_linear)"/>
-                                                <defs>
-                                                    <linearGradient id="paint0_linear" x1="24.2996" y1="16.8003" x2="24.2996" y2="31.2003" gradientUnits="userSpaceOnUse">
-                                                        <stop stop-color="white"/>
-                                                        <stop offset="1" stop-color="white" stop-opacity="0"/>
-                                                    </linearGradient>
-                                                </defs>
-                                            </svg>
-                                            <p class="uk-text-lead uk-text-italic">{{ $element.exec_board_quote }}</p>
-                                            {{ end }}
-                                            <hr>
-                                            <div class="C13-our-board__member-content">
-                                                {{ $element.exec_board_description | markdownify }}
+                                                <h3>{{ $element.exec_board_name }}</h3>
+                                                <p>{{ $element.exec_board_title }}</p>
+                                                {{ if $element.exec_board_linkedin }}
+                                                <a href="{{ $element.exec_board_linkedin }}" class="uk-icon-button">
+                                                    <span uk-icon="linkedin"></span>
+                                                </a>
+                                                {{ end }}
+                                            </div>
+                                            <div class="uk-width-1-1@s uk-width-2-3@m">
+                                                <hr>
+                                                {{if $element.exec_board_quote}}
+                                                <svg class="uk-align-center" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M2 13.3946C2 7.09691 7.09691 2 13.3946 2H46V34.6054C46 40.9031 40.9031 46 34.6054 46H13.3946C7.09691 46 2 40.9031 2 34.6054V13.3946Z" fill="#007E97" stroke="#007E97" stroke-width="4"/>
+                                                    <path d="M14.0996 25.7571C14.0996 23.9331 14.8002 22.1763 16.2015 20.4867C17.6225 18.7971 19.2014 17.5683 20.9382 16.8003L21.5007 17.9523C20.1191 18.7203 18.935 19.6803 17.9482 20.8323C16.9811 21.9651 16.4976 23.1171 16.4976 24.2883C16.4976 24.5187 16.5666 24.6915 16.7048 24.8067C16.8627 24.9219 17.06 24.9795 17.2969 24.9795C18.5797 24.8451 19.2705 24.7779 19.3692 24.7779C20.0205 24.7779 20.7211 25.0083 21.4711 25.4691C22.2408 25.9299 22.6256 26.7171 22.6256 27.8307C22.6256 28.7715 22.3098 29.5683 21.6783 30.2211C21.0467 30.8739 20.1487 31.2003 18.9843 31.2003C17.6225 31.2003 16.4679 30.6915 15.5206 29.6739C14.5733 28.6371 14.0996 27.3315 14.0996 25.7571ZM25.9736 25.9875C25.9736 23.9331 26.6841 22.0803 28.1051 20.4291C29.5458 18.7587 31.1149 17.5491 32.8122 16.8003L33.3747 17.9523C31.9931 18.7203 30.809 19.6707 29.8221 20.8035C28.8551 21.9171 28.3715 23.0595 28.3715 24.2307C28.3715 24.4419 28.4307 24.6243 28.5492 24.7779C28.6676 24.9123 28.8748 24.9795 29.1709 24.9795C30.434 24.8451 31.1247 24.7779 31.2431 24.7779C31.9734 24.7779 32.6938 25.0371 33.4043 25.5555C34.1345 26.0547 34.4996 26.8035 34.4996 27.8019C34.4996 28.5891 34.2134 29.3571 33.6411 30.1059C33.0885 30.8355 32.151 31.2003 30.8287 31.2003C29.4077 31.2003 28.2433 30.6723 27.3354 29.6163C26.4275 28.5411 25.9736 27.3315 25.9736 25.9875Z" fill="white"/>
+                                                    <path d="M14.0996 25.7571C14.0996 23.9331 14.8002 22.1763 16.2015 20.4867C17.6225 18.7971 19.2014 17.5683 20.9382 16.8003L21.5007 17.9523C20.1191 18.7203 18.935 19.6803 17.9482 20.8323C16.9811 21.9651 16.4976 23.1171 16.4976 24.2883C16.4976 24.5187 16.5666 24.6915 16.7048 24.8067C16.8627 24.9219 17.06 24.9795 17.2969 24.9795C18.5797 24.8451 19.2705 24.7779 19.3692 24.7779C20.0205 24.7779 20.7211 25.0083 21.4711 25.4691C22.2408 25.9299 22.6256 26.7171 22.6256 27.8307C22.6256 28.7715 22.3098 29.5683 21.6783 30.2211C21.0467 30.8739 20.1487 31.2003 18.9843 31.2003C17.6225 31.2003 16.4679 30.6915 15.5206 29.6739C14.5733 28.6371 14.0996 27.3315 14.0996 25.7571ZM25.9736 25.9875C25.9736 23.9331 26.6841 22.0803 28.1051 20.4291C29.5458 18.7587 31.1149 17.5491 32.8122 16.8003L33.3747 17.9523C31.9931 18.7203 30.809 19.6707 29.8221 20.8035C28.8551 21.9171 28.3715 23.0595 28.3715 24.2307C28.3715 24.4419 28.4307 24.6243 28.5492 24.7779C28.6676 24.9123 28.8748 24.9795 29.1709 24.9795C30.434 24.8451 31.1247 24.7779 31.2431 24.7779C31.9734 24.7779 32.6938 25.0371 33.4043 25.5555C34.1345 26.0547 34.4996 26.8035 34.4996 27.8019C34.4996 28.5891 34.2134 29.3571 33.6411 30.1059C33.0885 30.8355 32.151 31.2003 30.8287 31.2003C29.4077 31.2003 28.2433 30.6723 27.3354 29.6163C26.4275 28.5411 25.9736 27.3315 25.9736 25.9875Z" fill="url(#paint0_linear)"/>
+                                                    <defs>
+                                                        <linearGradient id="paint0_linear" x1="24.2996" y1="16.8003" x2="24.2996" y2="31.2003" gradientUnits="userSpaceOnUse">
+                                                            <stop stop-color="white"/>
+                                                            <stop offset="1" stop-color="white" stop-opacity="0"/>
+                                                        </linearGradient>
+                                                    </defs>
+                                                </svg>
+                                                <p class="uk-text-lead uk-text-italic">{{ $element.exec_board_quote }}</p>
+                                                {{ end }}
+                                                <hr>
+                                                <div class="C13-our-board__member-content">
+                                                    {{ $element.exec_board_description | markdownify }}
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="uk-modal-footer uk-text-right">
-                                    <svg class="C13-our-board__svg" width="100%" height="2" viewBox="0 0 1144 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <line x1="1" y1="1" x2="42" y2="1" stroke="#F59C00" stroke-width="2" stroke-linecap="round"/>
-                                        <line x1="56" y1="1" x2="1143" y2="1" stroke="#D0D0D0" stroke-width="2" stroke-linecap="round"/>
-                                    </svg>
-                                    <svg class="C13-our-board__svg-mobile" width="100%" height="2" viewBox="0 0 272 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <line x1="1" y1="1" x2="31" y2="1" stroke="#F59C00" stroke-width="2" stroke-linecap="round"/>
-                                        <line x1="41" y1="1" x2="271" y2="1" stroke="#D0D0D0" stroke-width="2" stroke-linecap="round"/>
-                                    </svg>
-                                    <!-- if it doesn't equal first item -->
-                                    {{ if (ne $index 0) }}
-                                    <a href="#modal-group-exec{{sub $index 1}}" class="uk-button uk-button-minimal uk-float-left" uk-toggle><span uk-icon="icon: chevron-left"></span> Previous</a>
-                                    {{end}}
-                                    {{ if or (ne $index $exec_count_real) }}
-                                    <!-- if it doesn't equal  the last item -->
-                                    <a href="#modal-group-exec{{add $index 1}}" class="uk-button uk-button-minimal uk-float-right" uk-toggle>Next <span uk-icon="icon: chevron-right"></span></a>
-                                    {{end}}
+                                    <div class="uk-modal-footer uk-text-right">
+                                        <svg class="C13-our-board__svg" width="100%" height="2" viewBox="0 0 1144 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <line x1="1" y1="1" x2="42" y2="1" stroke="#F59C00" stroke-width="2" stroke-linecap="round"/>
+                                            <line x1="56" y1="1" x2="1143" y2="1" stroke="#D0D0D0" stroke-width="2" stroke-linecap="round"/>
+                                        </svg>
+                                        <svg class="C13-our-board__svg-mobile" width="100%" height="2" viewBox="0 0 272 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <line x1="1" y1="1" x2="31" y2="1" stroke="#F59C00" stroke-width="2" stroke-linecap="round"/>
+                                            <line x1="41" y1="1" x2="271" y2="1" stroke="#D0D0D0" stroke-width="2" stroke-linecap="round"/>
+                                        </svg>
+                                        <!-- if it doesn't equal first item -->
+                                        {{ if (ne $index 0) }}
+                                        <a href="#modal-group-exec{{sub $index 1}}" class="uk-button uk-button-minimal uk-float-left" uk-toggle><span uk-icon="icon: chevron-left"></span> Previous</a>
+                                        {{end}}
+                                        {{ if or (ne $index $exec_count_real) }}
+                                        <!-- if it doesn't equal  the last item -->
+                                        <a href="#modal-group-exec{{add $index 1}}" class="uk-button uk-button-minimal uk-float-right" uk-toggle>Next <span uk-icon="icon: chevron-right"></span></a>
+                                        {{end}}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        </div>
                         {{end}}
+                        </div>
                     </div>
                 </div>
             </div>
