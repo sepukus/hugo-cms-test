@@ -1,0 +1,20 @@
+{{ with .Site.GetPage "/settings/settings.md" }}
+  {{range $key,$val := .Params.article}}
+    <div class="uk-container uk-background-muted uk-container-xsmall uk-margin-large-bottom ">
+      <div class="uk-text-left uk-padding-small">
+        {{if .article_title}}
+          <h3 class="uk-margin-small-top">{{.article_title}}</h3>
+        {{end}}
+        {{if .article_description}}
+          <p>{{.article_description}}</p>
+        {{end}}
+        {{if .article_description}}
+          <h4 class="uk-margin-remove-bottom">{{.article_fullname}}</h4>
+        {{end}}
+        {{if .article_email}}
+          <a href="mailto:{{.article_email}}" class="uk-link-heading" style="font-size: 16px;">{{.article_email}}</a>
+        {{end}}
+      </div>
+    </div>
+  {{end}}
+{{ end }}

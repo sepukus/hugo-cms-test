@@ -24,7 +24,6 @@ class ShareSocial extends Component {
   }
 
   PopupHandler(e) {
-    console.log(e);
     const Config = {
       Width: 500,
       Height: 500
@@ -35,7 +34,6 @@ class ShareSocial extends Component {
     const px = Math.floor(((screen.availWidth || 1024) - Config.Width) / 2),
       py = Math.floor(((screen.availHeight || 700) - Config.Height) / 2);
     // open popup
-    console.log("t:", t);
     const popup = window.open(t.href, "social",
       "width=" + Config.Width + ",height=" + Config.Height +
         ",left=" + px + ",top=" + py +

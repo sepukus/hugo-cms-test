@@ -576,3 +576,12 @@ collections: # A list of collections the CMS should be able to edit
           - { label: OG Type, name: seo_og_type, widget: string, required: false }
           - { label: OG Description, name: seo_og_description, widget: string, required: false }
           - { label: OG Twitter, name: seo_og_twitter, widget: string, required: false }
+      - label: "Article Settings"
+        name: "article"
+        widget: "list"
+        allow_add: false
+        fields:
+          - { label: Title, name: article_title, widget: string, required: false }
+          - { label: Description, name: article_description, widget: string, required: false }
+          - { label: Full Name, name: article_fullname, widget: string, required: false }
+          - { label: Email Address, name: article_email, widget: string, required: false }
