@@ -385,7 +385,7 @@ collections: # A list of collections the CMS should be able to edit
             name: "stacked-content-top-image"
             widget: object
             fields:
-              - { label: Stacked Image, name: stacked_image, widget: image }
+              - { label: Stacked Image, name: stacked_image, widget: image, required: false }
               - { label: Stacked Title, name: stacked_title, widget: string, required: true }
               - { label: Stacked Description, name: stacked_description, widget: markdown, required: true }
               - { label: Stacked CTA Link, name: stacked_cta_link, widget: string }
@@ -477,7 +477,7 @@ collections: # A list of collections the CMS should be able to edit
             widget: object
             fields:
               - { label: Title, name: contact_title, widget: string, required: true }
-              - { label: Lead, name: contact_lead, widget: string, required: false }
+              - { label: Lead Text, name: contact_lead, widget: string, required: false }
               - { label: Description, name: contact_description, widget: markdown, required: false }
           - label: "C17: Youtube"
             name: "youtube"
