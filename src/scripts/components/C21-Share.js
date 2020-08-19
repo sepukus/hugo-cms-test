@@ -15,7 +15,6 @@ class ShareSocial extends Component {
     if (super.exists()) {
       const self = this;
       document.querySelectorAll("a.social-share").forEach((link) => {
-        console.log(link);
         link.addEventListener("click", (event) => {
           self.PopupHandler(link);
           event.preventDefault();
