@@ -43,4 +43,4 @@ There were three key aspects of the campaign from the beginning:
 
 #### Podcast
 
-youtube QPdWJeybMo8
+<img src="http://img.youtube.com/vi/QPdWJeybMo8/maxresdefault.jpg" alt="Youtube Video"/>
