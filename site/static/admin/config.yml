@@ -25,20 +25,7 @@ collections: # A list of collections the CMS should be able to edit
         name: "modules"
         widget: "list"
         types:
-          - label: "Our Members"
-            name: "our_members"
-            widget: "list"
-            fields:
-              - { label: Title, name: our_members_title, widget: string, default: "Our Members", required: true }
-              - { label: Description, name: our_members_description, widget: markdown, default: "Description goes here" }
-              - label: Member
-                name: member
-                widget: list
-                allow_add: true
-                fields:
-                  - { label: Our Member Image, name: our_member_image, widget: image }
-                  - { label: Our Member Link, name: our_member_link, widget: string }
-          - label: "Split Title with Content"
+          - label: "C03: Split Title with Content"
             name: "split_title_content"
             widget: object
             fields:
@@ -46,7 +33,7 @@ collections: # A list of collections the CMS should be able to edit
               - { label: Image, name: image, widget: image, required: false }
               - { label: Lead Text, name: leadtext, widget: markdown, required: false }
               - { label: Content, name: content, widget: markdown, required: false }
-          - label: "Spotlight with Image & Content"
+          - label: "C04: Spotlight with Image & Content"
             name: "spotlight_image_content"
             widget: object
             fields:
@@ -55,7 +42,7 @@ collections: # A list of collections the CMS should be able to edit
               - { label: Content 1, name: content1, widget: markdown, required: true }
               - { label: Title 2, name: title2, widget: string }
               - { label: Content 2, name: content2, widget: markdown }
-          - label: "Statistics"
+          - label: "C05: Statistics"
             name: "statistics"
             widget: object
             fields:
@@ -68,7 +55,7 @@ collections: # A list of collections the CMS should be able to edit
               - { label: Statistic Number 3, name: stat_number_3, widget: number, valueType: "float" }
               - { label: Statistic Type 3, name: stat_type_3, widget: string }
               - { label: Info 3, name: stat_info_3, widget: markdown }
-          - label: "Pillar Content - Card, Image & Description"
+          - label: "C06: Pillar Content - Card, Image & Description"
             name: "pillar-content-cards"
             widget: object
             fields:
@@ -83,7 +70,7 @@ collections: # A list of collections the CMS should be able to edit
               - { label: Card Image 3, name: card_image_3, widget: image }
               - { label: Card Title 3, name: card_title_3, widget: string }
               - { label: Card Description 3, name: card_description_3, widget: markdown }
-          - label: "Call Out with Image, text & CTA"
+          - label: "C07: Call Out with Image, text & CTA"
             name: "callout-image-text-cta"
             widget: object
             fields:
@@ -92,7 +79,7 @@ collections: # A list of collections the CMS should be able to edit
               - { label: Call Out Description, name: callout_description, widget: markdown, required: true }
               - { label: Call Out CTA Link, name: callout_cta_link, widget: string }
               - { label: Call Out CTA Text, name: callout_cta_text, widget: string }
-          - label: "Stacked Content with Top Image"
+          - label: "C08: Stacked Content with Top Image"
             name: "stacked-content-top-image"
             widget: object
             fields:
@@ -101,34 +88,32 @@ collections: # A list of collections the CMS should be able to edit
               - { label: Stacked Description, name: stacked_description, widget: markdown, required: true }
               - { label: Stacked CTA Link, name: stacked_cta_link, widget: string }
               - { label: Stacked CTA Text, name: stacked_cta_text, widget: string }
-          - label: "Feature Member Stories"
-            name: "feature-member-stories"
+          - label: "C09: Our Members"
+            name: "our_members"
             widget: "list"
             fields:
-              - { label: Intro, name: feat_member_intro, widget: string, default: "Hear from some of our members and get to know their story.", required: true }
-              - label: Feature Member
-                name: feat_member
+              - { label: Title, name: our_members_title, widget: string, default: "Our Members", required: true }
+              - { label: Description, name: our_members_description, widget: markdown, default: "Description goes here" }
+              - label: Member
+                name: member
                 widget: list
                 allow_add: true
                 fields:
-                  - { label: Feature Member Image, name: feat_member_image, widget: image }
-                  - { label: Feature Member Description, name: feat_member_description, widget: string }
-                  - { label: Feature Member Link, name: feat_member_link, widget: string }
-                  - { label: Feature Member CTA Text, name: feat_member_cta, widget: string }
-              - { label: Read more stories link, name: feat_member_read_more, widget: string }
-          - label: "Image"
-            name: "image"
-            widget: object
-            fields:
-              - { label: Image, name: image, widget: image, required: true }
-          - label: "Youtube with Quote"
+                  - { label: Our Member Image, name: our_member_image, widget: image }
+                  - { label: Our Member Link, name: our_member_link, widget: string }
+          - label: "C10: Youtube with Quote"
             name: "youtube_with_quote"
             widget: object
             fields:
               - { label: Youtube ID, name: youtube_quote_id, widget: string, required: false, default: "7uWEucoGfG0" }
               - { label: Quote Text, name: youtube_quote_text, widget: markdown }
               - { label: Quote Author, name: youtube_quote_author, widget: string }
-          - label: "Split Title with Content & Background"
+          - label: "C11: Image"
+            name: "image"
+            widget: object
+            fields:
+              - { label: Image, name: image, widget: image, required: true }
+          - label: "C12: Split Title with Content & Background"
             name: "split_title_content_background"
             widget: object
             fields:
@@ -138,7 +123,7 @@ collections: # A list of collections the CMS should be able to edit
               - { label: Content, name: content, widget: markdown, required: false }
               - { label: CTA Text, name: cta_text, widget: string, required: false }
               - { label: CTA Link, name: cta_link, widget: string, required: false }
-          - label: "Our Board"
+          - label: "C13: Our Board"
             name: "our_board"
             widget: "list"
             fields:
@@ -167,7 +152,7 @@ collections: # A list of collections the CMS should be able to edit
                   - { label: Board Quote, name: exec_board_quote, widget: string, required: false }
                   - { label: Board Description, name: exec_board_description, widget: markdown, default: "Description goes here" }
                   - { label: Board LinkedIn, name: exec_board_linkedin, widget: string, required: false }
-          - label: "Friends of CMHAA"
+          - label: "C14: Friends of CMHAA"
             name: "friends_cmhaa"
             widget: "list"
             fields:
@@ -179,31 +164,31 @@ collections: # A list of collections the CMS should be able to edit
                 allow_add: true
                 fields:
                   - { label: Our friend, name: friend_text, widget: string }
-          - label: "Quote"
+          - label: "C15: Quote"
             name: "quote"
             widget: object
             fields:
               - { label: Quote Text, name: quote_text, widget: markdown }
               - { label: Quote Author, name: quote_author, widget: string }
-          - label: "Contact form"
+          - label: "C16: Contact form"
             name: "contact-form"
             widget: object
             fields:
               - { label: Title, name: contact_title, widget: string, required: true }
               - { label: Lead, name: contact_lead, widget: string, required: false }
               - { label: Description, name: contact_description, widget: markdown, required: false }
-          - label: "Youtube"
+          - label: "C17: Youtube"
             name: "youtube"
             widget: object
             fields:
               - { label: Youtube ID, name: youtube, widget: string, required: false, default: "7uWEucoGfG0" }
-          - label: "Rich Text"
+          - label: "C18: Rich Text"
             name: "rich-text"
             widget: object
             fields:
               - { label: Rich text top section, name: richtext_top, widget: boolean, default: true, required: false }
               - { label: Rich Text Content, name: richtext, widget: markdown, required: true }
-          - label: "Image Gallery"
+          - label: "C19: Image Gallery"
             name: "image_gallery"
             widget: "list"
             fields:
@@ -213,7 +198,7 @@ collections: # A list of collections the CMS should be able to edit
                 allow_add: true
                 fields:
                   - { label: Image, name: gallery_image, widget: image }
-          - label: "PDF Downloads"
+          - label: "C20: PDF Downloads"
             name: "pdf-downloads"
             widget: "list"
             fields:
@@ -226,6 +211,21 @@ collections: # A list of collections the CMS should be able to edit
                   - { label: PDF Heading, name: pdf_downloads_list_heading, widget: string, required: false }
                   - { label: PDF File, name: "pdf_downloads_list_file", widget: file, required: true }
                   - { label: PDF Text, name: pdf_downloads_list_text, widget: string, required: false }
+          - label: "C21: Feature Member Stories"
+            name: "feature-member-stories"
+            widget: "list"
+            fields:
+              - { label: Intro, name: feat_member_intro, widget: string, default: "Hear from some of our members and get to know their story.", required: true }
+              - label: Feature Member
+                name: feat_member
+                widget: list
+                allow_add: true
+                fields:
+                  - { label: Feature Member Image, name: feat_member_image, widget: image }
+                  - { label: Feature Member Description, name: feat_member_description, widget: string }
+                  - { label: Feature Member Link, name: feat_member_link, widget: string }
+                  - { label: Feature Member CTA Text, name: feat_member_cta, widget: string }
+              - { label: Read more stories link, name: feat_member_read_more, widget: string }
 
   - name: "resources"
     label: "Resources"
@@ -327,20 +327,7 @@ collections: # A list of collections the CMS should be able to edit
         name: "modules"
         widget: "list"
         types:
-          - label: "Our Members"
-            name: "our_members"
-            widget: "list"
-            fields:
-              - {label: Title, name: our_members_title, widget: string, default: "Our Members", required: true}
-              - {label: Description, name: our_members_description, widget: markdown, default: "Description goes here"}
-              - label: Member
-                name: member
-                widget: list
-                allow_add: true
-                fields:
-                  - {label: Our Member Image, name: our_member_image, widget: image}
-                  - {label: Our Member Link, name: our_member_link, widget: string}
-          - label: "Split Title with Content"
+          - label: "C03: Split Title with Content"
             name: "split_title_content"
             widget: object
             fields:
@@ -348,7 +335,7 @@ collections: # A list of collections the CMS should be able to edit
               - { label: Image, name: image, widget: image, required: false }
               - { label: Lead Text, name: leadtext, widget: markdown, required: false }
               - { label: Content, name: content, widget: markdown, required: false }
-          - label: "Spotlight with Image & Content"
+          - label: "C04: Spotlight with Image & Content"
             name: "spotlight_image_content"
             widget: object
             fields:
@@ -357,7 +344,7 @@ collections: # A list of collections the CMS should be able to edit
               - { label: Content 1, name: content1, widget: markdown, required: true }
               - { label: Title 2, name: title2, widget: string }
               - { label: Content 2, name: content2, widget: markdown }
-          - label: "Statistics"
+          - label: "C05: Statistics"
             name: "statistics"
             widget: object
             fields:
@@ -370,7 +357,7 @@ collections: # A list of collections the CMS should be able to edit
               - { label: Statistic Number 3, name: stat_number_3, widget: number, valueType: "float" }
               - { label: Statistic Type 3, name: stat_type_3, widget: string }
               - { label: Info 3, name: stat_info_3, widget: markdown }
-          - label: "Pillar Content - Card, Image & Description"
+          - label: "C06: Pillar Content - Card, Image & Description"
             name: "pillar-content-cards"
             widget: object
             fields:
@@ -385,7 +372,7 @@ collections: # A list of collections the CMS should be able to edit
               - { label: Card Image 3, name: card_image_3, widget: image }
               - { label: Card Title 3, name: card_title_3, widget: string }
               - { label: Card Description 3, name: card_description_3, widget: markdown }
-          - label: "Call Out with Image, text & CTA"
+          - label: "C07: Call Out with Image, text & CTA"
             name: "callout-image-text-cta"
             widget: object
             fields:
@@ -394,7 +381,7 @@ collections: # A list of collections the CMS should be able to edit
               - { label: Call Out Description, name: callout_description, widget: markdown, required: true }
               - { label: Call Out CTA Link, name: callout_cta_link, widget: string }
               - { label: Call Out CTA Text, name: callout_cta_text, widget: string }
-          - label: "Stacked Content with Top Image"
+          - label: "C08: Stacked Content with Top Image"
             name: "stacked-content-top-image"
             widget: object
             fields:
@@ -403,34 +390,32 @@ collections: # A list of collections the CMS should be able to edit
               - { label: Stacked Description, name: stacked_description, widget: markdown, required: true }
               - { label: Stacked CTA Link, name: stacked_cta_link, widget: string }
               - { label: Stacked CTA Text, name: stacked_cta_text, widget: string }
-          - label: "Feature Member Stories"
-            name: "feature-member-stories"
+          - label: "C09: Our Members"
+            name: "our_members"
             widget: "list"
             fields:
-              - {label: Intro, name: feat_member_intro, widget: string, default: "Hear from some of our members and get to know their story.", required: true}
-              - label: Feature Member
-                name: feat_member
+              - { label: Title, name: our_members_title, widget: string, default: "Our Members", required: true }
+              - { label: Description, name: our_members_description, widget: markdown, default: "Description goes here" }
+              - label: Member
+                name: member
                 widget: list
                 allow_add: true
                 fields:
-                  - {label: Feature Member Image, name: feat_member_image, widget: image}
-                  - {label: Feature Member Description, name: feat_member_description, widget: string}
-                  - {label: Feature Member Link, name: feat_member_link, widget: string}
-                  - {label: Feature Member CTA Text, name: feat_member_cta, widget: string}
-              - {label: Read more stories link, name: feat_member_read_more, widget: string}
-          - label: "Image"
-            name: "image"
-            widget: object
-            fields:
-              - { label: Image, name: image, widget: image, required: true }
-          - label: "Youtube with Quote"
+                  - { label: Our Member Image, name: our_member_image, widget: image }
+                  - { label: Our Member Link, name: our_member_link, widget: string }
+          - label: "C10: Youtube with Quote"
             name: "youtube_with_quote"
             widget: object
             fields:
               - { label: Youtube ID, name: youtube_quote_id, widget: string, required: false, default: "7uWEucoGfG0" }
               - { label: Quote Text, name: youtube_quote_text, widget: markdown }
               - { label: Quote Author, name: youtube_quote_author, widget: string }
-          - label: "Split Title with Content & Background"
+          - label: "C11: Image"
+            name: "image"
+            widget: object
+            fields:
+              - { label: Image, name: image, widget: image, required: true }
+          - label: "C12: Split Title with Content & Background"
             name: "split_title_content_background"
             widget: object
             fields:
@@ -440,7 +425,7 @@ collections: # A list of collections the CMS should be able to edit
               - { label: Content, name: content, widget: markdown, required: false }
               - { label: CTA Text, name: cta_text, widget: string, required: false }
               - { label: CTA Link, name: cta_link, widget: string, required: false }
-          - label: "Our Board"
+          - label: "C13: Our Board"
             name: "our_board"
             widget: "list"
             fields:
@@ -469,7 +454,7 @@ collections: # A list of collections the CMS should be able to edit
                   - {label: Board Quote, name: exec_board_quote, widget: string, required: false}
                   - {label: Board Description, name: exec_board_description, widget: markdown, default: "Description goes here"}
                   - {label: Board LinkedIn, name: exec_board_linkedin, widget: string, required: false}
-          - label: "Friends of CMHAA"
+          - label: "C14: Friends of CMHAA"
             name: "friends_cmhaa"
             widget: "list"
             fields:
@@ -481,31 +466,31 @@ collections: # A list of collections the CMS should be able to edit
                 allow_add: true
                 fields:
                   - {label: Our friend, name: friend_text, widget: string}
-          - label: "Quote"
+          - label: "C15: Quote"
             name: "quote"
             widget: object
             fields:
               - { label: Quote Text, name: quote_text, widget: markdown }
               - { label: Quote Author, name: quote_author, widget: string }
-          - label: "Contact form"
+          - label: "C16: Contact form"
             name: "contact-form"
             widget: object
             fields:
               - { label: Title, name: contact_title, widget: string, required: true }
               - { label: Lead, name: contact_lead, widget: string, required: false }
               - { label: Description, name: contact_description, widget: markdown, required: false }
-          - label: "Youtube"
+          - label: "C17: Youtube"
             name: "youtube"
             widget: object
             fields:
               - { label: Youtube ID, name: youtube, widget: string, required: false, default: "7uWEucoGfG0" }
-          - label: "Rich Text"
+          - label: "C18: Rich Text"
             name: "rich-text"
             widget: object
             fields:
               - { label: Rich text top section, name: richtext_top, widget: boolean, default: true, required: false }
               - { label: Rich Text Content, name: richtext, widget: markdown, required: true }
-          - label: "Image Gallery"
+          - label: "C19: Image Gallery"
             name: "image_gallery"
             widget: "list"
             fields:
@@ -515,7 +500,7 @@ collections: # A list of collections the CMS should be able to edit
                 allow_add: true
                 fields:
                   - {label: Image, name: gallery_image, widget: image}
-          - label: "PDF Downloads"
+          - label: "C20: PDF Downloads"
             name: "pdf-downloads"
             widget: "list"
             fields:
@@ -528,6 +513,21 @@ collections: # A list of collections the CMS should be able to edit
                   - { label: PDF Heading, name: pdf_downloads_list_heading, widget: string, required: false }
                   - { label: PDF File, name: "pdf_downloads_list_file", widget: file, required: true }
                   - { label: PDF Text, name: pdf_downloads_list_text, widget: string, required: false }
+          - label: "C21: Feature Member Stories"
+            name: "feature-member-stories"
+            widget: "list"
+            fields:
+              - { label: Intro, name: feat_member_intro, widget: string, default: "Hear from some of our members and get to know their story.", required: true }
+              - label: Feature Member
+                name: feat_member
+                widget: list
+                allow_add: true
+                fields:
+                  - { label: Feature Member Image, name: feat_member_image, widget: image }
+                  - { label: Feature Member Description, name: feat_member_description, widget: string }
+                  - { label: Feature Member Link, name: feat_member_link, widget: string }
+                  - { label: Feature Member CTA Text, name: feat_member_cta, widget: string }
+              - { label: Read more stories link, name: feat_member_read_more, widget: string }
 
   - name: "settings"
     label: "Global Settings"

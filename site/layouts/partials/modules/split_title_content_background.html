@@ -4,7 +4,7 @@
             <div class="uk-width-1-1@s uk-align-center">
                 <h3>{{ .title }}</h3>
                 {{if .leadtext }}
-                    <p class="uk-text-lead C03-split-title-content__lead">{{ .leadtext }}</p>
+                    <p class="uk-text-lead uk-margin-small-bottom">{{ .leadtext }}</p>
                 {{ end }}
                 {{if .content }}
                     {{ .content | markdownify }}
@@ -23,7 +23,7 @@
         </div>
         <div class="uk-width-1-1@s uk-width-3-4@l">
             {{if .leadtext }}
-            <p class="uk-text-lead C03-split-title-content__lead">{{ .leadtext }}</p>
+            <p class="uk-text-lead uk-margin-small-bottom">{{ .leadtext }}</p>
             {{ end }}
             {{if .content }}
             {{ .content | markdownify }}
