@@ -1,0 +1,65 @@
+.filter {
+  display: flex;
+  flex-direction: column;
+
+  + .filter {
+    margin-top: 30px;
+  }
+
+  label {
+    font-size: 16px;
+    display: flex;
+    position: relative;
+
+    + label {
+      margin-top: 20px;
+    }
+
+    input {
+      opacity: 0;
+      position: absolute;
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      position: relative;
+      width: 24px;
+      height: 24px;
+      border-radius: 2px;
+      transition: 50ms ease-out;
+      flex-shrink: 0;
+    }
+
+    &:before {
+      border: 2px solid #6a6d71;
+      margin-right: 10px;
+    }
+
+    &:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: url('/img/icons/tick.svg') no-repeat;
+      background-position: center;
+      opacity: 0;
+    }
+
+    &.active {
+      font-weight: 500;
+
+      &:before {
+        background: #6a6d71;
+      }
+
+      &:after {
+        opacity: 1;
+      }
+    }
+
+    &.disabled {
+      opacity: 0.4;
+    }
+  }
+}

@@ -1,6 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+import intersection from "lodash/intersection";
+import uniq from "lodash/uniq";
+
 import algoliasearch from "algoliasearch/lite";
 
 import Header from "./Layout/Header";
@@ -17,16 +20,19 @@ class App extends React.Component {
       searchResults: [],
       filtersVisible: true,
       loading: false,
+      displayDesc: true,
+      page: 1,
     };
 
     /* Bind this to functions */
     this._filterUpdate = this._filterUpdate.bind(this);
     this._clearFilters = this._clearFilters.bind(this);
     this._filterToggle = this._filterToggle.bind(this);
+    this._changeOrder = this._changeOrder.bind(this);
+    this._updatePage = this._updatePage.bind(this);
 
     /* Setup Algolia */
     const client = algoliasearch(process.env.ALGOLIA_APP_ID, process.env.ALGOLIA_SEARCH_KEY);
-
     this.searchindex = client.initIndex(process.env.ALGOLIA_INDEX_NAME);
   }
 
@@ -34,9 +40,14 @@ class App extends React.Component {
     fetch("/taxrelationships.json")
       .then((response) => response.json())
       .then((data) => {
-        this.setState({
-          relationships: data,
-        });
+        this.setState(
+          {
+            relationships: data,
+          },
+          () => {
+            this._querySearch();
+          }
+        );
       });
   }
 
@@ -53,6 +64,7 @@ class App extends React.Component {
         this.searchindex
           .search("", {
             filters: query,
+
             hitsPerPage: 1000,
           })
           .then(({ hits }) => {
@@ -68,7 +80,7 @@ class App extends React.Component {
 
   _filterAvailable(searchResults) {
     this.setState((currentState) => {
-      const filterable = ["category", "focus", "role", "organisation_size"];
+      const filterable = ["category", "focus", "role", "organisation_size", "industry"];
       const { filters, relationships } = currentState;
 
       const newFilters = {
@@ -76,70 +88,66 @@ class App extends React.Component {
         focus: [],
         role: [],
         organisation_size: [],
+        industry: [],
       };
 
-      const activeFilters = [];
+      const activeFilters = {};
 
       filterable.forEach((key) => {
         filters[key].forEach((filter) => {
+          if (filter.parent === "category" && filter.name === "all") {
+            return;
+          }
+
           if (filter.active === true) {
-            activeFilters.push(filter);
+            if (typeof activeFilters[key] === "undefined") {
+              activeFilters[key] = [];
+            }
+            activeFilters[key] = uniq(activeFilters[key].concat(relationships[key][filter.name]));
           }
         });
       });
 
       filterable.forEach((key) => {
+        // Create an array of filters excluding current parent
+        const nonParentFilters = Object.keys(activeFilters)
+          .map((k) => {
+            if (k != key) {
+              return activeFilters[k];
+            }
+
+            return false;
+          })
+          .filter(Boolean);
+
+        // If parent category doesnt have any then enable all filters and return early
+        if (nonParentFilters.length < 1) {
+          filters[key].forEach((filter) => {
+            filter.enabled = true;
+            newFilters[key].push(filter);
+          });
+
+          return;
+        }
+
+        const otherFilterIntersections = intersection(...nonParentFilters);
+
         filters[key].forEach((filter) => {
+          // If already active then skip
+          if (filter.active) {
+            newFilters[key].push(filter);
+            return;
+          }
+
+          // Put all category into filters and continue
           if (filter.parent === "category" && filter.name === "all") {
             newFilters[key].push(filter);
             return;
           }
 
-          const relationship = {};
+          const inter = intersection(otherFilterIntersections, relationships[filter.parent][filter.name]);
 
-          for (const activeKey in activeFilters) {
-            const active = activeFilters[activeKey];
-
-            if (active.parent === "category" && active.name === "all") {
-              continue;
-            }
-
-            if (active.parent === filter.parent) {
-              continue;
-            }
-
-            if (typeof relationship[active.parent] === "undefined") {
-              relationship[active.parent] = false;
-            }
-
-            const hasRelationship = relationships[filter.parent][filter.name][active.parent][active.name].length;
-
-            // Fact sheets
-            // Asseessment ....
-            // Large org size
-            /*if (filter.parent == "organisation_size" && filter.name.indexOf("Large") > -1) {
-              console.log(filter.name);
-              // console.log(hasRelationship);
-
-              console.log(relationships[filter.parent][filter.name]);
-
-              // Object.keys(relationship).every((el) => {
-              //   return relationship[el];
-              // });
-            }*/
-
-            if (hasRelationship > 0) {
-              relationship[active.parent] = true;
-            }
-          }
-
-          const isEnabled = Object.keys(relationship).every((el) => {
-            return relationship[el];
-          });
-
-          if (!filter.active) {
-            filter.enabled = isEnabled;
-          }
+          filter.enabled = inter.length > 0;
 
           newFilters[key].push(filter);
         });
@@ -204,6 +212,7 @@ class App extends React.Component {
     const allKey = "all";
 
     const filterIndex = this.state.filters[value.parent].findIndex((el) => el.name === value.name);
+    const allIndex = newFilters[value.parent].findIndex((el) => el.name == allKey);
 
     if (value.name == allKey) {
       newFilters[value.parent] = newFilters[value.parent].map((el, i) => {
@@ -211,14 +220,20 @@ class App extends React.Component {
         return el;
       });
     } else {
-      const allIndex = newFilters[value.parent].findIndex((el) => el.name == allKey);
       newFilters[value.parent][allIndex].active = false;
       newFilters[value.parent][filterIndex].active = !newFilters[value.parent][filterIndex].active;
+    }
+
+    const noneSelected = newFilters["category"].every((el) => el.active === false);
+
+    if (noneSelected) {
+      newFilters["category"][allIndex].active = true;
     }
 
     this.setState(
       {
         filters: newFilters,
+        page: 1,
       },
       this._querySearch
     );
@@ -243,6 +258,7 @@ class App extends React.Component {
     this.setState(
       {
         filters: newFilters,
+        page: 1,
       },
       this._querySearch
     );
@@ -266,6 +282,7 @@ class App extends React.Component {
 
       return {
         filters,
+        page: 1,
       };
     }, this._querySearch);
   }
@@ -279,6 +296,7 @@ class App extends React.Component {
       focus: filters.focus,
       role: filters.role,
       organisation_size: filters.organisation_size,
+      industry: filters.industry,
     };
   }
 
@@ -288,13 +306,50 @@ class App extends React.Component {
     });
   }
 
+  _changeOrder(displayDesc) {
+    this.setState(
+      {
+        displayDesc: displayDesc,
+      },
+      () => {
+        const client = algoliasearch(process.env.ALGOLIA_APP_ID, process.env.ALGOLIA_SEARCH_KEY);
+        const indexDir = this.state.displayDesc ? process.env.ALGOLIA_INDEX_NAME : process.env.ALGOLIA_INDEX_NAME_REV;
+        this.searchindex = client.initIndex(indexDir);
+        this._querySearch();
+      }
+    );
+  }
+
+  _updatePage() {
+    this.setState({
+      page: this.state.page + 1,
+    });
+  }
+
   render() {
     return (
       <div className="resource-listing">
-        <Header filterToggle={this._filterToggle} />
+        <Header
+          filterToggle={this._filterToggle}
+          changeOrder={this._changeOrder}
+          displayDesc={this.state.displayDesc}
+          filtersVisible={this.state.filtersVisible}
+        />
         <div className="resource-listing__body">
-          <FilterBar visible={this.state.filtersVisible} filters={this.state.filters} update={this._filterUpdate} clear={this._clearFilters} />
-          <Listing results={this.state.searchResults} loading={this.state.loading} />
+          <FilterBar
+            visible={this.state.filtersVisible}
+            filters={this.state.filters}
+            update={this._filterUpdate}
+            clear={this._clearFilters}
+            filterToggle={this._filterToggle}
+          />
+          <Listing
+            results={this.state.searchResults}
+            page={this.state.page}
+            perPage={12}
+            pageUpdate={this._updatePage}
+            loading={this.state.loading}
+          />
         </div>
       </div>
     );

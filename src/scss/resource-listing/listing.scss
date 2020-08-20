@@ -1,0 +1,25 @@
+.resource-listing {
+  &__listing {
+    flex-grow: 1;
+    transition: 400ms ease;
+    position: relative;
+    padding-bottom: 40px;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__show-more {
+    background-color: transparent;
+    background-image: url('/img/icons/down-arrow.svg');
+    background-repeat: no-repeat;
+    background-position: 5px center;
+    border: none;
+    color: #000;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 5px 10px 5px 30px;
+  }
+}

@@ -1,0 +1,87 @@
+ 
+.resource-listing__filter-bar {
+  background-color: #f8f8f8;
+  flex-shrink: 0;
+  transition: transform 200ms ease-out 380ms, width 400ms ease 0ms, opacity 100ms ease-out 400ms;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100vw;    
+  z-index: 1000;
+  overflow-y: scroll;
+
+  @media (min-width: $mobileFilterBreakpoint) {
+    position: relative;
+    overflow-y: auto;
+    width: 35%;
+  }
+
+  @media (min-width: $breakpoint-large) {
+    width: 25%;
+  }
+  
+  &.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-80%);
+    transition: transform 200ms ease-out 0ms, width 400ms ease 220ms, opacity 100ms ease-out 0ms;
+    width: 0;
+  }
+  
+  .inner {
+    padding: 48px 40px;
+  }
+
+  .filter-bar {
+    &__header {
+      border-bottom: 1px solid #9e9e9e;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+
+      h2 {
+        margin-bottom: 0;
+      }
+
+      .hide-filters {
+        border: none;
+        background: transparent;
+        padding: 5px;
+      }
+    }
+  }
+
+  .uk-accordion-title {
+    text-align: left;
+    background: none;
+    border: none;
+    padding: 0;
+
+    &:before {
+      background-image: url('/img/icons/up-chevron.svg');
+      transition: 200ms ease;
+      transform: rotate(-180deg);
+    }
+  }
+
+  .filter.uk-open {
+    .uk-accordion-title {
+      &:before {
+        transform: rotate(0deg);
+      }
+    }
+  }
+
+  .uk-accordion-content {
+    margin-top: 0;
+  }
+}
+
+body.filters-open {
+  @media (max-width: $mobileFilterBreakpoint) {
+    overflow: hidden;
+  }
+}

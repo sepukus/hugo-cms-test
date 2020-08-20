@@ -8,52 +8,18 @@
   {{- range $primaryTax, $p := $primaryTaxonomies -}}
     {{- with $.Site.GetPage (printf "/%s" $primaryTax) -}} {{/* we do this to get the proper taxonomy title rather than a urlized value */}}
       {{- $primaryTitle := .LinkTitle -}}      
-      {{- $.Scratch.Add "secondaryFilter" dict -}}
+      {{- $.Scratch.Add "pages" slice -}}
       
-      {{- /* Third Loop - Second Taxonomy */ -}}
-      {{- range $secondaryFilter := $filters -}}        
-        {{- if ne $primaryFilter $secondaryFilter -}}
-          {{- $secondaryTaxonomies := index $.Site.Taxonomies $secondaryFilter -}}  
-          {{- $.Scratch.Add "relations" dict -}}
+      {{- $primaryParam := print ".Params." $primaryFilter -}}
+      {{- $v1 := where .Site.Pages $primaryParam $primaryTitle -}}
+      
+      {{- range $page := $v1 -}}
+        {{- $.Scratch.Add "pages" $page.File.UniqueID }}
+      {{- end -}}
 
-          {{- /* Fourth Loop - Second Taxonomy Taxonomies */ -}}
-          {{- range $secondaryTax, $s := $secondaryTaxonomies -}}
-            {{- with $.Site.GetPage (printf "/%s" $secondaryTax) -}} {{/* we do this to get the proper taxonomy title rather than a urlized value */}}
-              {{- $secondaryTitle := .LinkTitle -}}
-              {{- $primaryParam := print ".Params." $primaryFilter -}}
-              {{- $secondaryParam := print ".Params." $secondaryFilter -}}
-              
-              {{- /* Get an Intersection of Pages where First Taxonomy and Second Taxonomy both set: then get the number of pages */ -}}                
-              {{- $v1 := where .Site.Pages $primaryParam $primaryTitle -}}
-              {{- $v2 := where .Site.Pages $secondaryParam $secondaryTitle -}}
-              {{- $filtered := $v1 | intersect $v2 -}}
-
-              {{- $.Scratch.Add "relation_ids" slice -}}
-              {{- range $i, $page := $filtered -}}
-                {{/* $page.File.UniqueID */}}
-                {{- $.Scratch.Add "relation_ids" $page.File.UniqueID }}
-              {{- end -}}
-              {{/*- $filteredLen := len $filtered -*/}}
-              
-              {{- /* Assign to a map with Taxonomy title as key */ -}}
-              {{- $relationIDs := $.Scratch.Get "relation_ids" -}}
-              {{- $.Scratch.SetInMap "relations" $secondaryTitle $relationIDs -}}              
-              {{- $.Scratch.Delete "relation_ids" -}}
-            {{- end -}}
-          {{- end -}}
-
-          {{- /* Assign to a map with Taxonomy type of second Taxonomy  as key */ -}}
-          {{- $relationData := $.Scratch.Get "relations" -}}
-          {{- $.Scratch.SetInMap "secondaryFilter" $secondaryFilter $relationData -}}
-          {{- $.Scratch.Delete "relations" -}}
-
-          {{- end -}}
-        {{- end -}}   
-        
-      {{- /* Assign to a map with Taxonomy title of first Taxonomy  as key */ -}}
-      {{- $secondaryData := $.Scratch.Get "secondaryFilter" -}}
+      {{- $secondaryData := $.Scratch.Get "pages" -}}
       {{- $.Scratch.SetInMap "primaryFilter" $primaryTitle $secondaryData -}}
-      {{- $.Scratch.Delete "secondaryFilter" -}}
+      {{- $.Scratch.Delete "pages" -}}
     {{- end -}}
   {{- end -}}
   {{- /* Assign to a map with Taxonomy type of first Taxonomy  as key */ -}}
