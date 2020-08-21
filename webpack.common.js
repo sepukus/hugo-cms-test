@@ -6,7 +6,7 @@ const AssetsPlugin = require("assets-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const Dotenv = require("dotenv-webpack");
+// const Dotenv = require("dotenv-webpack");
 
 module.exports = {
   mode: "development",
@@ -48,7 +48,7 @@ module.exports = {
         ],
       },
 
-      {test: /\.json$/, loader: "json-loader"},
+      { test: /\.json$/, loader: "json-loader" },
 
       {
         test: /\.(woff|woff2|ttf|otf)$/,
@@ -93,7 +93,7 @@ module.exports = {
         loader: "babel-loader",
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        query: {cacheDirectory: true},
+        query: { cacheDirectory: true },
       },
     ],
   },
@@ -121,6 +121,8 @@ module.exports = {
       template: "src/cms.html",
       inject: false,
     }),
-    new Dotenv(),
+    new Dotenv({
+      systemvars: true,
+    }),
   ],
 };
