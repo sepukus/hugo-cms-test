@@ -15,6 +15,11 @@ modules:
   - type: feature-member-stories
     feat_member_intro: Hear from some of our members and get to know their story.
     feat_member_read_more: /home/
+    feat_member:
+      - feat_member_image: img/andrew-culleton.jpg
+        feat_member_description: terst
+        feat_member_link: /asdf
+        feat_member_cta: asdfasdf
   - type: pdf-downloads
     pdf_downloads_heading: Download resources
     pdf_downloads_list:
