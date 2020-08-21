@@ -1,0 +1,6 @@
+<div class="C23-feature-resource uk-container uk-container-xsmall uk-margin-large-bottom">
+  {{- $page := print "/resources/" .Module.resource -}}
+  {{ with .Site.GetPage $page }}
+      {{ partial "card" (dict "item" . "class" "card--horizontal") }}
+  {{ end }}
+</div>

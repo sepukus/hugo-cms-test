@@ -10,15 +10,15 @@
 
     <div class="uk-text-left" uk-grid>
         <div class="uk-width-1-1@s uk-width-1-3@m">
-            <h3>{{ .friends_cmhaa_title }}</h3>
+            <h3>{{ .Module.friends_cmhaa_title }}</h3>
         </div>
         <div class="uk-width-1-1@s uk-width-2-3@m">
-            <p class="uk-text-lead C14-friends-cmhaa__lead">{{ .friends_cmhaa_description }}</p>
+            <p class="uk-text-lead C14-friends-cmhaa__lead">{{ .Module.friends_cmhaa_description }}</p>
 
             <!-- loop over first 8 items only, then dont display -->
-            {{ $friend_count := len .friend }}
+            {{ $friend_count := len .Module.friend }}
             <ul class="uk-list uk-list-disc uk-list-secondary-raspberry">
-            {{ range $index, $element := .friend }}
+            {{ range $index, $element := .Module.friend }}
                 {{ if le $index 4 }}
                 <li>
                     {{ $element.friend_text}}
@@ -33,7 +33,7 @@
             {{end}}
             {{ if ge $friend_count 4 }}
                 <ul class="uk-list uk-list-disc uk-list-secondary-raspberry">
-                    {{ range $index, $element := .friend }}
+                    {{ range $index, $element := .Module.friend }}
                         {{ if ge $index 5 }}
                             <li>
                                 {{ $element.friend_text}}

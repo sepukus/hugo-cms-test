@@ -52,7 +52,9 @@ class Listing extends React.Component {
     return (
       <section className={`resource-listing__listing${loadingClass}`}>
         <div className="uk-container">
-          <div className="uk-text-center uk-margin-medium-top uk-margin-medium-bottom">Displaying &lt;{this.props.results.length}&gt; resources</div>
+          <div className="uk-text-center uk-margin-medium-top uk-margin-medium-bottom">
+            Displaying &lt;{this.props.results.length}&gt; resource{this.props.results.length != 1 ? "s" : ""}
+          </div>
           <div className="cards-wrapper" ref={this.listRef}>
             {cards}
           </div>

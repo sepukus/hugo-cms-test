@@ -8,10 +8,10 @@
         <line x1="41" y1="1" x2="271" y2="1" stroke="#D0D0D0" stroke-width="2" stroke-linecap="round"/>
     </svg>
 
-    {{if .image}}
+    {{if .Module.image }}
     <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-1@s uk-margin uk-card-no-box-shadow" uk-grid>
         <div class="uk-card-media-left uk-cover-container">
-            <img src="{{ .image }}" alt="image for {{ .image }}" uk-cover>
+            <img src="{{ .Module.image }}" alt="image for {{ .Module.image }}" uk-cover>
             <canvas width="600" height="340"></canvas>
         </div>
     </div>
@@ -19,12 +19,12 @@
 
     <div class="uk-text-left" uk-grid>
         <div class="uk-width-1-1@s uk-width-1-4@l">
-            <h3>{{ .title }}</h3>
+            <h3>{{ .Module.title }}</h3>
         </div>
         <div class="uk-width-1-1@s uk-width-3-4@l">
-            {{if .leadtext}}<p class="uk-text-lead uk-margin-small-bottom">{{ .leadtext }}</p>{{end}}
-            {{if .content}}
-                {{ .content | markdownify }}
+            {{if .Module.leadtext}}<p class="uk-text-lead uk-margin-small-bottom">{{ .Module.leadtext }}</p>{{end}}
+            {{if .Module.content }}
+                {{ .Module.content | markdownify }}
             {{end}}
         </div>
     </div>

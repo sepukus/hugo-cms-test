@@ -6,7 +6,7 @@ $categorymap: (
   fact-sheets: (#F0F0F0, #000),
   guides-toolkits: (#007E97, #fff),
   support-services: (#8ABD24, #000),
-  research: (#8ABD24, #000)
+  research: (#D0D0D0, #000)
 );
 
 .card {
@@ -40,6 +40,7 @@ $categorymap: (
     border-radius: 20px;
     color: #fff;
     padding: 2px 10px;
+    align-self: flex-start;
 
     @each $category, $colors in $categorymap {
       &.#{$category} {
@@ -82,6 +83,40 @@ $categorymap: (
   &:hover {
     text-decoration: none;
     color: #000;
+  }
+
+  &--horizontal {
+    flex-direction: row;
+    margin-left: 0;
+    margin-right: 0;
+
+    > * {
+      width: 50%;
+      flex-shrink: 0;
+    }
+
+    .card {
+      &__image-wrapper {
+        padding: 0;
+
+        img {
+          border-top-right-radius: 0;
+          border-bottom-left-radius: 4px;         
+        }
+      }
+
+      &__content {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+
+      &__focus {
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 24px;
+        margin-right: 24px;
+      }
+    }
   }
 }
 

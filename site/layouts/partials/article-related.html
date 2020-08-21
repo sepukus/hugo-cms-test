@@ -6,7 +6,7 @@
     <div class="uk-container">
       <div class="cards-wrapper">
         {{ range . }}
-          {{ partial "card" . }}
+          {{ partial "card" (dict "item" .) }}
         {{ end }}
       </div>
     </div>

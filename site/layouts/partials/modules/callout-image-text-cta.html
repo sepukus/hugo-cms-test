@@ -1,15 +1,15 @@
 <div class="uk-container global-padding-tb C07-callout-image-text-cta">
     <div class="uk-card uk-card-default uk-card-no-box-shadow uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
         <div class="uk-card-media-left uk-cover-container">
-            <img src="{{ .callout_image }}" alt="image for {{ .callout_title }}" uk-cover>
+            <img src="{{ .Module.callout_image }}" alt="image for {{ .Module.callout_title }}" uk-cover>
             <canvas width="600" height="400"></canvas>
         </div>
         <div>
             <div class="uk-card-body">
-                <p class="uk-text-lead">{{ .callout_title }}</p>
-                <p>{{ .callout_description }}</p>
-                {{if .callout_cta_link}}
-                <a href="{{ .callout_cta_link }}" class="uk-button uk-button-secondary">{{ .callout_cta_text }}</a>
+                <p class="uk-text-lead">{{ .Module.callout_title }}</p>
+                <p>{{ .Module.callout_description }}</p>
+                {{if .Module.callout_cta_link}}
+                <a href="{{ .Module.callout_cta_link }}" class="uk-button uk-button-secondary">{{ .Module.callout_cta_text }}</a>
                 {{end}}
             </div>
         </div>

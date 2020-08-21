@@ -531,8 +531,9 @@ collections: # A list of collections the CMS should be able to edit
               - { label: Souncloud iFrame URL, name: souncloud_url, widget: string, required: true }
           - label: "C23: Feature Resource"
             name: "feature_resource"
-            widget: "string"
-            
+            widget: object
+            fields:
+              - { label: Feature Resource, name: resource, widget: relation, collection: "resources", searchFields: ["title"], valueField: ".File.UniqueID", displayFields: ["title"] }
 
   - name: "pages"
     label: "Pages"

@@ -21,17 +21,7 @@
     </div>
   </div>
 
-  {{ range .Params.Modules }}
-    {{ $path := printf "%s%s%s" "modules/" .type ".html" }}
-    {{ $fullpath := printf "%s%s" "layouts/partials/" $path }}
-    {{ if (fileExists $fullpath) -}}
-      {{ partial $path .}}
-    {{ else }}
-      {{ if ne (getenv "HUGO_ENV") "production" }}
-        <h1>Module does not exist</h1>
-      {{ end }}
-    {{- end }}
-  {{ end }}
+  {{ partial "modules-loop" (dict "Site" $.Site "context" .)}}
 
   {{ partial "share-article" . }}
 

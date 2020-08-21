@@ -1,7 +1,7 @@
 <div class="uk-container uk-container-xsmall C20-pdf">
-  <h3>{{ .pdf_downloads_heading }}</h3>
-  <div class="uk-grid-column-small uk-grid-row-small uk-child-width-1-2@s uk-text-left" uk-grid uk-height-match="target: .uk-card">
-    {{ range $index, $element := .pdf_downloads_list }}
+  <h3>{{ .Module.pdf_downloads_heading }}</h3>
+  <div class="uk-grid-column-small uk-grid-row-small uk-child-width-1-2@s uk-text-left" uk-grid uk-height-match="target: .Module.uk-card">
+    {{ range $index, $element := .Module.pdf_downloads_list }}
     <div>
       <a href="{{$element.pdf_downloads_list_file}}" class="uk-card uk-card-white uk-card-box-shadow uk-flex-middle uk-link-toggle" uk-grid>
         <div class="uk-width-auto">

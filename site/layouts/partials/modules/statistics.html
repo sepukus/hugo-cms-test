@@ -1,26 +1,26 @@
 <div id="C05-statistics" class="uk-container C05-statistics" data-id="C05">
     <div class="uk-child-width uk-child-width-expand@s uk-text-center" uk-grid uk-height-match="target: div">
-        {{if .stat_number_1}}
+        {{if .Module.stat_number_1}}
         <div>
             <div class="uk-card uk-card-default uk-card-body">
-                <h1><span class="C05-statistics__number">{{ .stat_number_1 }}</span> {{ .stat_type_1 }}</h1>
-                <p class="C05-statistics__info">{{ .stat_info_1 }}</p>
+                <h1><span class="C05-statistics__number">{{ .Module.stat_number_1 }}</span> {{ .Module.stat_type_1 }}</h1>
+                <p class="C05-statistics__info">{{ .Module.stat_info_1 }}</p>
             </div>
         </div>
         {{end}}
-        {{if .stat_number_2}}
+        {{if .Module.stat_number_2}}
         <div>
             <div class="uk-card uk-card-default uk-card-body">
-                <h1><span class="C05-statistics__number">{{ .stat_number_2 }}</span> {{ .stat_type_2 }}</h1>
-                <p class="C05-statistics__info">{{ .stat_info_2 }}</p>
+                <h1><span class="C05-statistics__number">{{ .Module.stat_number_2 }}</span> {{ .Module.stat_type_2 }}</h1>
+                <p class="C05-statistics__info">{{ .Module.stat_info_2 }}</p>
             </div>
         </div>
         {{end}}
-        {{if .stat_number_3}}
+        {{if .Module.stat_number_3}}
         <div>
             <div class="uk-card uk-card-default uk-card-body">
-                <h1><span class="C05-statistics__number">{{ .stat_number_3 }}</span> {{ .stat_type_3 }}</h1>
-                <p class="C05-statistics__info">{{ .stat_info_3 }}</p>
+                <h1><span class="C05-statistics__number">{{ .Module.stat_number_3 }}</span> {{ .Module.stat_type_3 }}</h1>
+                <p class="C05-statistics__info">{{ .Module.stat_info_3 }}</p>
             </div>
         </div>
         {{end}}
