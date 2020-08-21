@@ -1,6 +1,6 @@
 import React from "react";
 
-import prettifyName from "../utils/prettyName";
+import prettifyName from "../Utils/prettyName";
 
 class TextFilter extends React.Component {
   constructor(props) {
