@@ -1,0 +1,26 @@
+<a href={{ .RelPermalink }} class="card card--resource">
+  <div class="card__image-wrapper">
+    {{ $image := "/img/placeholder-noimage.gif" }}
+    {{ if .Params.banner_image}}
+      {{ $image = .Params.banner_image }}
+    {{ else if .Params.banner_right_image }}
+      {{ $image = .Params.banner_right_image }}
+    {{ else if .Params.image }}
+      {{ $image = .Params.image }}
+    {{end}}
+      
+    <img src={{ $image }} alt="" />
+  </div>
+  <div class="card__content">
+    {{ if .Params.category }}
+      <span class="card__category {{ .Params.category_tag }}">{{ .Params.category }}</span>
+    {{ end }}
+    <span class="card__date">{{ dateFormat "Jan 02, 2006" .Params.date }}</span>
+    <p class="card__title">{{ .Params.title }}</p>
+  </div>
+  {{ if .Params.focus }}
+    <p class="card__focus">
+      <strong>Focus</strong> {{ .Params.focus }}
+    </p>
+  {{ end }}
+</a>

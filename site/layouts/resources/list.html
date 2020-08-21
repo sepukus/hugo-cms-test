@@ -1,34 +1,37 @@
 {{ define "main" }}
-
-  {{ partial "jumbotron" (dict "imageUrl" "/img/blog-index.jpg" "title" "Latest stories") }}
-
-  {{/* Get number of all categories */}}
-  {{ $countAll := 0}}
-  {{ range $key, $filter := $.Site.Taxonomies.category }}
-      {{ $countAll = add $countAll $filter.Count }}
-  {{ end }}
-  {{/* 
-        Loop over our filter taxonomies, add the name and amount of articles
-        within those taxonomies to a dictionary then parse that as json to
-        the resource listing app for initial population
-  */}}
-  {{ $filters := slice "category" "focus" "role" "organisation_size" "industry" }}
-  {{- $.Scratch.Add "index" dict -}}
-  {{ range $filter := $filters }}
-    {{ $tax := index $.Site.Taxonomies $filter}}
-    {{ $.Scratch.Add "filterData" slice }}
-    {{/* Add all with all counted resources to category */}}
-    {{ if eq $filter "category" }}
-      {{- $.Scratch.Add "filterData" (dict "name" "all" "active" true "parent" $filter "enabled" true) -}}
+  {{ with .Site.GetPage "/settings/settings.md" }}
+    {{range $key,$val := .Params.resources}}
+      {{ partial "jumbotron" (dict "imageUrl" .resources_banner_image "banner_title" .resources_banner_title) }}
     {{ end }}
-    {{ range $name, $taxonomy := $tax }}
-      {{ with $.Site.GetPage (printf "/%s" $name) }} {{/* doing this we can use .LinkTitle to get taxonomy human friendly name */}}
-        {{- $.Scratch.Add "filterData" (dict "name" .LinkTitle "active" false "parent" $filter "enabled" true) -}}
+
+    {{/* Get number of all categories */}}
+    {{ $countAll := 0}}
+    {{ range $key, $filter := $.Site.Taxonomies.category }}
+        {{ $countAll = add $countAll $filter.Count }}
+    {{ end }}
+    {{/* 
+          Loop over our filter taxonomies, add the name and amount of articles
+          within those taxonomies to a dictionary then parse that as json to
+          the resource listing app for initial population
+    */}}
+    {{ $filters := slice "category" "focus" "role" "organisation_size" "industry" }}
+    {{- $.Scratch.Add "index" dict -}}
+    {{ range $filter := $filters }}
+      {{ $tax := index $.Site.Taxonomies $filter}}
+      {{ $.Scratch.Add "filterData" slice }}
+      {{/* Add all with all counted resources to category */}}
+      {{ if eq $filter "category" }}
+        {{- $.Scratch.Add "filterData" (dict "name" "all" "active" true "parent" $filter "enabled" true) -}}
       {{ end }}
+      {{ range $name, $taxonomy := $tax }}
+        {{ with $.Site.GetPage (printf "/%s" $name) }} {{/* doing this we can use .LinkTitle to get taxonomy human friendly name */}}
+          {{- $.Scratch.Add "filterData" (dict "name" .LinkTitle "active" false "parent" $filter "enabled" true) -}}
+        {{ end }}
+      {{ end }}
+      {{ $filterData := $.Scratch.Get "filterData" }}
+      {{- $.Scratch.SetInMap "index" $filter $filterData -}}
+      {{- $.Scratch.Delete "filterData" -}}
     {{ end }}
-    {{ $filterData := $.Scratch.Get "filterData" }}
-    {{- $.Scratch.SetInMap "index" $filter $filterData -}}
-    {{- $.Scratch.Delete "filterData" -}}
-  {{ end }}
-  <div id='resource-listing'>{{- $.Scratch.Get "index" | jsonify -}}</div>
-{{end}}
+    <div id='resource-listing'>{{- $.Scratch.Get "index" | jsonify -}}</div>
+  {{end}}
+{{ end }}

@@ -1,4 +1,4 @@
-{{ if or .Next .Prev }}
+{{ if or .NextInSection .PrevInSection }}
 <nav class="uk-container uk-margin-bottom C21-pagination">
   <svg class="C13-our-board__svg" width="100%" height="2" viewBox="0 0 1144 2" fill="none" xmlns="http://www.w3.org/2000/svg">
     <line x1="1" y1="1" x2="42" y2="1" stroke="#F59C00" stroke-width="2" stroke-linecap="round"/>
@@ -9,26 +9,26 @@
     <line x1="41" y1="1" x2="271" y2="1" stroke="#D0D0D0" stroke-width="2" stroke-linecap="round"/>
   </svg>
 
-  {{ if .Prev }}
-  <a title="Previous Page" href="{{ .Prev.URL | relURL}}" class="C21-pagination__prev uk-button uk-button-minimal uk-float-left uk-text-left" uk-toggle>
+  {{ if .PrevInSection }}
+  <a title="Previous Page" href="{{ .PrevInSection.URL | relURL}}" class="C21-pagination__prev uk-button uk-button-minimal uk-float-left uk-text-left" uk-toggle>
     <div class="uk-flex uk-flex-wrap uk-flex-wrap-around">
       <div class="C21-pagination__icon uk-flex uk-flex-middle">
         <span uk-icon="icon: chevron-left; ratio: 2"></span>
       </div>
       <div>
         PREVIOUS<br>
-        <span class="C21-pagination__title">{{ .Prev.Title | markdownify }}</span>
+        <span class="C21-pagination__title">{{ .PrevInSection.Title | markdownify }}</span>
       </div>
     </div>
   </a>
   {{ end }}
 
-  {{ if .Next }}
-  <a title="Next Page" href="{{ .Next.URL | relURL}}" class="C21-pagination__next uk-button uk-button-minimal uk-float-right uk-text-right" uk-toggle>
+  {{ if .NextInSection }}
+  <a title="Next Page" href="{{ .NextInSection.URL | relURL}}" class="C21-pagination__next uk-button uk-button-minimal uk-float-right uk-text-right" uk-toggle>
     <div class="uk-flex uk-flex-wrap uk-flex-wrap-around">
       <div>
         NEXT<br>
-        <span class="C21-pagination__title">{{ .Next.Title | markdownify }}</span>
+        <span class="C21-pagination__title">{{ .NextInSection.Title | markdownify }}</span>
       </div>
       <div class="C21-pagination__icon uk-flex uk-flex-middle">
         <span uk-icon="icon: chevron-right; ratio: 2"></span>

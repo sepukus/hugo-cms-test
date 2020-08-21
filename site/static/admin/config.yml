@@ -248,6 +248,9 @@ collections: # A list of collections the CMS should be able to edit
       - { label: "Banner CTA Link", name: "banner_cta_link", widget: "string", required: false }
       - { label: "Banner CTA Text", name: "banner_cta_text", widget: "string", required: false }
       - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Intro Blurb", name: "description", widget: "text" }
+      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
       - label: "Category"
         name: "category"
         widget: "select"
@@ -526,6 +529,13 @@ collections: # A list of collections the CMS should be able to edit
             fields:
               - { label: Heading, name: souncloud_heading, widget: string, required: true }
               - { label: Souncloud iFrame URL, name: souncloud_url, widget: string, required: true }
+          - label: "C23: Feature Resource"
+            name: "feature_resource"
+            widget: "relation"
+            collection: "resources"
+            searchFields: ["Title"]
+            valueField: "Title"
+            displayFields: ["Title"]
 
   - name: "pages"
     label: "Pages"

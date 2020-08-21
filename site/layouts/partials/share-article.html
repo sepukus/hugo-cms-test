@@ -3,18 +3,20 @@
     <div class="uk-width-3-4@m">
       <h4>Share article</h4>
       {{$.Site.Params.socialurl}}
+
+      
     </div>
     <div class="uk-width-auto@m">
-      <a href="https://www.facebook.com/sharer/sharer.php?u=https://cmhaa.org.au/" class="uk-icon-button uk-text-emphasis social-share">
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://cmhaa.org.au{{ .Permalink }}" class="uk-icon-button uk-text-emphasis social-share">
         <span uk-icon="facebook"></span>
       </a>
-      <a href="https://twitter.com/intent/tweet?url=https://cmhaa.org.au/&text={{ $.Site.Title }}&via=twitter"  class="uk-icon-button uk-text-emphasis social-share">
+      <a href="https://twitter.com/intent/tweet?url=https://cmhaa.org.au{{ .Permalink }}&text={{ $.Site.Title }}&via=twitter"  class="uk-icon-button uk-text-emphasis social-share">
         <span uk-icon="twitter"></span>
       </a>
-      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcmhaa.org.au" class="uk-icon-button uk-text-emphasis social-share">
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcmhaa.org.au{{ .Permalink }}" class="uk-icon-button uk-text-emphasis social-share">
         <span uk-icon="linkedin"></span>
       </a>
-      <a href="mailto:?subject={{ $.Site.Title }}&body=https%3A%2F%2Fcmhaa.org.au" class="uk-icon-button uk-text-emphasis social-share">
+      <a href="mailto:?subject={{ $.Site.Title }}&body=https%3A%2F%2Fcmhaa.org.au{{ .Permalink }}" class="uk-icon-button uk-text-emphasis social-share">
         <span uk-icon="mail"></span>
       </a>
     </div>
