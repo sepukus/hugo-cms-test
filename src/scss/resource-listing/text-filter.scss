@@ -1,0 +1,63 @@
+.text-filter {
+  &__wrap {
+    position: relative;
+
+    input {
+      padding: 15px 10px;
+      display: block;
+      border: 1px solid #000;
+      border-radius: 4px;
+      width: 100%;
+      background-image: url('/img/icons/search.svg');
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+    }
+  }
+
+  &__selected,
+  &__autocomplete {
+    list-style-type: none;
+    padding: 0;    
+
+    button {
+      border-radius: 2px;
+      border: 1px solid #000;
+      padding: 15px 10px;
+      background: #f8f8f8;
+      width: 100%;
+      text-align: left;
+      position: relative;
+
+      &:after {        
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(-10px, -50%);
+      }
+    }
+  }
+
+  &__autocomplete {
+    margin: 0;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    z-index: 100;
+
+    button {
+      &:after {
+        content: '+';
+      }
+    }
+  }
+
+  &__selected {
+    margin: 10px 0;
+
+    button {
+      &:after {
+        content: '-';
+      }
+    }
+  }
+}

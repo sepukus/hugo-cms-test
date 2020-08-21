@@ -1,3 +1,14 @@
+/* Category Map = classname: (background-color, text-color) */
+$categorymap: (
+  news-blogs: (#E54820, #fff),
+  personal-stories: (#B60057, #fff),
+  case-studies: (#F59C00, #000),
+  fact-sheets: (#F0F0F0, #000),
+  guides-toolkits: (#007E97, #fff),
+  support-services: (#8ABD24, #000),
+  research: (#8ABD24, #000)
+);
+
 .card {
   background: #fff;
   border-radius: 4px;
@@ -29,6 +40,13 @@
     border-radius: 20px;
     color: #fff;
     padding: 2px 10px;
+
+    @each $category, $colors in $categorymap {
+      &.#{$category} {
+        background-color: nth($colors, 1);
+        color: nth($colors, 2);
+      }
+    }
   }
 
   &__date {
@@ -74,6 +92,21 @@
   margin-right: -16px;
 
   > * {
-    width: calc((100% / 3) - 32px);
+    width: 100%;
+
+    @media (min-width: $breakpoint-small) {
+      width: calc((100% / 2) - 32px);
+    }
+
+    @media (min-width: $breakpoint-large) {
+      width: calc((100% / 3) - 32px);
+    }
+
+    &:nth-child(3n+1) {
+      &:last-child {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
   }
 }

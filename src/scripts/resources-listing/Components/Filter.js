@@ -28,10 +28,12 @@ const Filter = (props) => {
   });
 
   return (
-    <div className="filter">
-      <h3>{title}</h3>
-      {categories}
-    </div>
+    <li className="filter">
+      <button className="uk-accordion-title">
+        <h3>{title}</h3>
+      </button>
+      <div className="uk-accordion-content">{categories}</div>
+    </li>
   );
 };
 

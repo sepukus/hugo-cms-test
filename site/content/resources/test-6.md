@@ -1,6 +1,6 @@
 ---
 title: test-6
-date: 2020-07-30T07:53:59.980Z
+date: 2020-06-20T07:53:59.980Z
 banner_title: Testing Banner Title
 banner_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 banner_image: img/bannerrightimage.jpg
