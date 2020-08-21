@@ -1,8 +1,9 @@
+{{ $context := .context }}
 {{ range .context.Params.Modules }}
   {{ $path := printf "%s%s%s" "modules/" .type ".html" }}
   {{ $fullpath := printf "%s%s" "layouts/partials/" $path }}
   {{ if (fileExists $fullpath) -}}
-    {{ partial $path (dict "Site" $.Site "Module" .) }}
+    {{ partial $path (dict "Site" $.Site "Module" . "Context" $context) }}
   {{ else }}
     {{ if ne (getenv "HUGO_ENV") "production" }}
       <h1>Module does not exist</h1>

@@ -1,0 +1,16 @@
+{{- $title := .Module.title | default "You might be interested in" -}}
+{{- $related := (where (.Site.RegularPages.Related .Context) "Type" "resources") | first 3 -}}
+{{ with $related }}
+<div class="uk-section uk-background-muted">
+  <div class="uk-container">
+    <h3 class="uk-text-center">{{ $title }}</h3>
+    <div class="uk-container">
+      <div class="cards-wrapper">
+        {{ range . }}
+          {{ partial "card" (dict "item" .) }}
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}
