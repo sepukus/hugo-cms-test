@@ -238,11 +238,16 @@ collections: # A list of collections the CMS should be able to edit
     folder: "site/content/resources"
     create: true
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Title", name: "title", widget: "string", required: true }
+      - { label: "Metadata Keywords", name: "meta_keywords", widget: "string", required: true, default: "Mental Awareness, CMHAA, Keyword, Keyword." }
+      - { label: "Metadata Description", name: "meta_description", widget: "string", required: true, default: "This is a detailed description of the page." }
       - { label: "Banner Title", name: "banner_title", widget: "string", required: false }
       - { label: "Banner Description", name: "banner_description", widget: "string", required: false }
       - { label: "Banner Background Image", name: "banner_image", widget: "image", required: false }
+      - { label: "Banner Right Image", name: "banner_right_image", widget: "image", required: false }
+      - { label: "Banner CTA Link", name: "banner_cta_link", widget: "string", required: false }
+      - { label: "Banner CTA Text", name: "banner_cta_text", widget: "string", required: false }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
       - label: "Category"
         name: "category"
         widget: "select"
@@ -310,7 +315,217 @@ collections: # A list of collections the CMS should be able to edit
           "Environment & agriculture",
           "Emergency services & security"
         ]
-      - { label: Content, name: content, widget: markdown, required: false }
+      - label: "Modules"
+        name: "modules"
+        widget: "list"
+        types:
+          - label: "C03: Split Title with Content"
+            name: "split_title_content"
+            widget: object
+            fields:
+              - { label: Title, name: title, widget: string, required: true }
+              - { label: Image, name: image, widget: image, required: false }
+              - { label: Lead Text, name: leadtext, widget: markdown, required: false }
+              - { label: Content, name: content, widget: markdown, required: false }
+          - label: "C04: Spotlight with Image & Content"
+            name: "spotlight_image_content"
+            widget: object
+            fields:
+              - { label: Image, name: image, widget: image }
+              - { label: Title 1, name: title1, widget: string, required: true }
+              - { label: Content 1, name: content1, widget: markdown, required: true }
+              - { label: Title 2, name: title2, widget: string }
+              - { label: Content 2, name: content2, widget: markdown }
+          - label: "C05: Statistics"
+            name: "statistics"
+            widget: object
+            fields:
+              - { label: Statistic Number 1, name: stat_number_1, widget: number, valueType: "float" }
+              - { label: Statistic Type 1, name: stat_type_1, widget: string }
+              - { label: Info 1, name: stat_info_1, widget: markdown }
+              - { label: Statistic Number 2, name: stat_number_2, widget: number, valueType: "float" }
+              - { label: Statistic Type 2, name: stat_type_2, widget: string }
+              - { label: Info 2, name: stat_info_2, widget: markdown }
+              - { label: Statistic Number 3, name: stat_number_3, widget: number, valueType: "float" }
+              - { label: Statistic Type 3, name: stat_type_3, widget: string }
+              - { label: Info 3, name: stat_info_3, widget: markdown }
+          - label: "C06: Pillar Content - Card, Image & Description"
+            name: "pillar-content-cards"
+            widget: object
+            fields:
+              - { label: Intro Title, name: intro_title, widget: string, required: true }
+              - { label: Intro Description, name: intro_description, widget: markdown, required: true }
+              - { label: Card Image 1, name: card_image_1, widget: image, required: true }
+              - { label: Card Title 1, name: card_title_1, widget: string, required: true }
+              - { label: Card Description 1, name: card_description_1, widget: markdown, required: true }
+              - { label: Card Image 2, name: card_image_2, widget: image }
+              - { label: Card Title 2, name: card_title_2, widget: string }
+              - { label: Card Description 2, name: card_description_2, widget: markdown }
+              - { label: Card Image 3, name: card_image_3, widget: image }
+              - { label: Card Title 3, name: card_title_3, widget: string }
+              - { label: Card Description 3, name: card_description_3, widget: markdown }
+          - label: "C07: Call Out with Image, text & CTA"
+            name: "callout-image-text-cta"
+            widget: object
+            fields:
+              - { label: Call Out Image, name: callout_image, widget: image, required: true }
+              - { label: Call Out Title, name: callout_title, widget: string, required: true }
+              - { label: Call Out Description, name: callout_description, widget: markdown, required: true }
+              - { label: Call Out CTA Link, name: callout_cta_link, widget: string }
+              - { label: Call Out CTA Text, name: callout_cta_text, widget: string }
+          - label: "C08: Stacked Content with Top Image"
+            name: "stacked-content-top-image"
+            widget: object
+            fields:
+              - { label: Stacked Image, name: stacked_image, widget: image }
+              - { label: Stacked Title, name: stacked_title, widget: string, required: true }
+              - { label: Stacked Description, name: stacked_description, widget: markdown, required: true }
+              - { label: Stacked CTA Link, name: stacked_cta_link, widget: string }
+              - { label: Stacked CTA Text, name: stacked_cta_text, widget: string }
+          - label: "C09: Our Members"
+            name: "our_members"
+            widget: "list"
+            fields:
+              - { label: Title, name: our_members_title, widget: string, default: "Our Members", required: true }
+              - { label: Description, name: our_members_description, widget: markdown, default: "Description goes here" }
+              - label: Member
+                name: member
+                widget: list
+                allow_add: true
+                fields:
+                  - { label: Our Member Image, name: our_member_image, widget: image }
+                  - { label: Our Member Link, name: our_member_link, widget: string }
+          - label: "C10: Youtube with Quote"
+            name: "youtube_with_quote"
+            widget: object
+            fields:
+              - { label: Youtube ID, name: youtube_quote_id, widget: string, required: false, default: "7uWEucoGfG0" }
+              - { label: Quote Text, name: youtube_quote_text, widget: markdown }
+              - { label: Quote Author, name: youtube_quote_author, widget: string }
+          - label: "C11: Image"
+            name: "image"
+            widget: object
+            fields:
+              - { label: Image, name: image, widget: image, required: true }
+          - label: "C12: Split Title with Content & Background"
+            name: "split_title_content_background"
+            widget: object
+            fields:
+              - { label: Disable Left Right, name: disable_leftright, widget: boolean, default: false, required: false }
+              - { label: Title, name: title, widget: string, required: true }
+              - { label: Lead Text, name: leadtext, widget: markdown, required: false }
+              - { label: Content, name: content, widget: markdown, required: false }
+              - { label: CTA Text, name: cta_text, widget: string, required: false }
+              - { label: CTA Link, name: cta_link, widget: string, required: false }
+          - label: "C13: Our Board"
+            name: "our_board"
+            widget: "list"
+            fields:
+              - { label: Title, name: our_board_title, widget: string, default: "Our Board", required: true }
+              - { label: Description, name: our_board_description, widget: markdown, default: "Description goes here", required: false }
+              - label: Board
+                name: board
+                widget: list
+                allow_add: true
+                fields:
+                  - { label: Board Name, name: our_board_name, widget: string, required: true }
+                  - { label: Board Image, name: our_board_image, widget: image, required: true }
+                  - { label: Board Title, name: our_board_title, widget: string, required: true }
+                  - { label: Board Quote, name: our_board_quote, widget: string, required: false }
+                  - { label: Board Description, name: our_board_description, widget: markdown, required: false }
+                  - { label: Board LinkedIn, name: our_board_linkedin, widget: string, required: false }
+              - { label: Executive description, name: our_board_exec_description, widget: markdown, default: "Description goes here", required: false }
+              - label: Executive Board
+                name: exec_board
+                widget: list
+                allow_add: true
+                fields:
+                  - { label: Board Name, name: exec_board_name, widget: string, required: true }
+                  - { label: Board Image, name: exec_board_image, widget: image, required: true }
+                  - { label: Board Title, name: exec_board_title, widget: string, required: true }
+                  - { label: Board Quote, name: exec_board_quote, widget: string, required: false }
+                  - { label: Board Description, name: exec_board_description, widget: markdown, default: "Description goes here" }
+                  - { label: Board LinkedIn, name: exec_board_linkedin, widget: string, required: false }
+          - label: "C14: Friends of CMHAA"
+            name: "friends_cmhaa"
+            widget: "list"
+            fields:
+              - { label: Title, name: friends_cmhaa_title, widget: string, default: "Friends of CMHAA", required: true }
+              - { label: Description, name: friends_cmhaa_description, widget: markdown, default: "CMHAA is guided by a group of mental health experts from across Australia. We call this group the Friends of CMHAA:" }
+              - label: Friends
+                name: friend
+                widget: list
+                allow_add: true
+                fields:
+                  - { label: Our friend, name: friend_text, widget: string }
+          - label: "C15: Quote"
+            name: "quote"
+            widget: object
+            fields:
+              - { label: Quote Text, name: quote_text, widget: markdown }
+              - { label: Quote Author, name: quote_author, widget: string }
+          - label: "C16: Contact form"
+            name: "contact-form"
+            widget: object
+            fields:
+              - { label: Title, name: contact_title, widget: string, required: true }
+              - { label: Lead, name: contact_lead, widget: string, required: false }
+              - { label: Description, name: contact_description, widget: markdown, required: false }
+          - label: "C17: Youtube"
+            name: "youtube"
+            widget: object
+            fields:
+              - { label: Youtube ID, name: youtube, widget: string, required: false, default: "7uWEucoGfG0" }
+          - label: "C18: Rich Text"
+            name: "rich-text"
+            widget: object
+            fields:
+              - { label: Rich text top section, name: richtext_top, widget: boolean, default: true, required: false }
+              - { label: Rich Text Content, name: richtext, widget: markdown, required: true }
+          - label: "C19: Image Gallery"
+            name: "image_gallery"
+            widget: "list"
+            fields:
+              - label: Add Gallery Image
+                name: gallery
+                widget: list
+                allow_add: true
+                fields:
+                  - { label: Image, name: gallery_image, widget: image }
+          - label: "C20: PDF Downloads"
+            name: "pdf-downloads"
+            widget: "list"
+            fields:
+              - { label: Heading, name: pdf_downloads_heading, widget: string, default: "Download resources" }
+              - label: PDF Download List
+                name: pdf_downloads_list
+                widget: list
+                allow_add: true
+                fields:
+                  - { label: PDF Heading, name: pdf_downloads_list_heading, widget: string, required: false }
+                  - { label: PDF File, name: "pdf_downloads_list_file", widget: file, required: true }
+                  - { label: PDF Text, name: pdf_downloads_list_text, widget: string, required: false }
+          - label: "C21: Feature Member Stories"
+            name: "feature-member-stories"
+            widget: "list"
+            fields:
+              - { label: Intro, name: feat_member_intro, widget: string, default: "Hear from some of our members and get to know their story.", required: true }
+              - label: Feature Member
+                name: feat_member
+                widget: list
+                allow_add: true
+                fields:
+                  - { label: Feature Member Image, name: feat_member_image, widget: image }
+                  - { label: Feature Member Description, name: feat_member_description, widget: string }
+                  - { label: Feature Member Link, name: feat_member_link, widget: string }
+                  - { label: Feature Member CTA Text, name: feat_member_cta, widget: string }
+              - { label: Read more stories link, name: feat_member_read_more, widget: string }
+          - label: "C22: Soundcloud"
+            name: "soundcloud"
+            widget: object
+            fields:
+              - { label: Heading, name: souncloud_heading, widget: string, required: true }
+              - { label: Souncloud iFrame URL, name: souncloud_url, widget: string, required: true }
 
   - name: "pages"
     label: "Pages"

@@ -1,0 +1,14 @@
+For setting a new algolia account
+
+In your index -> configuration -> Facets
+Add category, focus, industry, organisation_size and role each as attributes
+for faceting with value of "filter only"
+
+Set your main Index to sort by post_date_timestamp in descending order
+Index -> configuration -> Ranking and Sorting
+
+Create a replica of your main index
+Change the post_date_timestamp sort to ascending
+
+set your ALGOLIA_INDEX_NAME and ALGOLIA_INDEX_NAME_REV environment variables
+with the respective indexs

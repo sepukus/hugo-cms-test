@@ -6,7 +6,7 @@ const AssetsPlugin = require("assets-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-// const Dotenv = require("dotenv-webpack");
+const Dotenv = require("dotenv-webpack");
 
 module.exports = {
   mode: "development",
