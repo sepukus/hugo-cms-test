@@ -30,5 +30,7 @@ modules:
       - pdf_downloads_list_heading: sdfdddd
         pdf_downloads_list_file: img/annette-kimmitt.jpg
         pdf_downloads_list_text: asdf
+  - type: feature_resource
+    resource: Something or other
 ---
 fasdfasdfasdfasdfsadf
