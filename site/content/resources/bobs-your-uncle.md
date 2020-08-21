@@ -15,4 +15,13 @@ modules:
   - type: feature-member-stories
     feat_member_intro: Hear from some of our members and get to know their story.
     feat_member_read_more: /home/
+  - type: pdf-downloads
+    pdf_downloads_heading: Download resources
+    pdf_downloads_list:
+      - pdf_downloads_list_heading: asdsdf
+        pdf_downloads_list_file: img/allianz.jpg
+        pdf_downloads_list_text: sdfeefe
+      - pdf_downloads_list_heading: sdfdddd
+        pdf_downloads_list_file: img/annette-kimmitt.jpg
+        pdf_downloads_list_text: asdf
 ---
