@@ -1,5 +1,5 @@
 {{- $title := .Module.title | default "You might be interested in" -}}
-{{- $related := (where (.Site.RegularPages.Related .Context) "Type" "resources") | first 3 -}}
+{{- $related := (where .Site.RegularPages "Type" "resources") | first 3 -}}
 {{ with $related }}
 <div class="uk-section uk-background-muted">
   <div class="uk-container">
