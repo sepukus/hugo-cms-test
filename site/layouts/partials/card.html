@@ -1,4 +1,4 @@
-<a href="{{ .RelPermalink }}" class="card{{ if .class }} {{ .class }}{{ end }}">
+<a href="{{ .item.RelPermalink }}" class="card{{ if .class }} {{ .class }}{{ end }}">
   <div class="card__image-wrapper">
     {{ $image := "/img/placeholder-noimage.gif" }}
     {{ if .item.Params.banner_image}}
