@@ -32,5 +32,6 @@ modules:
         pdf_downloads_list_text: asdf
   - type: feature_resource
     resource: test-18
+  - type: recommended_resources
 ---
 fasdfasdfasdfasdfsadf
