@@ -2723,10 +2723,10 @@ atob@^2.1.2:
   resolved "https://registry.npmjs.org/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
-atomic-algolia@^0.3.18:
-  version "0.3.18"
-  resolved "https://registry.yarnpkg.com/atomic-algolia/-/atomic-algolia-0.3.18.tgz#c2d3de6c82ceba2d12be8e158ef760f2559f1a3d"
-  integrity sha512-56YxrK4DmrBTOMtYNIkNMzWzcewJDu+ouqs4ge4EkleH2Y98LF5JegWsEDoLq+FDaMxBMWY0qpyDXGUJn8G52w==
+atomic-algolia@^0.3.19:
+  version "0.3.19"
+  resolved "https://registry.yarnpkg.com/atomic-algolia/-/atomic-algolia-0.3.19.tgz#7846fa2444814fdc1d819699e9a9125fc4ad652b"
+  integrity sha512-TiJt5BeYszS9ARk6beZKQCOLtqrEVp4CgReDlL9e3NLpIuOPGcTFMs2iMTyotfl8zBFLLPF84MlXA+C5TnlrAw==
   dependencies:
     "@babel/cli" "^7.2.0"
     "@babel/core" "^7.2.0"

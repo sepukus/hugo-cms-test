@@ -812,3 +812,14 @@ collections: # A list of collections the CMS should be able to edit
           - { label: Description, name: article_description, widget: string, required: false }
           - { label: Full Name, name: article_fullname, widget: string, required: false }
           - { label: Email Address, name: article_email, widget: string, required: false }
+      - label: "Resources Settings"
+        name: "resources"
+        widget: "list"
+        allow_add: false
+        fields:
+          - { label: "Title", name: "resources_title", widget: "string", required: true }
+          - { label: "Metadata Keywords", name: "resources_meta_keywords", widget: "string", required: true, default: "Mental Awareness, CMHAA, Keyword, Keyword." }
+          - { label: "Metadata Description", name: "resources_meta_description", widget: "string", required: true, default: "This is a detailed description of the page." }
+          - { label: "Banner Title", name: "resources_banner_title", widget: "string", required: false }
+          - { label: "Banner Description", name: "resources_banner_description", widget: "string", required: false }
+          - { label: "Banner Background Image", name: "resources_banner_image", widget: "image", required: false }

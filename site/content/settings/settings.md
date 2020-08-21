@@ -37,4 +37,6 @@ article:
       success of this bespoke program.
     article_fullname: Full Name (Functional Lead)
     article_email: functionallead@emailaddress.com
+resources:
+  - resources_title: Resources
 ---
