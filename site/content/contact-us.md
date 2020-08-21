@@ -10,4 +10,5 @@ modules:
     contact_lead: Optional lead text if wanting.
     contact_description: Please complete the form below with your details and
       outline the nature of your enquiry;
+  - type: recommended_resources
 ---
