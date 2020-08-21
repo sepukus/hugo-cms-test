@@ -35,9 +35,12 @@ const FilterBar = (props) => {
 
         <ul uk-accordion="multiple: true; active: 0">{filters}</ul>
       </div>
-      <div className="uk-hidden@m">
+      <div className="uk-hidden@m filters-m-button-box">
         <button className="clear-filters" onClick={props.clear}>
           Clear filters
+        </button>
+        <button className="apply-filters" onClick={props.runQuery}>
+          Apply
         </button>
       </div>
     </section>

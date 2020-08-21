@@ -18,7 +18,7 @@ const Header = (props) => {
       </button>
       <div className={toggleClass}>
         <button onClick={() => setOrderMenuOpen(!orderMenuOpen)}>
-          {props.displayDesc ? "Least Recent" : "Most Recent"}
+          {props.displayDesc ? "Most Recent" : "Least Recent"}
           <img src="/img/icons/up-chevron.svg" alt="" />
         </button>
         <div>

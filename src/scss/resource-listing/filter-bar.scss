@@ -1,6 +1,6 @@
  
 .resource-listing__filter-bar {
-  background-color: #f8f8f8;
+  background-color: #fff;
   flex-shrink: 0;
   transition: transform 200ms ease-out 380ms, width 400ms ease 0ms, opacity 100ms ease-out 400ms;
   position: fixed;
@@ -11,6 +11,7 @@
   overflow-y: scroll;
 
   @media (min-width: $mobileFilterBreakpoint) {
+    background-color: #f8f8f8;
     position: relative;
     overflow-y: auto;
     width: 35%;
@@ -77,6 +78,22 @@
 
   .uk-accordion-content {
     margin-top: 0;
+  }
+
+  .filters-m-button-box {
+    background-color: #f8f8f8;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .apply-filters {
+    background-color: #474747;
+    color: #fff;
+    padding: 12px 32px;
+    text-transform: uppercase;
+    border-radius: 32px;
+    border: none;
   }
 }
 

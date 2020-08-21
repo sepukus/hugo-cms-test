@@ -30,10 +30,13 @@ class App extends React.Component {
     this._filterToggle = this._filterToggle.bind(this);
     this._changeOrder = this._changeOrder.bind(this);
     this._updatePage = this._updatePage.bind(this);
+    this._runQuery = this._runQuery.bind(this);
 
     /* Setup Algolia */
     const client = algoliasearch(process.env.ALGOLIA_APP_ID, process.env.ALGOLIA_SEARCH_KEY);
     this.searchindex = client.initIndex(process.env.ALGOLIA_INDEX_NAME);
+
+    this.filterBreakpoint = 960;
   }
 
   componentDidMount() {
@@ -43,6 +46,7 @@ class App extends React.Component {
         this.setState(
           {
             relationships: data,
+            filtersVisible: window.innerWidth >= this.filterBreakpoint ? true : false,
           },
           () => {
             this._querySearch();
@@ -68,17 +72,20 @@ class App extends React.Component {
             hitsPerPage: 1000,
           })
           .then(({ hits }) => {
-            this._filterAvailable(hits);
+            this.setState({
+              searchResults: hits,
+            });
+            this._filterAvailable();
           })
           .catch((err) => {
             console.log("error", err);
-            this._filterAvailable([]);
+            this._filterAvailable();
           });
       }
     );
   }
 
-  _filterAvailable(searchResults) {
+  _filterAvailable() {
     this.setState((currentState) => {
       const filterable = ["category", "focus", "role", "organisation_size", "industry"];
       const { filters, relationships } = currentState;
@@ -154,7 +161,6 @@ class App extends React.Component {
       });
 
       return {
-        searchResults,
         filters: newFilters,
         loading: false,
       };
@@ -235,7 +241,13 @@ class App extends React.Component {
         filters: newFilters,
         page: 1,
       },
-      this._querySearch
+      () => {
+        if (window.innerWidth >= this.filterBreakpoint) {
+          this._querySearch();
+        } else {
+          this._filterAvailable();
+        }
+      }
     );
   }
 
@@ -260,7 +272,13 @@ class App extends React.Component {
         filters: newFilters,
         page: 1,
       },
-      this._querySearch
+      () => {
+        if (window.innerWidth >= this.filterBreakpoint) {
+          this._querySearch();
+        } else {
+          this._filterAvailable();
+        }
+      }
     );
   }
 
@@ -326,6 +344,13 @@ class App extends React.Component {
     });
   }
 
+  _runQuery() {
+    this._querySearch();
+    this.setState({
+      filtersVisible: false,
+    });
+  }
+
   render() {
     return (
       <div className="resource-listing">
@@ -342,6 +367,7 @@ class App extends React.Component {
             update={this._filterUpdate}
             clear={this._clearFilters}
             filterToggle={this._filterToggle}
+            runQuery={this._runQuery}
           />
           <Listing
             results={this.state.searchResults}
