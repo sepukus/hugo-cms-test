@@ -11,5 +11,5 @@ modules:
     contact_description: Please complete the form below with your details and
       outline the nature of your enquiry;
   - type: recommended_resources
-    heading: You might be interested in
+    heading: ""
 ---
