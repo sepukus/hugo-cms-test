@@ -6,6 +6,7 @@ banner_title: asdfasdf
 banner_description: asdfsdf
 banner_image: img/about-us.jpg
 date: 2020-08-21T05:26:42.159Z
+description: Intro blurb
 category: Case studies
 focus: Support for leaders, colleagues and staff
 role: HR professional
@@ -30,3 +31,4 @@ modules:
         pdf_downloads_list_file: img/annette-kimmitt.jpg
         pdf_downloads_list_text: asdf
 ---
+fasdfasdfasdfasdfsadf
