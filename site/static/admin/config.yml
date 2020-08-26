@@ -548,7 +548,7 @@ collections: # A list of collections the CMS should be able to edit
             name: "feature_resource"
             widget: object
             fields:
-              - { label: Feature Resource, name: resource, widget: relation, collection: "resources", searchFields: ["title"], valueField: ".File.UniqueID", displayFields: ["title"] }
+              - { label: Feature Resource, name: resource, widget: relation, collection: "resources", searchFields: ["title"], valueField: ".title", displayFields: ["title"] }
           - label: "C24: Recommended resources"
             name: "recommended_resources"
             widget: object
