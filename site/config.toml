@@ -43,9 +43,9 @@ pages = "/:slug/"
     weight = 1
 
   [[menu.main]]
-    identifier = "our-stories"
-    name = "Our Stories"
-    url = "/our-stories/"
+    identifier = "resources"
+    name = "Resources"
+    url = "/resources/"
     weight = 2
 
   [[menu.main]]

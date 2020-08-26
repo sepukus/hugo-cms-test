@@ -265,6 +265,7 @@ collections: # A list of collections the CMS should be able to edit
         name: "category"
         widget: "select"
         options: [
+          "News & Blogs",
           "Personal stories",
           "Case studies",
           "Fact sheets",
@@ -276,22 +277,24 @@ collections: # A list of collections the CMS should be able to edit
         name: "focus"
         widget: "select"
         options: [
-          "Support for leaders, colleagues and staff",
-          "Assessment of organisational approach",
+          "Support for managers, colleagues and staff",
+          "Assessing organisational approach",
           "Improving workplace culture",
-          "Developing policy and practice"
+          "Developing policy and practice",
+          "Responding to national/global crises"
         ]
       - label: "Role"
         name: "role"
         widget: "select"
         options: [
-          "CEO or leadership",
+          "CEO or leadership role",
           "Senior manager",
           "HR professional",
           "Line manager/supervisor",
           "Sole trader",
           "Employee",
-          "Health or wellbeing lead",
+          "Health and/or wellbeing lead",
+          "Diversity and/or inclusion lead",
           "Champion or advocate"
         ]
       - label: "Organisation size"
@@ -307,26 +310,28 @@ collections: # A list of collections the CMS should be able to edit
         name: "industry"
         widget: "select"
         options: [
-          "Retail & consumer",
-          "Manufacturing",
-          "Property & Construction",
-          "Transport & Logistics",
-          "Law & Legal Services",
-          "Financial & Insurance Services",
           "Business Consulting & Management",
-          "IT & Telecommunications",
+          "Charity, Not-for-profit",
+          "Defence",
+          "Education & Training",
+          "Emergency Services & Security",
+          "Energy & Utilities",
+          "Environment & Agriculture",
+          "Financial & Insurance Services",
+          "Government & Public Agencies",
           "Healthcare",
+          "IT & Telecommunications",
+          "Law & Legal Services",
+          "Manufacturing",
+          "Media, Communications & Digital",
+          "Mining",
+          "Occupational Health & Rehabilitation",
+          "Property & Construction",
           "Recruitment & HR",
+          "Retail & Consumer",
           "Science & Pharmaceuticals",
           "Tourism & Hospitality",
-          "Government & Public Agencies",
-          "Education & Training",
-          "Media, communications and digital",
-          "Occupational health & rehabilitation",
-          "Energy & Utilities",
-          "Charity, not-for-profit",
-          "Environment & agriculture",
-          "Emergency services & security"
+          "Transport & Logistics"
         ]
       - label: "Modules"
         name: "modules"
@@ -851,8 +856,6 @@ collections: # A list of collections the CMS should be able to edit
         allow_add: false
         fields:
           - { label: "Title", name: "resources_title", widget: "string", required: true }
-          - { label: "Metadata Keywords", name: "resources_meta_keywords", widget: "string", required: true, default: "Mental Awareness, CMHAA, Keyword, Keyword." }
-          - { label: "Metadata Description", name: "resources_meta_description", widget: "string", required: true, default: "This is a detailed description of the page." }
           - { label: "Banner Title", name: "resources_banner_title", widget: "string", required: false }
           - { label: "Banner Description", name: "resources_banner_description", widget: "string", required: false }
           - { label: "Banner Background Image", name: "resources_banner_image", widget: "image", required: false }
